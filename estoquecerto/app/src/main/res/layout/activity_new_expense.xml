@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.product.EditProductSecondActivity">
+    tools:context=".activities.extract.NewExpenseActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                 android:layout_weight="10"
                 android:fontFamily="sans-serif-thin"
                 android:gravity="center"
-                android:text="@string/product_edit"
+                android:text="@string/extract_name_expense"
                 android:textColor="@color/white"
                 android:textFontWeight="600"
                 android:textSize="20sp"
@@ -48,7 +48,7 @@
                 android:layout_marginEnd="20sp"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:src="@drawable/trash_full" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
-                android:text="@string/product_description_2"
+                android:text="@string/product_description_1"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -80,10 +80,10 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Estoque Inicial">
+                tools:hint="Descrição da despesa">
 
                 <EditText
-                    android:id="@+id/etInitialInventory"
+                    android:id="@+id/etExpenseName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -105,10 +105,10 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Estoque mínimo">
+                tools:hint="Valor da despesa">
 
                 <EditText
-                    android:id="@+id/etMinimumStock"
+                    android:id="@+id/etExpenseValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -117,116 +117,6 @@
                     android:textStyle="bold" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:boxCornerRadiusBottomEnd="8dp"
-                app:boxCornerRadiusBottomStart="8dp"
-                app:boxCornerRadiusTopEnd="8dp"
-                app:boxCornerRadiusTopStart="8dp"
-                app:counterEnabled="true"
-                app:counterMaxLength="25"
-                app:endIconMode="clear_text"
-                tools:hint="Estoque máximo">
-
-                <EditText
-                    android:id="@+id/etMaximumStock"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/background_text"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="25dp"
-                android:text="@string/product_description_3"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:boxCornerRadiusBottomEnd="8dp"
-                    app:boxCornerRadiusBottomStart="8dp"
-                    app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusTopStart="8dp"
-                    app:counterEnabled="true"
-                    app:counterMaxLength="25"
-                    app:endIconMode="clear_text"
-                    tools:hint="Preço de compra">
-
-                    <EditText
-                        android:id="@+id/etPurchasePrice"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="5dp"
-                        android:textColor="@color/background_text"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:boxCornerRadiusBottomEnd="8dp"
-                    app:boxCornerRadiusBottomStart="8dp"
-                    app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusTopStart="8dp"
-                    app:counterEnabled="true"
-                    app:counterMaxLength="25"
-                    app:endIconMode="clear_text"
-                    tools:hint="Preço de venda">
-
-                    <EditText
-                        android:id="@+id/etSalePrice"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="15dp"
-                        android:textColor="@color/background_text"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:gravity="bottom|center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/page2_2" />
-                </LinearLayout>
-
-            </RelativeLayout>
 
         </LinearLayout>
 
@@ -245,7 +135,7 @@
                 android:layout_marginRight="30dp">
 
                 <ImageButton
-                    android:id="@+id/btnBackToStep1"
+                    android:id="@+id/goBack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -256,12 +146,12 @@
                     android:src="@drawable/chevron_left" />
 
                 <Button
-                    android:id="@+id/btnFinishRegisterProduct"
+                    android:id="@+id/btnSave"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:backgroundTint="@color/background_header"
-                    android:text="@string/next_page" />
+                    android:text="@string/save" />
 
             </LinearLayout>
 

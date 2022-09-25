@@ -14,6 +14,15 @@
         android:theme="@style/Theme.Estoquecerto"
         tools:targetApi="31">
         <activity
+            android:name=".activities.extract.ExtractActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.extract.NewExpenseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.extract.NewRecipeActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.product.EditProductSecondActivity"
             android:exported="false" />
         <activity

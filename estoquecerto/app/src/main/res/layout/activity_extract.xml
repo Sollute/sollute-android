@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.product.ProductActivity">
+    tools:context=".activities.extract.ExtractActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:layout_weight="10"
                 android:fontFamily="sans-serif-thin"
                 android:gravity="center"
-                android:text="@string/product_name"
+                android:text="@string/extract_name"
                 android:textColor="@color/white"
                 android:textFontWeight="600"
                 android:textSize="20sp"
@@ -71,15 +71,16 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Pesquisar">
+                tools:hint="Descrição da despesa">
 
                 <EditText
-                    android:id="@+id/SearchProduct"
+                    android:id="@+id/SearchExtract"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="viewStart"
                     android:textColor="@color/background_text"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:text="" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,10 +99,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:fontFamily="sans-serif-thin"
+                android:text="@string/extract_description"
                 android:textAlignment="center"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                tools:text="Seus produtos" />
+                android:textStyle="bold" />
 
         </LinearLayout>
 
