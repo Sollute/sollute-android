@@ -13,48 +13,40 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/backgroud_header">
+            android:background="@color/background_header">
 
-            <TextView
-                android:id="@+id/tvMenu"
+            <ImageView
+                android:id="@+id/tvMenuHamburguer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_gravity="center"
                 android:layout_marginStart="20sp"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:text="="
-                android:textColor="@color/white"
-                android:textFontWeight="600"
-                android:textSize="24sp"
-                tools:ignore="UnusedAttribute" />
+                android:src="@drawable/hamburger_lg" />
 
             <TextView
                 android:id="@+id/tvPageName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="1"
+                android:layout_weight="10"
+                android:fontFamily="sans-serif-thin"
                 android:gravity="center"
                 android:text="@string/product_name"
                 android:textColor="@color/white"
                 android:textFontWeight="600"
                 android:textSize="20sp"
+                tools:targetApi="p" />
 
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
+            <ImageView
                 android:id="@+id/tvNewProduct"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
                 android:layout_weight="1"
-                android:gravity="right"
-                android:text="+"
-                android:textColor="@color/white"
-                android:textFontWeight="600"
-                android:textSize="24sp"
+                android:gravity="end"
+                android:src="@drawable/add_plus"
                 tools:ignore="UnusedAttribute" />
 
         </LinearLayout>
@@ -67,17 +59,11 @@
             android:layout_marginRight="50dp"
             android:orientation="vertical">
 
-            <!--        <TextView-->
-            <!--            android:layout_width="wrap_content"-->
-            <!--            android:layout_height="wrap_content"-->
-            <!--            android:text="Pesquisar"-->
-            <!--            android:textSize="12sp" />-->
-
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="viewStart"
-                android:textColor="@color/backgroud_text"
+                android:textColor="@color/background_text"
                 android:textSize="12sp"
                 tools:text="    Pesquisar" />
 
@@ -91,34 +77,27 @@
             android:layout_marginRight="50dp"
             android:orientation="vertical">
 
-            <!--        <TextView-->
-            <!--            android:layout_width="wrap_content"-->
-            <!--            android:layout_height="wrap_content"-->
-            <!--            android:text="Pesquisar"-->
-            <!--            android:textSize="12sp" />-->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-thin"
                 android:textAlignment="center"
-                android:textFontWeight="450"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:text="Seus produtos" />
 
         </LinearLayout>
 
-
         <LinearLayout
-            android:layout_width="350dp"
+            android:layout_width="380dp"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="100dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/border">
 
-            <TextView
+            <ImageView
                 android:id="@+id/tvSell"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -126,54 +105,36 @@
                 android:layout_marginStart="20sp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="+"
-                android:textColor="@color/white"
-                android:textFontWeight="600"
-                android:textSize="24sp"
-                tools:ignore="UnusedAttribute" />
+                android:src="@drawable/shopping_cart_01" />
 
-            <TextView
+            <ImageView
                 android:id="@+id/tvDashboard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="+"
-                android:textColor="@color/white"
-                android:textFontWeight="600"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:ignore="UnusedAttribute" />
+                android:src="@drawable/chart_line" />
 
-            <TextView
+            <ImageView
                 android:id="@+id/tvAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="+"
-                android:textColor="@color/white"
-                android:textFontWeight="600"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:ignore="UnusedAttribute" />
+                android:src="@drawable/add_plus_circle" />
 
-            <TextView
+            <ImageView
                 android:id="@+id/tvProduct"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="+"
-                android:textColor="@color/white"
-                android:textFontWeight="600"
-                android:textSize="24sp"
-                tools:ignore="UnusedAttribute" />
+                android:src="@drawable/gift" />
 
-            <TextView
+            <ImageView
                 android:id="@+id/tvUser"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -181,11 +142,7 @@
                 android:layout_marginEnd="20sp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="+"
-                android:textColor="@color/white"
-                android:textFontWeight="600"
-                android:textSize="24sp"
-                tools:ignore="UnusedAttribute" />
+                android:src="@drawable/usercircle" />
 
         </LinearLayout>
 
