@@ -116,7 +116,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="100dp"
             android:layout_marginRight="30dp"
-            android:background="@color/backgroud_header">
+            android:background="@drawable/border">
 
             <TextView
                 android:id="@+id/tvSell"
@@ -140,10 +140,10 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="+"
-                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textFontWeight="600"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 tools:ignore="UnusedAttribute" />
 
             <TextView
@@ -154,10 +154,10 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="+"
-                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textFontWeight="600"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 tools:ignore="UnusedAttribute" />
 
             <TextView
