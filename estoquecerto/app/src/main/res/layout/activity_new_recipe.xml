@@ -80,7 +80,7 @@
                 app:endIconMode="clear_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:hint="Descrição da receita">
+                android:hint="Descrição da receita">
 
                 <EditText
                     android:id="@+id/etRecipeName"
@@ -105,7 +105,7 @@
                 app:endIconMode="clear_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:hint="Valor da receita">
+                android:hint="Valor da receita">
 
                 <EditText
                     android:id="@+id/etRecipeValue"

@@ -1,6 +1,6 @@
 <resources>
     <!--  APP  -->
-    <string name="app_name">estoque-certo</string>
+    <string name="app_name">Estoque Certo</string>
     <string name="next_page">Próximo</string>
     <string name="save">Salvar</string>
 

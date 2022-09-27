@@ -80,7 +80,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Estoque Inicial">
+                android:hint="Estoque Inicial">
 
                 <EditText
                     android:id="@+id/etInitialInventory"
@@ -105,7 +105,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Estoque mínimo">
+                android:hint="Estoque mínimo">
 
                 <EditText
                     android:id="@+id/etMinimumStock"
@@ -129,7 +129,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Estoque máximo">
+                android:hint="Estoque máximo">
 
                 <EditText
                     android:id="@+id/etMaximumStock"
@@ -168,7 +168,7 @@
                     app:counterEnabled="true"
                     app:counterMaxLength="25"
                     app:endIconMode="clear_text"
-                    tools:hint="Preço de compra">
+                    android:hint="Preço de compra">
 
                     <EditText
                         android:id="@+id/etPurchasePrice"
@@ -194,7 +194,7 @@
                     app:counterEnabled="true"
                     app:counterMaxLength="25"
                     app:endIconMode="clear_text"
-                    tools:hint="Preço de venda">
+                    android:hint="Preço de venda">
 
                     <EditText
                         android:id="@+id/etSalePrice"

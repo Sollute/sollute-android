@@ -80,7 +80,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Descrição da despesa">
+                android:hint="Descrição da despesa">
 
                 <EditText
                     android:id="@+id/etExpenseName"
@@ -105,7 +105,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Valor da despesa">
+                android:hint="Valor da despesa">
 
                 <EditText
                     android:id="@+id/etExpenseValue"

@@ -71,7 +71,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Pesquisar">
+                android:hint="Pesquisar">
 
                 <EditText
                     android:id="@+id/SearchProduct"

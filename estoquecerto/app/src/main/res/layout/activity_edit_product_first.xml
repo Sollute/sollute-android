@@ -80,7 +80,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Nome do Produto">
+                android:hint="Nome do Produto">
 
                 <EditText
                     android:id="@+id/etProductName"
@@ -105,7 +105,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Código do Produto">
+                android:hint="Código do Produto">
 
                 <EditText
                     android:id="@+id/etProductCode"
@@ -129,7 +129,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Marca do Produto">
+                android:hint="Marca do Produto">
 
                 <EditText
                     android:id="@+id/ProductBrand"
@@ -153,7 +153,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Categoria">
+                android:hint="Categoria">
 
                 <EditText
                     android:id="@+id/ProductCategory"
@@ -183,7 +183,7 @@
                     app:counterEnabled="true"
                     app:counterMaxLength="25"
                     app:endIconMode="clear_text"
-                    tools:hint="Peso">
+                    android:hint="Peso">
 
                     <EditText
                         android:id="@+id/etWeight"
@@ -209,7 +209,7 @@
                     app:counterEnabled="true"
                     app:counterMaxLength="25"
                     app:endIconMode="clear_text"
-                    tools:hint="Tamanho">
+                    android:hint="Tamanho">
 
                     <EditText
                         android:id="@+id/etSize"

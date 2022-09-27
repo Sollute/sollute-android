@@ -14,4 +14,5 @@ class NewRecipeActivity : AppCompatActivity() {
         binding = ActivityNewRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
+
 }

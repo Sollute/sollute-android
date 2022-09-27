@@ -86,9 +86,10 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Estoque Inicial">
+                android:hint="Estoque Inicial">
 
                 <EditText
+                    android:text="0"
                     android:id="@+id/etInitialInventory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -112,9 +113,10 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Estoque mínimo">
+                android:hint="Estoque mínimo">
 
                 <EditText
+                    android:text="0"
                     android:id="@+id/etMinimumStock"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -137,9 +139,10 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                tools:hint="Estoque máximo">
+                android:hint="Estoque máximo">
 
                 <EditText
+                    android:text="99"
                     android:id="@+id/etMaximumStock"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -177,9 +180,10 @@
                     app:counterEnabled="true"
                     app:counterMaxLength="25"
                     app:endIconMode="clear_text"
-                    tools:hint="Preço de compra">
+                    android:hint="Preço de compra">
 
                     <EditText
+                        android:text="10.00"
                         android:id="@+id/etPurchasePrice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -204,9 +208,10 @@
                     app:counterEnabled="true"
                     app:counterMaxLength="25"
                     app:endIconMode="clear_text"
-                    tools:hint="Preço de venda">
+                    android:hint="Preço de venda">
 
                     <EditText
+                        android:text="25.00"
                         android:id="@+id/etSalePrice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
