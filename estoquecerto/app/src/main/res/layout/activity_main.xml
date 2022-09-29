@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,9 +21,13 @@
 
             <Button
                 android:id="@+id/btnProductScreen"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="Tela de Produtos" />
+                android:text="Tela de Produtos"
+                android:textColor="@color/black"
+                app:strokeColor="@color/background_header"
+                app:strokeWidth="3dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -32,9 +37,30 @@
 
             <Button
                 android:id="@+id/btnExtractScreen"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="Tela de Extrato" />
+                android:text="Tela de Extrato"
+                android:textColor="@color/black"
+                app:strokeColor="@color/background_header"
+                app:strokeWidth="3dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <Button
+                android:id="@+id/btnNewProductScreen"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Tela de Novo Cliente"
+                android:textColor="@color/black"
+                app:strokeColor="@color/background_header"
+                app:strokeWidth="3dp" />
 
         </LinearLayout>
 

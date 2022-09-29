@@ -4,7 +4,7 @@
     package="com.sollute.estoque_certo">
 
     <!--permissions for INTERNET-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -41,6 +41,9 @@
             android:exported="false" />
         <activity
             android:name=".activities.product.ProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.client.NewClientActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
