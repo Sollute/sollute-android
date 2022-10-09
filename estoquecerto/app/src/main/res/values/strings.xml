@@ -2,7 +2,9 @@
     <!--  APP  -->
     <string name="app_name">Estoque Certo</string>
     <string name="next_page">Próximo</string>
+    <string name="back_page">Voltar</string>
     <string name="save">Salvar</string>
+    
     <string name="finalizar">Finalizar</string>
     <string name="atualizar">Atualizar</string>
 
@@ -19,4 +21,9 @@
     <string name="extract_description">Histórico de Lançamento</string>
     <string name="extract_name_recipe">Nova Receita</string>
     <string name="extract_name_expense">Nova Despesa</string>
+
+    <!--  Cliente  -->
+    <string name="client_description_1">Dados Gerais</string>
+    <string name="client_new">Novo Cliente</string>
+    <string name="client_edit">Editar Cliente</string>
 </resources>
