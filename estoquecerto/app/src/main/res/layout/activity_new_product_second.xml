@@ -278,7 +278,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:backgroundTint="@color/background_header"
-                    android:text="@string/next_page" />
+                    android:text="@string/finalizar" />
 
             </LinearLayout>
 

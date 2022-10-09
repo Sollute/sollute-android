@@ -1,5 +1,6 @@
 package com.sollute.estoque_certo.activities.product
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,9 @@ class NewProductSecondActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         bundle = getIntent().getExtras()!!
+        binding.btnBackToStep1.setOnClickListener {
+            startActivity(Intent(this, NewProductFirstActivity::class.java))
+        }
         binding.btnFinishRegisterProduct.setOnClickListener { postProduct() }
     }
 
@@ -62,7 +66,7 @@ class NewProductSecondActivity : AppCompatActivity() {
                     (response.isSuccessful) -> {
                         Toast.makeText(
                             baseContext,
-                            response.body()?.toString(),
+                            "Produto criado com sucesso",
                             Toast.LENGTH_LONG
                         ).show()
                     }
@@ -74,18 +78,18 @@ class NewProductSecondActivity : AppCompatActivity() {
                     }
                 }
 
-        }
+            }
 
-                override fun onFailure(call: Call<Void>, t: Throwable) {
-            print("not ok")
-        }
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                print("not ok")
+            }
 
-    })
+        })
 
-}
+    }
 
-companion object {
-    const val ID_EMPRESA = 1L
-}
+    companion object {
+        const val ID_EMPRESA = 1L
+    }
 
 }

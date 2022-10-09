@@ -3,6 +3,8 @@
     <string name="app_name">Estoque Certo</string>
     <string name="next_page">Próximo</string>
     <string name="save">Salvar</string>
+    <string name="finalizar">Finalizar</string>
+    <string name="atualizar">Atualizar</string>
 
     <!--  Produto  -->
     <string name="product_name">Produtos</string>
@@ -12,7 +14,7 @@
     <string name="product_description_2">Estoque</string>
     <string name="product_description_3">Preço</string>
 
-    <!--  Produto  -->
+    <!--  Extrato  -->
     <string name="extract_name">Extrato</string>
     <string name="extract_description">Histórico de Lançamento</string>
     <string name="extract_name_recipe">Nova Receita</string>

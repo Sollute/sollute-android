@@ -1,9 +1,6 @@
 package com.sollute.estoque_certo.models.product
 
-import com.google.gson.annotations.SerializedName
-
 data class NewProduct(
-    @SerializedName("codigo")
     val codigo: String,
     val nome: String,
     val marca: String,
