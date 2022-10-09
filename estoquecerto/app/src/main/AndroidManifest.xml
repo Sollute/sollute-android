@@ -3,16 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sollute.estoque_certo">
 
+    <!--permissions for INTERNET-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_with_tittle"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Estoquecerto"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <activity
+            android:name=".activities.extract.ExtractActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.extract.NewExpenseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.extract.NewRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.product.EditProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.product.NewProductSecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.product.NewProductFirstActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.product.ProductActivity"
             android:exported="false" />
@@ -26,5 +49,6 @@
             </intent-filter>
         </activity>
     </application>
+
 
 </manifest>
