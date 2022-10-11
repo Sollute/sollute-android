@@ -6,6 +6,7 @@
     <string name="save">Salvar</string>
     <string name="update">Atualizar</string>
     <string name="finished">Finalizar</string>
+    <string name="login">Login</string>
 
     <!--  Produto  -->
     <string name="product_name">Produtos</string>
@@ -25,4 +26,7 @@
     <string name="client_description_1">Dados Gerais</string>
     <string name="client_new">Novo Cliente</string>
     <string name="client_edit">Editar Cliente</string>
+    
+    <!-- Login -->
+    <string name="login_description">Login</string>
 </resources>

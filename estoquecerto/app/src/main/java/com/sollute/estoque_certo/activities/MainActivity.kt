@@ -3,6 +3,7 @@ package com.sollute.estoque_certo.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sollute.estoque_certo.Login
 import com.sollute.estoque_certo.activities.client.NewClientActivity
 import com.sollute.estoque_certo.activities.extract.ExtractActivity
 import com.sollute.estoque_certo.activities.product.NewProductFirstActivity
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnProductScreen.setOnClickListener { productScreen() }
         binding.btnExtractScreen.setOnClickListener { productExtract() }
         binding.btnNewProductScreen.setOnClickListener { clientScreen() }
+        binding.btnLogin.setOnClickListener { loginScreen() }
     }
 
     private fun productScreen() {
@@ -45,5 +47,13 @@ class MainActivity : AppCompatActivity() {
             NewClientActivity::class.java
         )
         startActivity(productScreen)
+    }
+
+    private fun loginScreen() {
+        val loginScreen = Intent(
+            this,
+            Login::class.java
+        )
+        startActivity(loginScreen)
     }
 }
