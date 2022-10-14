@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background_header">#566FF0</color>
     <color name="background_text">#999999</color>
+    <color name="roxo">#566FF0</color>
+    <color name="cinza">#F1F1F1</color>
 </resources>
