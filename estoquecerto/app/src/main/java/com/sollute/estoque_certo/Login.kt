@@ -38,8 +38,8 @@ class Login : AppCompatActivity() {
     }
 
     private fun tryLogin(){
-        val email = binding.etLoginEmail.text.toString()
-        val senha = binding.etLoginSenha.text.toString()
+        val email = binding.etEmail.text.toString()
+        val senha = binding.etSenha.text.toString()
         val body = Login(email,senha)
 
         val request = Rest.getInstance()
