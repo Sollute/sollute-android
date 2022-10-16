@@ -4,10 +4,7 @@ import com.sollute.estoque_certo.models.product.EditProduct
 import com.sollute.estoque_certo.models.product.ListProduct
 import com.sollute.estoque_certo.models.product.NewProduct
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface Product {
 
@@ -17,16 +14,28 @@ interface Product {
         @Body newProduct: NewProduct
     ): Call<Void>
 
-    @POST("/produtos/editar-produto/{idEmpresa}/{codigo}")
+    @PUT("/produtos/editar-produto-nome/{idEmpresa}/{nome}")
     fun editProduct(
         @Path("idEmpresa") idEmpresa: Long,
-        @Path("codigo") codigo: String,
+        @Path("nome") nome: String,
         @Body editProduct: EditProduct
     ): Call<Void>
 
-    @GET("/produtos/listar-produto/{idEmpresa}")
+    @DELETE("/produtos/deletar-produto-nome/{nome}/{idEmpresa}")
+    fun deleteProduct(
+        @Path("nome") nome: String,
+        @Path("idEmpresa") idEmpresa: Long
+    ): Call<Void>
+
+    @GET("/produtos/listar-produtos-android/{idEmpresa}")
     fun listProducts(
         @Path("idEmpresa") idEmpresa: Long
-    ): Call<ListProduct>
+    ): Call<List<ListProduct>>
+
+    @GET("/produtos/info/{nome}/{fkEmpresa}")
+    fun getInfo(
+        @Path("nome") nome: String,
+        @Path("fkEmpresa") fkEmpresa: Long,
+    ): Call<EditProduct>
 
 }

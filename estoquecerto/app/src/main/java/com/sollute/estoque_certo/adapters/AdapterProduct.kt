@@ -30,7 +30,6 @@ class AdapterProduct(
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.productPhoto.setImageResource(products[position].productPhoto)
         holder.productName.text = products[position].productName
         holder.productPrice.text = products[position].productPrice.toString()
         holder.productQuantity.text = products[position].productQuantity.toString()
@@ -43,7 +42,6 @@ class AdapterProduct(
     override fun getItemCount(): Int = products.size
 
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val productPhoto = itemView.findViewById<ImageView>(R.id.ivProductPhoto)
         val productName = itemView.findViewById<TextView>(R.id.tvProductNameItem)
         val productPrice = itemView.findViewById<TextView>(R.id.tvProductPrice)
         val productQuantity = itemView.findViewById<TextView>(R.id.tvProductQuantity)
