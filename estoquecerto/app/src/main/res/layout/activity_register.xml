@@ -8,9 +8,9 @@
     tools:context=".activities.register.RegisterActivity">
 
     <RelativeLayout
-        android:background="@color/cinza"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/cinza">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,7 +71,9 @@
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    app:endIconMode="clear_text">
+                    app:boxStrokeColor="@color/background_header"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="@color/background_header">
 
                     <EditText
                         android:id="@+id/etEmail"
@@ -95,7 +97,9 @@
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    app:endIconMode="password_toggle">
+                    app:boxStrokeColor="@color/background_header"
+                    app:endIconMode="password_toggle"
+                    app:hintTextColor="@color/background_header">
 
                     <EditText
                         android:id="@+id/etSenha"
@@ -120,7 +124,9 @@
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    app:endIconMode="password_toggle">
+                    app:boxStrokeColor="@color/background_header"
+                    app:endIconMode="password_toggle"
+                    app:hintTextColor="@color/background_header">
 
                     <EditText
                         android:id="@+id/etConfirmeSenha"

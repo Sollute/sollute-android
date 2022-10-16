@@ -1,10 +1,10 @@
 package com.sollute.estoque_certo.activities.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.sollute.estoque_certo.activities.product.NewProductFirstActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.activities.register.RegisterActivity
 import com.sollute.estoque_certo.databinding.ActivityLoginBinding
 import com.sollute.estoque_certo.models.login.Login
@@ -16,10 +16,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class Login : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -27,20 +29,21 @@ class Login : AppCompatActivity() {
         binding.btnGoRegister.setOnClickListener { goRegister() }
     }
 
-    private fun goRegister() { startActivity(Intent(this, RegisterActivity::class.java)) }
+    private fun goRegister() = startActivity(Intent(this, RegisterActivity::class.java))
 
-    private fun productScreen() {
+    private fun productScreen(idEmpresa: Int) {
         val productScreen = Intent(
             this,
-            NewProductFirstActivity::class.java
+            ProductActivity::class.java
         )
+        productScreen.putExtra("idEmp", idEmpresa)
         startActivity(productScreen)
     }
 
     private fun tryLogin() {
         val body = Login(
-            binding.etEmail.text.toString(),
-            binding.etSenha.text.toString()
+            login = binding.etLogin.text.toString(),
+            senha = binding.etSenha.text.toString()
         )
 
         val request = Rest.getInstance().create(AuthLogin::class.java)
@@ -50,12 +53,22 @@ class Login : AppCompatActivity() {
                 call: Call<LoginResponse>,
                 response: Response<LoginResponse>
             ) {
-                Toast.makeText(
-                    baseContext,
-                    response.body()?.token,
-                    Toast.LENGTH_LONG
-                ).show()
-                productScreen()
+                when {
+                    response.code() == 200 -> {
+                        productScreen(response.body()!!.idEmpresa)
+                    }
+                    (response.code() == 401) -> {
+                        Toast.makeText(
+                            baseContext,
+                            "Credenciais incorretas",
+                            Toast.LENGTH_LONG
+                        ).show().also {
+                            binding.etLogin.error
+                            binding.etSenha.error
+                        }
+                    }
+                }
+
             }
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {

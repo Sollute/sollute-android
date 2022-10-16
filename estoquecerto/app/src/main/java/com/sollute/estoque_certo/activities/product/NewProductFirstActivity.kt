@@ -3,24 +3,27 @@ package com.sollute.estoque_certo.activities.product
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.sollute.estoque_certo.activities.extract.ExtractActivity
 import com.sollute.estoque_certo.databinding.ActivityNewProductFirstBinding
 
 class NewProductFirstActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNewProductFirstBinding
+    var bundle: Bundle? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityNewProductFirstBinding.inflate(layoutInflater)
+        bundle = getIntent().getExtras()!!
+
+        val idEmpresa = bundle?.getInt("idEmp", 0)
         setContentView(binding.root)
 
-        binding.btnNextPageRegisterProduct.setOnClickListener { nextStep() }
+        binding.btnNextPageRegisterProduct.setOnClickListener { nextStep(idEmpresa!!) }
         binding.goBack.setOnClickListener { onBackPressed() }
     }
 
-    private fun nextStep() {
+    private fun nextStep(idEmpresa: Int) {
 
         val productName = binding.etProductName.text.toString()
         val productCode = binding.etProductCode.text.toString()
@@ -34,6 +37,7 @@ class NewProductFirstActivity : AppCompatActivity() {
             NewProductSecondActivity::class.java
         )
 
+        nextScreen.putExtra("idEmp", idEmpresa)
         nextScreen.putExtra("productName", productName)
         nextScreen.putExtra("productCode", productCode)
         nextScreen.putExtra("productBrand", productBrand)

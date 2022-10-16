@@ -24,16 +24,16 @@
 
     <!-- Cadastro -->
     <string name="e_mail">e-mail</string>
-    <string name="email_value">sollute@gmail.com</string>
-    <string name="senha">*********************</string>
+    <string name="email_value">sollute2@gmail.com</string>
+    <string name="senha">sollute123456</string>
     <string name="possui">Já possui conta?</string>
     <string name="entre">Entre na sua conta</string>
-    <string name="sollute">Sollute</string>
+    <string name="sollute">Sollute FAKE</string>
     <string name="nome_fantasia">nome fantasia</string>
     <string name="social">razão social</string>
-    <string name="sollute_sa">Sollute SA</string>
+    <string name="sollute_sa">Sollute SA FAKE</string>
     <string name="confirme_sua_senha">confirme sua senha</string>
-    <string name="cnpj">85.377.281/0001-59</string>
+    <string name="cnpj">33099701000189</string>
     <string name="cnpj_nome">CNPJ</string>
     <string name="telefone_celular">telefone celular</string>
     <string name="numero">(11) 98099-2290</string>

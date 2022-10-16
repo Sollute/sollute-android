@@ -60,6 +60,7 @@
                     android:textStyle="bold" />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/testeLogin"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -74,11 +75,12 @@
                     app:hintTextColor="@color/background_header">
 
                     <EditText
-                        android:id="@+id/etEmail"
+                        android:id="@+id/etLogin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:maxLength="25"
+                        android:text="sollute@gmail.com"
                         android:textColor="@color/background_text"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -104,6 +106,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
+                        android:text="sollute123"
                         android:textColor="@color/background_text"
                         android:textSize="12sp"
                         android:textStyle="bold" />
