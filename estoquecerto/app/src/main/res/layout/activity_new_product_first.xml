@@ -18,12 +18,13 @@
 
             <ImageButton
                 android:id="@+id/tvMenuHamburguer"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="20sp"
-                android:layout_weight="1"
-                android:background="@color/background_header"
+                android:layout_weight="1.5"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/hamburger_lg" />
 
             <TextView
@@ -46,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:gravity="end"
                 android:textColor="@color/white" />
 
@@ -83,12 +84,12 @@
                 app:endIconMode="clear_text">
 
                 <EditText
-                    android:text="nome teste"
                     android:id="@+id/etProductName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:maxLength="25"
+                    android:text="nome teste"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -109,11 +110,11 @@
                 app:endIconMode="clear_text">
 
                 <EditText
-                    android:text="cod teste"
                     android:id="@+id/etProductCode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:text="cod teste"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -134,11 +135,11 @@
                 app:endIconMode="clear_text">
 
                 <EditText
-                    android:text="marca teste"
                     android:id="@+id/etProductBrand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:text="marca teste"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -159,11 +160,11 @@
                 app:endIconMode="clear_text">
 
                 <EditText
-                    android:text="marca teste"
                     android:id="@+id/etProductCategory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:text="marca teste"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -190,12 +191,12 @@
                     app:endIconMode="clear_text">
 
                     <EditText
-                        android:text="10"
                         android:id="@+id/etWeight"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="5dp"
+                        android:text="10"
                         android:textColor="@color/background_text"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -217,12 +218,12 @@
                     app:endIconMode="clear_text">
 
                     <EditText
-                        android:text="GG"
                         android:id="@+id/etSize"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="15dp"
+                        android:text="GG"
                         android:textColor="@color/background_text"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -267,11 +268,12 @@
 
                 <ImageButton
                     android:id="@+id/goBack"
+                    style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginEnd="25dp"
-                    android:background="@color/white"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:minWidth="48dp"
                     android:minHeight="48dp"
                     android:src="@drawable/chevron_left" />

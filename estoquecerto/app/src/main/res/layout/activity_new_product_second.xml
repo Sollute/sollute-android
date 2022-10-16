@@ -19,12 +19,13 @@
 
             <ImageButton
                 android:id="@+id/tvMenuHamburguer"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="20sp"
-                android:layout_weight="1"
-                android:background="@color/background_header"
+                android:layout_weight="1.5"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Botão Hamburguer"
                 android:minHeight="48dp"
                 android:src="@drawable/hamburger_lg"
@@ -50,10 +51,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
+                android:contentDescription="vazio"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:contentDescription="vazio"
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>
@@ -79,22 +80,22 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Estoque Inicial"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text"
-                android:hint="Estoque Inicial">
+                app:endIconMode="clear_text">
 
                 <EditText
-                    android:text="0"
                     android:id="@+id/etInitialInventory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:maxLength="25"
+                    android:text="0"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -106,21 +107,21 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Estoque mínimo"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text"
-                android:hint="Estoque mínimo">
+                app:endIconMode="clear_text">
 
                 <EditText
-                    android:text="0"
                     android:id="@+id/etMinimumStock"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:text="0"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -132,21 +133,21 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Estoque máximo"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text"
-                android:hint="Estoque máximo">
+                app:endIconMode="clear_text">
 
                 <EditText
-                    android:text="99"
                     android:id="@+id/etMaximumStock"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:text="99"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -173,22 +174,22 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:hint="Preço de compra"
                     app:boxCornerRadiusBottomEnd="8dp"
                     app:boxCornerRadiusBottomStart="8dp"
                     app:boxCornerRadiusTopEnd="8dp"
                     app:boxCornerRadiusTopStart="8dp"
                     app:counterEnabled="true"
                     app:counterMaxLength="25"
-                    app:endIconMode="clear_text"
-                    android:hint="Preço de compra">
+                    app:endIconMode="clear_text">
 
                     <EditText
-                        android:text="10.00"
                         android:id="@+id/etPurchasePrice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="5dp"
+                        android:text="10.00"
                         android:textColor="@color/background_text"
                         android:textSize="12sp"
                         android:textStyle="bold"
@@ -201,22 +202,22 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:hint="Preço de venda"
                     app:boxCornerRadiusBottomEnd="8dp"
                     app:boxCornerRadiusBottomStart="8dp"
                     app:boxCornerRadiusTopEnd="8dp"
                     app:boxCornerRadiusTopStart="8dp"
                     app:counterEnabled="true"
                     app:counterMaxLength="25"
-                    app:endIconMode="clear_text"
-                    android:hint="Preço de venda">
+                    app:endIconMode="clear_text">
 
                     <EditText
-                        android:text="25.00"
                         android:id="@+id/etSalePrice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="15dp"
+                        android:text="25.00"
                         android:textColor="@color/background_text"
                         android:textSize="12sp"
                         android:textStyle="bold"
@@ -262,18 +263,19 @@
 
                 <ImageButton
                     android:id="@+id/btnBackToStep1"
+                    style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginEnd="25dp"
-                    android:background="@color/white"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:minWidth="48dp"
                     android:minHeight="48dp"
                     android:src="@drawable/chevron_left"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
-                    android:id="@+id/btnFinishRegisterProduct"
+                    android:id="@+id/btnFinishProduct"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:layout_gravity="center"

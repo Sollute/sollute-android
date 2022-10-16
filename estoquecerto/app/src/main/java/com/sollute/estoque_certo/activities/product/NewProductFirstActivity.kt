@@ -17,9 +17,7 @@ class NewProductFirstActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnNextPageRegisterProduct.setOnClickListener { nextStep() }
-        binding.goBack.setOnClickListener {
-            startActivity(Intent(this, ProductActivity::class.java))
-        }
+        binding.goBack.setOnClickListener { onBackPressed() }
     }
 
     private fun nextStep() {

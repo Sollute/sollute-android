@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.sollute.estoque_certo.R
 import com.sollute.estoque_certo.databinding.ActivityNewProductSecondBinding
+import com.sollute.estoque_certo.models.product.ListProduct
 import com.sollute.estoque_certo.models.product.NewProduct
 import com.sollute.estoque_certo.rest.Rest
 import com.sollute.estoque_certo.services.product.Product
@@ -16,6 +18,7 @@ class NewProductSecondActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityNewProductSecondBinding
     lateinit var bundle: Bundle
+    private val httpClient: Product = Rest.getInstance().create(Product::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +27,12 @@ class NewProductSecondActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         bundle = getIntent().getExtras()!!
-        binding.btnBackToStep1.setOnClickListener {
-            startActivity(Intent(this, NewProductFirstActivity::class.java))
-        }
-        binding.btnFinishRegisterProduct.setOnClickListener { postProduct() }
+        binding.btnBackToStep1.setOnClickListener { onBackPressed() }
+        binding.btnFinishProduct.setOnClickListener { postProduct() }
     }
+
+    private fun goBack() = startActivity(Intent(this, ProductActivity::class.java))
+    private fun goBackFirstStep() = startActivity(Intent(this, NewProductFirstActivity::class.java))
 
     private fun postProduct() {
         val productName = bundle.getString("productName")!!
@@ -57,9 +61,7 @@ class NewProductSecondActivity : AppCompatActivity() {
             estoqueMax = maximumStock,
         )
 
-        val request = Rest.getInstance().create(Product::class.java)
-
-        request.postProduct(ID_EMPRESA, newProduct).enqueue(object : Callback<Void> {
+        httpClient.postProduct(ID_EMPRESA, newProduct).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
 
                 when {
@@ -68,7 +70,18 @@ class NewProductSecondActivity : AppCompatActivity() {
                             baseContext,
                             "Produto criado com sucesso",
                             Toast.LENGTH_LONG
-                        ).show()
+                        ).show().also {
+                            goBack()
+                        }
+                    }
+                    (response.code() == 409) -> {
+                        Toast.makeText(
+                            baseContext,
+                            "Código ou nome já existe. Por favor, escolha outro",
+                            Toast.LENGTH_LONG
+                        ).show().also {
+                            goBackFirstStep()
+                        }
                     }
                     (response.code() == 400) -> {
                         print("ERROR CODE: 400")
@@ -85,7 +98,6 @@ class NewProductSecondActivity : AppCompatActivity() {
             }
 
         })
-
     }
 
     companion object {
