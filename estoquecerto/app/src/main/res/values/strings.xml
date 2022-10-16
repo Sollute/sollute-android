@@ -26,4 +26,9 @@
     <string name="client_description_1">Dados Gerais</string>
     <string name="client_new">Novo Cliente</string>
     <string name="client_edit">Editar Cliente</string>
+
+    <!--  Fornecedor  -->
+    <string name="provider_description_1">Dados Gerais</string>
+    <string name="provider_new">Novo Fornecedor</string>
+    <string name="provider_edit">Editar Fornecedor</string>
 </resources>
