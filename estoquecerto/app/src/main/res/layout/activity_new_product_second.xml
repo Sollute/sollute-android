@@ -19,12 +19,13 @@
 
             <ImageButton
                 android:id="@+id/tvMenuHamburguer"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="20sp"
-                android:layout_weight="1"
-                android:background="@color/background_header"
+                android:layout_weight="1.5"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Botão Hamburguer"
                 android:minHeight="48dp"
                 android:src="@drawable/hamburger_lg"
@@ -50,10 +51,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
+                android:contentDescription="vazio"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:contentDescription="vazio"
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>
@@ -262,18 +263,19 @@
 
                 <ImageButton
                     android:id="@+id/btnBackToStep1"
+                    style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginEnd="25dp"
-                    android:background="@color/white"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:minWidth="48dp"
                     android:minHeight="48dp"
                     android:src="@drawable/chevron_left"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
-                    android:id="@+id/btnFinishRegisterProduct"
+                    android:id="@+id/btnFinishProduct"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:layout_gravity="center"

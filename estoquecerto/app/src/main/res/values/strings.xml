@@ -2,6 +2,7 @@
     <!--  APP  -->
     <string name="app_name">Estoque Certo</string>
     <string name="next_page">Próximo</string>
+    <string name="back_page">Voltar</string>
     <string name="save">Salvar</string>
     <string name="finalizar">Finalizar</string>
     <string name="atualizar">Atualizar</string>
@@ -19,6 +20,8 @@
     <string name="extract_description">Histórico de Lançamento</string>
     <string name="extract_name_recipe">Nova Receita</string>
     <string name="extract_name_expense">Nova Despesa</string>
+    
+    <!-- Cadastro -->
     <string name="e_mail">e-mail</string>
     <string name="email_value">sollute@gmail.com</string>
     <string name="senha">*********************</string>
@@ -49,4 +52,15 @@
     <string name="cadastro">CADASTRO</string>
     <string name="titulo_senha">senha</string>
     <string name="text_cep">20260130</string>
+
+    <!--  Cliente  -->
+    <string name="client_description_1">Dados Gerais</string>
+    <string name="client_new">Novo Cliente</string>
+    <string name="client_edit">Editar Cliente</string>
+
+    <!--  Fornecedor  -->
+    <string name="provider_description_1">Dados Gerais</string>
+    <string name="provider_new">Novo Fornecedor</string>
+    <string name="provider_edit">Editar Fornecedor</string>
+
 </resources>

@@ -16,13 +16,15 @@
             android:layout_height="60dp"
             android:background="@color/background_header">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/tvMenuHamburguer"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="20sp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/hamburger_lg" />
 
             <TextView
@@ -39,13 +41,15 @@
                 android:textSize="20sp"
                 tools:targetApi="p" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/tvNewProduct"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:gravity="end"
                 android:src="@drawable/add_plus"
                 tools:ignore="UnusedAttribute" />
@@ -64,14 +68,14 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Descrição da despesa"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text"
-                android:hint="Descrição da despesa">
+                app:endIconMode="clear_text">
 
                 <EditText
                     android:id="@+id/SearchExtract"
@@ -108,57 +112,67 @@
 
         <LinearLayout
             android:layout_width="380dp"
-            android:layout_height="60dp"
+            android:layout_height="65dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="100dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="15dp"
             android:background="@drawable/border">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/tvSell"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="20sp"
                 android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
                 android:src="@drawable/shopping_cart_01" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/tvDashboard"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
                 android:src="@drawable/chart_line" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/tvAdd"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
                 android:src="@drawable/add_plus_circle" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/tvProduct"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
                 android:src="@drawable/gift" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/tvUser"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginEnd="20sp"
                 android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
                 android:src="@drawable/usercircle" />
 
