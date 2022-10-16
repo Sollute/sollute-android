@@ -73,10 +73,12 @@
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    app:endIconMode="clear_text">
+                    app:boxStrokeColor="@color/background_header"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="@color/background_header">
 
                     <EditText
-                        android:id="@+id/etNomeFantasia"
+                        android:id="@+id/etCep"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -105,7 +107,9 @@
                         app:boxCornerRadiusBottomStart="10dp"
                         app:boxCornerRadiusTopEnd="10dp"
                         app:boxCornerRadiusTopStart="10dp"
-                        app:endIconMode="none">
+                        app:boxStrokeColor="@color/background_header"
+                        app:endIconMode="none"
+                        app:hintTextColor="@color/background_header">
 
                         <EditText
                             android:id="@+id/etUf"
@@ -131,7 +135,9 @@
                         app:boxCornerRadiusBottomStart="10dp"
                         app:boxCornerRadiusTopEnd="10dp"
                         app:boxCornerRadiusTopStart="10dp"
-                        app:endIconMode="none">
+                        app:boxStrokeColor="@color/background_header"
+                        app:endIconMode="none"
+                        app:hintTextColor="@color/background_header">
 
                         <EditText
                             android:id="@+id/etCidade"
@@ -159,10 +165,12 @@
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    app:endIconMode="none">
+                    app:boxStrokeColor="@color/background_header"
+                    app:endIconMode="none"
+                    app:hintTextColor="@color/background_header">
 
                     <EditText
-                        android:id="@+id/etCNPJ"
+                        android:id="@+id/etLogradouro"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/nome_logradouro"
@@ -184,10 +192,12 @@
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    app:endIconMode="none">
+                    app:boxStrokeColor="@color/background_header"
+                    app:endIconMode="none"
+                    app:hintTextColor="@color/background_header">
 
                     <EditText
-                        android:id="@+id/etTelefoneCelular"
+                        android:id="@+id/etPontoRef"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/referencia"

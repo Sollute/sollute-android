@@ -10,13 +10,13 @@ interface Product {
 
     @POST("/produtos/criar-produto/{idEmpresa}")
     fun postProduct(
-        @Path("idEmpresa") idEmpresa: Long,
+        @Path("idEmpresa") idEmpresa: Int,
         @Body newProduct: NewProduct
     ): Call<Void>
 
     @PUT("/produtos/editar-produto-nome/{idEmpresa}/{nome}")
     fun editProduct(
-        @Path("idEmpresa") idEmpresa: Long,
+        @Path("idEmpresa") idEmpresa: Int,
         @Path("nome") nome: String,
         @Body editProduct: EditProduct
     ): Call<Void>
@@ -24,18 +24,18 @@ interface Product {
     @DELETE("/produtos/deletar-produto-nome/{nome}/{idEmpresa}")
     fun deleteProduct(
         @Path("nome") nome: String,
-        @Path("idEmpresa") idEmpresa: Long
+        @Path("idEmpresa") idEmpresa: Int
     ): Call<Void>
 
     @GET("/produtos/listar-produtos-android/{idEmpresa}")
     fun listProducts(
-        @Path("idEmpresa") idEmpresa: Long
+        @Path("idEmpresa") idEmpresa: Int
     ): Call<List<ListProduct>>
 
     @GET("/produtos/info/{nome}/{fkEmpresa}")
     fun getInfo(
         @Path("nome") nome: String,
-        @Path("fkEmpresa") fkEmpresa: Long,
+        @Path("fkEmpresa") fkEmpresa: Int,
     ): Call<EditProduct>
 
 }

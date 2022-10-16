@@ -5,8 +5,10 @@
         android:bottom="10dp"
         android:left="10dp"
         android:right="10dp"
-        android:top="10dp" />
+        android:top="10dp"/>
     <corners
         android:topLeftRadius="40dp"
-        android:topRightRadius="40dp" />
+        android:topRightRadius="40dp"
+        android:bottomRightRadius="40dp"
+        android:bottomLeftRadius="40dp"/>
 </shape>

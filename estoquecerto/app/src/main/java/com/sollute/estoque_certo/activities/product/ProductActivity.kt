@@ -18,8 +18,8 @@ import retrofit2.Response
 
 class ProductActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityProductBinding
     private val httpClient: Product = Rest.getInstance().create(Product::class.java)
+    private lateinit var binding: ActivityProductBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,19 +27,24 @@ class ProductActivity : AppCompatActivity() {
         binding = ActivityProductBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.tvPageName.setOnClickListener { list() }
-        binding.tvProduct.setOnClickListener { list() }
-        list()
+        val bundle: Bundle? = getIntent().getExtras()
+        val idEmpresa = bundle!!.getInt("idEmp", 0)
 
+        list(idEmpresa)
+        binding.tvPageName.setOnClickListener { list(idEmpresa) }
+        binding.tvProduct.setOnClickListener { list(idEmpresa) }
         binding.tvNewProduct.setOnClickListener {
-            startActivity(
-                Intent(this, NewProductFirstActivity::class.java)
+            val productScreen = Intent(
+                this,
+                NewProductFirstActivity::class.java
             )
+            productScreen.putExtra("idEmp", idEmpresa)
+            startActivity(productScreen)
         }
-
     }
 
-    private fun list() {
+
+    private fun list(idEmpresa: Int) {
         val listProducts: MutableList<ListProduct> = mutableListOf()
         val reciclewView = binding.rvProductList
         reciclewView.layoutManager = LinearLayoutManager(this)
@@ -52,10 +57,11 @@ class ProductActivity : AppCompatActivity() {
                 EditProductActivity::class.java
             )
             productScreen.putExtra("productName", it.productName)
+            productScreen.putExtra("idEmp", idEmpresa)
             startActivity(productScreen)
         }
 
-        httpClient.listProducts(1).enqueue(object : Callback<List<ListProduct>> {
+        httpClient.listProducts(idEmpresa).enqueue(object : Callback<List<ListProduct>> {
             @SuppressLint("SetTextI18n")
             override fun onResponse(
                 call: Call<List<ListProduct>>,

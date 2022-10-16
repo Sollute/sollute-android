@@ -16,7 +16,6 @@ import retrofit2.Response
 class EditProductActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityEditProductBinding
-    lateinit var bundle: Bundle
     var nome: String = ""
     private val httpClient: Product = Rest.getInstance().create(Product::class.java)
 
@@ -24,22 +23,28 @@ class EditProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityEditProductBinding.inflate(layoutInflater)
-        bundle = getIntent().getExtras()!!
-        nome = bundle.getString("productName")!!
+        val bundle: Bundle? = getIntent().getExtras()
+
+        nome = bundle!!.getString("productName")!!
+        val idEmpresa = bundle.getInt("idEmp", 0)
         setContentView(binding.root)
 
         binding.btnBackToStep1.setOnClickListener { goBack() }
-        binding.btnDeleteProduct.setOnClickListener { delete() }
-        binding.btnEditProduct.setOnClickListener { edit() }
+        binding.btnDeleteProduct.setOnClickListener { delete(idEmpresa) }
+        binding.btnEditProduct.setOnClickListener { edit(idEmpresa) }
 
-
-        getInfo(nome)
+        getInfo(nome, idEmpresa)
     }
 
-    private fun goBack() = startActivity(Intent(this, ProductActivity::class.java))
+    private fun goBack() {
+        startActivity(Intent(baseContext, ProductActivity::class.java))
+    }
 
-    private fun getInfo(name: String) {
-        httpClient.getInfo(name, 1).enqueue(object : Callback<EditProduct> {
+    private fun getInfo(
+        name: String,
+        idEmpresa: Int
+    ) {
+        httpClient.getInfo(name, idEmpresa).enqueue(object : Callback<EditProduct> {
             override fun onResponse(
                 call: Call<EditProduct>,
                 response: Response<EditProduct>
@@ -68,7 +73,7 @@ class EditProductActivity : AppCompatActivity() {
         })
     }
 
-    private fun edit() {
+    private fun edit(idEmpresa: Int) {
 
         val prod = EditProduct(
             binding.etInitialInventory.text.toString().toInt(),
@@ -78,7 +83,11 @@ class EditProductActivity : AppCompatActivity() {
             binding.etSalePrice.text.toString().toDouble(),
         )
 
-        httpClient.editProduct(1, nome, prod).enqueue(object : Callback<Void> {
+        httpClient.editProduct(
+            idEmpresa = idEmpresa,
+            nome = nome,
+            editProduct = prod
+        ).enqueue(object : Callback<Void> {
             override fun onResponse(
                 call: Call<Void>,
                 response: Response<Void>
@@ -89,9 +98,8 @@ class EditProductActivity : AppCompatActivity() {
                             baseContext,
                             "Produto editado com sucesso",
                             Toast.LENGTH_LONG
-                        ).show().also {
-                            goBack()
-                        }
+                        ).show()
+                        goBack()
                     }
                 }
             }
@@ -109,8 +117,8 @@ class EditProductActivity : AppCompatActivity() {
         })
     }
 
-    private fun delete() {
-        httpClient.deleteProduct(nome, 1).enqueue(object : Callback<Void> {
+    private fun delete(idEmpresa: Int) {
+        httpClient.deleteProduct(nome, idEmpresa).enqueue(object : Callback<Void> {
             override fun onResponse(
                 call: Call<Void>,
                 response: Response<Void>
@@ -121,9 +129,8 @@ class EditProductActivity : AppCompatActivity() {
                             baseContext,
                             "Produto excluído com sucesso",
                             Toast.LENGTH_LONG
-                        ).show().also {
-                            goBack()
-                        }
+                        ).show()
+                        goBack()
                     }
                 }
             }

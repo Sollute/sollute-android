@@ -81,9 +81,11 @@
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etInitialInventory"
@@ -106,9 +108,11 @@
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etMinimumStock"
@@ -130,9 +134,11 @@
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etMaximumStock"
@@ -169,9 +175,11 @@
                     app:boxCornerRadiusBottomStart="8dp"
                     app:boxCornerRadiusTopEnd="8dp"
                     app:boxCornerRadiusTopStart="8dp"
+                    app:boxStrokeColor="@color/background_header"
                     app:counterEnabled="true"
                     app:counterMaxLength="25"
-                    app:endIconMode="clear_text">
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="@color/background_header">
 
                     <EditText
                         android:id="@+id/etPurchasePrice"
@@ -195,9 +203,11 @@
                     app:boxCornerRadiusBottomStart="8dp"
                     app:boxCornerRadiusTopEnd="8dp"
                     app:boxCornerRadiusTopStart="8dp"
+                    app:boxStrokeColor="@color/background_header"
                     app:counterEnabled="true"
                     app:counterMaxLength="25"
-                    app:endIconMode="clear_text">
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="@color/background_header">
 
                     <EditText
                         android:id="@+id/etSalePrice"

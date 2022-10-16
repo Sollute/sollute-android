@@ -4,6 +4,7 @@
     <string name="next_page">Próximo</string>
     <string name="back_page">Voltar</string>
     <string name="save">Salvar</string>
+    <string name="login">Login</string>
     <string name="finalizar">Finalizar</string>
     <string name="atualizar">Atualizar</string>
 
@@ -20,19 +21,19 @@
     <string name="extract_description">Histórico de Lançamento</string>
     <string name="extract_name_recipe">Nova Receita</string>
     <string name="extract_name_expense">Nova Despesa</string>
-    
+
     <!-- Cadastro -->
     <string name="e_mail">e-mail</string>
-    <string name="email_value">sollute@gmail.com</string>
-    <string name="senha">*********************</string>
+    <string name="email_value">sollute2@gmail.com</string>
+    <string name="senha">sollute123456</string>
     <string name="possui">Já possui conta?</string>
     <string name="entre">Entre na sua conta</string>
-    <string name="sollute">Sollute</string>
+    <string name="sollute">Sollute FAKE</string>
     <string name="nome_fantasia">nome fantasia</string>
     <string name="social">razão social</string>
-    <string name="sollute_sa">Sollute SA</string>
+    <string name="sollute_sa">Sollute SA FAKE</string>
     <string name="confirme_sua_senha">confirme sua senha</string>
-    <string name="cnpj">85.377.281/0001-59</string>
+    <string name="cnpj">33099701000189</string>
     <string name="cnpj_nome">CNPJ</string>
     <string name="telefone_celular">telefone celular</string>
     <string name="numero">(11) 98099-2290</string>
@@ -58,9 +59,17 @@
     <string name="client_new">Novo Cliente</string>
     <string name="client_edit">Editar Cliente</string>
 
+    <!-- Login -->
+    <string name="login_description">Login</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="ainda_n_possui_conta">Ainda não possui conta?</string>
+    <string name="criar_agora">Cria a sua agora</string>
+    <string name="esqueceu_sua_senha">Esqueceu sua senha?</string>
+
     <!--  Fornecedor  -->
     <string name="provider_description_1">Dados Gerais</string>
     <string name="provider_new">Novo Fornecedor</string>
     <string name="provider_edit">Editar Fornecedor</string>
+
 
 </resources>
