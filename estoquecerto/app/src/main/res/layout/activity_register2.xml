@@ -55,11 +55,10 @@
                     android:layout_marginTop="30dp"
                     android:text="@string/cadastro"
                     android:textAlignment="center"
-                    android:textAppearance="bold"
+                    android:textStyle="bold"
                     android:textColor="@color/roxo"
                     android:textFontWeight="900"
                     android:textSize="26sp"
-                    android:textStyle="bold"
                     tools:targetApi="p" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -222,7 +221,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="bold"
+                        android:textStyle="bold"
                         android:textFontWeight="700"
                         android:textSize="12sp"
                         android:text="@string/possui"
@@ -231,7 +230,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="6dp"
-                        android:textAppearance="bold"
+                        android:textStyle="bold"
                         android:textFontWeight="700"
                         android:textSize="12sp"
                         android:textColor="@color/roxo"

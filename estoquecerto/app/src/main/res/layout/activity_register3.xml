@@ -8,9 +8,9 @@
     tools:context=".activities.register.Register3Activity">
 
     <RelativeLayout
-        android:background="@color/cinza"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/cinza">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,7 +55,6 @@
                     android:layout_marginTop="30dp"
                     android:text="@string/cadastro"
                     android:textAlignment="center"
-                    android:textAppearance="bold"
                     android:textColor="@color/roxo"
                     android:textFontWeight="900"
                     android:textSize="26sp"
@@ -97,10 +96,10 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
+                        android:layout_weight="1"
                         android:hint="@string/uf"
                         app:boxCornerRadiusBottomEnd="10dp"
                         app:boxCornerRadiusBottomStart="10dp"
@@ -123,10 +122,10 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
+                        android:layout_weight="2"
                         android:hint="@string/cidade"
                         app:boxCornerRadiusBottomEnd="10dp"
                         app:boxCornerRadiusBottomStart="10dp"
@@ -252,27 +251,29 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="55dp"
+                    android:layout_marginTop="20dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="bold"
+                        android:text="@string/possui"
                         android:textFontWeight="700"
                         android:textSize="12sp"
-                        android:text="@string/possui"
+                        android:textStyle="bold"
                         tools:targetApi="p" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="6dp"
-                        android:textAppearance="bold"
+                        android:paddingEnd="0dp"
+                        android:text="@string/entre"
+                        android:textColor="@color/roxo"
                         android:textFontWeight="700"
                         android:textSize="12sp"
-                        android:textColor="@color/roxo"
-                        android:text="@string/entre"
+                        android:textStyle="bold"
                         tools:targetApi="p" />
 
                 </LinearLayout>
@@ -283,7 +284,6 @@
         </LinearLayout>
 
     </RelativeLayout>
-
 
 
 </LinearLayout>

@@ -55,9 +55,7 @@
                     android:layout_marginTop="30dp"
                     android:text="@string/cadastro"
                     android:textAlignment="center"
-                    android:textAppearance="bold"
                     android:textColor="@color/roxo"
-                    android:textFontWeight="900"
                     android:textSize="26sp"
                     android:textStyle="bold" />
 
@@ -188,22 +186,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginLeft="55dp"
+                    android:layout_marginStart="55dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="bold"
-                        android:textFontWeight="700"
+                        android:textStyle="bold"
                         android:textSize="12sp"
                         android:text="@string/possui"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="6dp"
-                        android:textAppearance="bold"
-                        android:textFontWeight="700"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="0dp"
+                        android:textStyle="bold"
                         android:textSize="12sp"
                         android:textColor="@color/roxo"
                         android:text="@string/entre"/>
