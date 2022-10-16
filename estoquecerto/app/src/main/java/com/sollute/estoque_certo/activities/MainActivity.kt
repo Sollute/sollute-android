@@ -1,12 +1,14 @@
 package com.sollute.estoque_certo.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.sollute.estoque_certo.activities.client.NewClientActivity
+
 import com.sollute.estoque_certo.activities.extract.ExtractActivity
 import com.sollute.estoque_certo.activities.product.NewProductFirstActivity
 import com.sollute.estoque_certo.activities.provider.NewProviderActivity
+import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +18,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        getSupportActionBar()?.hide()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -23,12 +27,13 @@ class MainActivity : AppCompatActivity() {
         binding.btnExtractScreen.setOnClickListener { productExtract() }
         binding.btnNewProductScreen.setOnClickListener { clientScreen() }
         binding.btnNewProviderScreen.setOnClickListener { providerScreen() }
+
     }
 
     private fun productScreen() {
         val productScreen = Intent(
             this,
-            NewProductFirstActivity::class.java
+            ProductActivity::class.java
         )
         startActivity(productScreen)
     }

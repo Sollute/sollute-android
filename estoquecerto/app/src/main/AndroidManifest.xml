@@ -28,10 +28,7 @@
             android:name=".activities.extract.NewRecipeActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.product.EditProductSecondActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.product.EditProductFirstActivity"
+            android:name=".activities.product.EditProductActivity"
             android:exported="false" />
         <activity
             android:name=".activities.product.NewProductSecondActivity"
