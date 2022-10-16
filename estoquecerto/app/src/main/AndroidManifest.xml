@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sollute.estoque_certo">
-
-    <!--permissions for INTERNET-->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -17,7 +15,18 @@
         android:theme="@style/Theme.Estoquecerto"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".activities.register.Register3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.register.Register2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".BorderItem3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.register.RegisterActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.extract.ExtractActivity"
             android:exported="false" />
@@ -55,6 +64,5 @@
             </intent-filter>
         </activity>
     </application>
-
 
 </manifest>
