@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.product.EditProductFirstActivity">
+    tools:context=".activities.provider.EditProviderActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="20sp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:background="@color/background_header"
                 android:src="@drawable/hamburger_lg" />
 
@@ -34,7 +34,7 @@
                 android:layout_weight="10"
                 android:fontFamily="sans-serif-thin"
                 android:gravity="center"
-                android:text="@string/product_edit"
+                android:text="@string/provider_edit"
                 android:textColor="@color/white"
                 android:textFontWeight="600"
                 android:textSize="20sp"
@@ -46,9 +46,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:gravity="end"
-                android:src="@drawable/trash_full" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -58,14 +58,14 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="100dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="300dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
-                android:text="@string/product_description_1"
+                android:text="@string/client_description_1"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -73,24 +73,27 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Nome"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                android:hint="Nome do Produto">
+                app:hintTextColor="@color/background_header">
 
                 <EditText
-                    android:id="@+id/etProductName"
+                    android:id="@+id/etProviderName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:maxLength="25"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Ex: Roberto Aparecido" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,23 +101,26 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Produto fornecido"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                android:hint="Código do Produto">
+                app:hintTextColor="@color/background_header">
 
                 <EditText
-                    android:id="@+id/etProductCode"
+                    android:id="@+id/etProviderProduct"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Ex: bolacha" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -122,23 +128,26 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Telefone"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                android:hint="Marca do Produto">
+                app:hintTextColor="@color/background_header">
 
                 <EditText
-                    android:id="@+id/ProductBrand"
+                    android:id="@+id/etProviderPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="11 58219295" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -146,102 +155,28 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Celular"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                android:hint="Categoria">
+                app:hintTextColor="@color/background_header">
 
                 <EditText
-                    android:id="@+id/ProductCategory"
+                    android:id="@+id/etProviderCell"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="11 987906081" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:boxCornerRadiusBottomEnd="8dp"
-                    app:boxCornerRadiusBottomStart="8dp"
-                    app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusTopStart="8dp"
-                    app:counterEnabled="true"
-                    app:counterMaxLength="25"
-                    app:endIconMode="clear_text"
-                    android:hint="Peso">
-
-                    <EditText
-                        android:id="@+id/etWeight"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="5dp"
-                        android:textColor="@color/background_text"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:boxCornerRadiusBottomEnd="8dp"
-                    app:boxCornerRadiusBottomStart="8dp"
-                    app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusTopStart="8dp"
-                    app:counterEnabled="true"
-                    app:counterMaxLength="25"
-                    app:endIconMode="clear_text"
-                    android:hint="Tamanho">
-
-                    <EditText
-                        android:id="@+id/etSize"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="15dp"
-                        android:textColor="@color/background_text"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:gravity="bottom|center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/page1_2" />
-                </LinearLayout>
-
-            </RelativeLayout>
 
         </LinearLayout>
 
@@ -254,29 +189,36 @@
             android:layout_marginRight="20dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp">
 
-                <ImageButton
-                    android:id="@+id/goBack"
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/btnBackPage"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="25dp"
-                    android:background="@color/white"
-                    android:minWidth="48dp"
-                    android:minHeight="48dp"
-                    android:src="@drawable/chevron_left" />
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/back_page"
+                    android:textColor="@color/background_header"
+                    app:icon="@drawable/baseline_arrow_back_ios_24"
+                    app:strokeColor="@color/background_header"
+                    app:strokeWidth="3dp" />
 
                 <Button
-                    android:id="@+id/btnNextPageRegisterProduct"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:id="@+id/btnUpdate"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/background_header"
-                    android:text="@string/next_page" />
+                    android:text="@string/atualizar"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_baseline_update_24" />
 
             </LinearLayout>
 

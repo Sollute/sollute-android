@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.sollute.estoque_certo.activities.client.NewClientActivity
 import com.sollute.estoque_certo.activities.extract.ExtractActivity
-import com.sollute.estoque_certo.activities.product.NewProductFirstActivity
+import com.sollute.estoque_certo.activities.login.Login
+import com.sollute.estoque_certo.activities.provider.NewProviderActivity
+import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,12 +23,14 @@ class MainActivity : AppCompatActivity() {
         binding.btnProductScreen.setOnClickListener { productScreen() }
         binding.btnExtractScreen.setOnClickListener { productExtract() }
         binding.btnNewProductScreen.setOnClickListener { clientScreen() }
+        binding.btnLogin.setOnClickListener { loginScreen() }
+        binding.btnNewProviderScreen.setOnClickListener { providerScreen() }
     }
 
     private fun productScreen() {
         val productScreen = Intent(
             this,
-            NewProductFirstActivity::class.java
+            ProductActivity::class.java
         )
         startActivity(productScreen)
     }
@@ -45,5 +49,21 @@ class MainActivity : AppCompatActivity() {
             NewClientActivity::class.java
         )
         startActivity(productScreen)
+    }
+
+    private fun loginScreen() {
+        val loginScreen = Intent(
+            this,
+            Login::class.java
+        )
+        startActivity(loginScreen)
+    }
+
+    private fun providerScreen() {
+        val providerScreen = Intent(
+            this,
+            NewProviderActivity::class.java
+        )
+        startActivity(providerScreen)
     }
 }

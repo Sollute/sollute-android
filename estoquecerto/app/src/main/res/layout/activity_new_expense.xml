@@ -18,12 +18,13 @@
 
             <ImageButton
                 android:id="@+id/tvMenuHamburguer"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="20sp"
-                android:layout_weight="1"
-                android:background="@color/background_header"
+                android:layout_weight="1.5"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/hamburger_lg" />
 
             <TextView
@@ -46,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:gravity="end"
                 android:textColor="@color/white" />
 
@@ -73,14 +74,16 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Descrição da despesa"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                android:hint="Descrição da despesa">
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etExpenseName"
@@ -98,14 +101,16 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Valor da despesa"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:endIconMode="clear_text"
-                android:hint="Valor da despesa">
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etExpenseValue"
@@ -136,11 +141,12 @@
 
                 <ImageButton
                     android:id="@+id/goBack"
+                    style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginEnd="25dp"
-                    android:background="@color/white"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:minWidth="48dp"
                     android:minHeight="48dp"
                     android:src="@drawable/chevron_left" />

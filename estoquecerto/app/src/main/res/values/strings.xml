@@ -4,8 +4,9 @@
     <string name="next_page">Próximo</string>
     <string name="back_page">Voltar</string>
     <string name="save">Salvar</string>
-    <string name="update">Atualizar</string>
-    <string name="finished">Finalizar</string>
+    <string name="login">Login</string>
+    <string name="finalizar">Finalizar</string>
+    <string name="atualizar">Atualizar</string>
 
     <!--  Produto  -->
     <string name="product_name">Produtos</string>
@@ -15,14 +16,60 @@
     <string name="product_description_2">Estoque</string>
     <string name="product_description_3">Preço</string>
 
-    <!--  Produto  -->
+    <!--  Extrato  -->
     <string name="extract_name">Extrato</string>
     <string name="extract_description">Histórico de Lançamento</string>
     <string name="extract_name_recipe">Nova Receita</string>
     <string name="extract_name_expense">Nova Despesa</string>
 
+    <!-- Cadastro -->
+    <string name="e_mail">e-mail</string>
+    <string name="email_value">sollute2@gmail.com</string>
+    <string name="senha">sollute123456</string>
+    <string name="possui">Já possui conta?</string>
+    <string name="entre">Entre na sua conta</string>
+    <string name="sollute">Sollute FAKE</string>
+    <string name="nome_fantasia">nome fantasia</string>
+    <string name="social">razão social</string>
+    <string name="sollute_sa">Sollute SA FAKE</string>
+    <string name="confirme_sua_senha">confirme sua senha</string>
+    <string name="cnpj">33099701000189</string>
+    <string name="cnpj_nome">CNPJ</string>
+    <string name="telefone_celular">telefone celular</string>
+    <string name="numero">(11) 98099-2290</string>
+    <string name="cep">CEP</string>
+    <string name="sp">SP</string>
+    <string name="uf">UF</string>
+    <string name="cidade">cidade</string>
+    <string name="sao_paulo">São Paulo</string>
+    <string name="logradouro">logradouro</string>
+    <string name="nome_logradouro">Rua Haddock Lobo, 595</string>
+    <string name="ponto_referencia">ponto de referência</string>
+    <string name="referencia">próximo à avenida paulista</string>
+    <string name="finish">FINALIZAR</string>
+    <string name="nome_fantasia_user">Nome Fantasia:</string>
+    <string name="user_social">Razão Social:</string>
+    <string name="cnpj_user">CNPJ:</string>
+    <string name="cadastro">CADASTRO</string>
+    <string name="titulo_senha">senha</string>
+    <string name="text_cep">20260130</string>
+
     <!--  Cliente  -->
     <string name="client_description_1">Dados Gerais</string>
     <string name="client_new">Novo Cliente</string>
     <string name="client_edit">Editar Cliente</string>
+
+    <!-- Login -->
+    <string name="login_description">Login</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="ainda_n_possui_conta">Ainda não possui conta?</string>
+    <string name="criar_agora">Cria a sua agora</string>
+    <string name="esqueceu_sua_senha">Esqueceu sua senha?</string>
+
+    <!--  Fornecedor  -->
+    <string name="provider_description_1">Dados Gerais</string>
+    <string name="provider_new">Novo Fornecedor</string>
+    <string name="provider_edit">Editar Fornecedor</string>
+
+
 </resources>

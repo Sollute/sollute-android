@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="20sp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:background="@color/background_header"
                 android:src="@drawable/hamburger_lg" />
 
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:gravity="end"
                 android:textColor="@color/white" />
 
@@ -78,9 +78,11 @@
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etClientName"
@@ -104,9 +106,11 @@
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etClientPhone"
@@ -129,9 +133,11 @@
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etClientCell"
@@ -183,7 +189,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:backgroundTint="@color/background_header"
-                    android:text="@string/update"
+                    android:text="@string/atualizar"
                     android:textColor="@color/white"
                     app:icon="@drawable/ic_baseline_update_24" />
 
