@@ -12,37 +12,47 @@
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/add_plus_circle.xml" value="0.2475" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/border.xml" value="0.2475" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/border_button.xml" value="0.2475" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/border_item_1.xml" value="0.2285" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/border_item_2.xml" value="0.2285" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/bordergray.xml" value="0.245" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/borderwhite.xml" value="0.245" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/borderwhite2.xml" value="0.3065" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/button.xml" value="0.276" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/chart_line.xml" value="0.2475" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/chevron_left.xml" value="0.2475" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/chevron_right.xml" value="0.2475" />
-        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/gift.xml" value="0.2475" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/gift.xml" value="0.17" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/gift_selected.xml" value="0.173" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/hamburger_lg.xml" value="0.2475" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/ic_add.xml" value="0.2475" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2475" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/insta.xml" value="0.2695" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/page1_2.xml" value="0.2475" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/shopping_cart_01.xml" value="0.2475" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/trash_full.xml" value="0.2475" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/tres_pontos.xml" value="0.2475" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/drawable/usercircle.xml" value="0.2475" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_edit_client.xml" value="0.18802083333333333" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_edit_product.xml" value="0.34814814814814815" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_edit_product_first.xml" value="0.33" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_edit_product_second.xml" value="0.33" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_edit_provider.xml" value="0.22604166666666667" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_extract.xml" value="0.33" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_new_client.xml" value="0.5" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_new_expense.xml" value="0.33" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_new_login.xml" value="0.33" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_new_product.xml" value="0.33" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_new_product_first.xml" value="0.33" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_new_product_second.xml" value="0.33" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_new_provider.xml" value="0.22604166666666667" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_new_recipe.xml" value="0.33" />
         <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_product.xml" value="0.33" />
-        <entry key="..\:/Users/leo5d/Documents/Estudos/faculdade/PI-Android/sollute-android/estoquecerto/app/src/main/res/drawable/add_plus.xml" value="0.1185" />
-        <entry key="..\:/Users/leo5d/Documents/Estudos/faculdade/PI-Android/sollute-android/estoquecerto/app/src/main/res/drawable/page2_2.xml" value="0.2055" />
-        <entry key="..\:/Users/leo5d/Documents/Estudos/faculdade/PI-Android/sollute-android/estoquecerto/app/src/main/res/drawable/round_corner_all.xml" value="0.1925" />
-        <entry key="..\:/Users/leo5d/Documents/Estudos/faculdade/PI-Android/sollute-android/estoquecerto/app/src/main/res/drawable/round_corner_bottom.xml" value="0.1925" />
-        <entry key="..\:/Users/leo5d/Documents/Estudos/faculdade/PI-Android/sollute-android/estoquecerto/app/src/main/res/drawable/round_corner_left_right.xml" value="0.1615" />
-        <entry key="..\:/Users/leo5d/Documents/Estudos/faculdade/PI-Android/sollute-android/estoquecerto/app/src/main/res/drawable/round_corner_top.xml" value="0.2455" />
-        <entry key="..\:/Users/leo5d/Documents/Estudos/faculdade/PI-Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/leo5d/Documents/Estudos/faculdade/PI-Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_main.xml" value="0.20677083333333332" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_product_item.xml" value="0.33" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_register2.xml" value="0.203125" />
+        <entry key="..\:/Projeto/Sollute/Android/sollute-android/estoquecerto/app/src/main/res/layout/activity_register3.xml" value="0.203125" />
       </map>
     </option>
   </component>

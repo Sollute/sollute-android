@@ -16,8 +16,17 @@
         android:theme="@style/Theme.Estoquecerto"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+<!--        <activity-->
+<!--            android:name=".activities.login.Login"-->
+<!--            android:exported="false" />-->
         <activity
-            android:name=".Login"
+            android:name=".activities.register.Register3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.register.Register2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.register.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".activities.extract.ExtractActivity"
@@ -29,10 +38,7 @@
             android:name=".activities.extract.NewRecipeActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.product.EditProductSecondActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.product.EditProductFirstActivity"
+            android:name=".activities.product.EditProductActivity"
             android:exported="false" />
         <activity
             android:name=".activities.product.NewProductSecondActivity"
@@ -47,7 +53,10 @@
             android:name=".activities.client.NewClientActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.provider.NewProviderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.login.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

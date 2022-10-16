@@ -3,10 +3,11 @@ package com.sollute.estoque_certo.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.sollute.estoque_certo.Login
 import com.sollute.estoque_certo.activities.client.NewClientActivity
 import com.sollute.estoque_certo.activities.extract.ExtractActivity
-import com.sollute.estoque_certo.activities.product.NewProductFirstActivity
+import com.sollute.estoque_certo.activities.login.Login
+import com.sollute.estoque_certo.activities.provider.NewProviderActivity
+import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -23,12 +24,13 @@ class MainActivity : AppCompatActivity() {
         binding.btnExtractScreen.setOnClickListener { productExtract() }
         binding.btnNewProductScreen.setOnClickListener { clientScreen() }
         binding.btnLogin.setOnClickListener { loginScreen() }
+        binding.btnNewProviderScreen.setOnClickListener { providerScreen() }
     }
 
     private fun productScreen() {
         val productScreen = Intent(
             this,
-            NewProductFirstActivity::class.java
+            ProductActivity::class.java
         )
         startActivity(productScreen)
     }
@@ -55,5 +57,13 @@ class MainActivity : AppCompatActivity() {
             Login::class.java
         )
         startActivity(loginScreen)
+    }
+
+    private fun providerScreen() {
+        val providerScreen = Intent(
+            this,
+            NewProviderActivity::class.java
+        )
+        startActivity(providerScreen)
     }
 }

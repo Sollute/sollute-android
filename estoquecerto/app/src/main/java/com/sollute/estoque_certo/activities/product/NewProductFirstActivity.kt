@@ -1,14 +1,10 @@
 package com.sollute.estoque_certo.activities.product
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.WindowManager
-import android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN
 import androidx.appcompat.app.AppCompatActivity
+import com.sollute.estoque_certo.activities.extract.ExtractActivity
 import com.sollute.estoque_certo.databinding.ActivityNewProductFirstBinding
-import com.sollute.estoque_certo.databinding.ActivityNewProductSecondBinding
 
 class NewProductFirstActivity : AppCompatActivity() {
 
@@ -21,6 +17,7 @@ class NewProductFirstActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnNextPageRegisterProduct.setOnClickListener { nextStep() }
+        binding.goBack.setOnClickListener { onBackPressed() }
     }
 
     private fun nextStep() {
@@ -47,4 +44,5 @@ class NewProductFirstActivity : AppCompatActivity() {
         startActivity(nextScreen)
 
     }
+
 }

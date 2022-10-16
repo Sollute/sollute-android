@@ -183,7 +183,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:backgroundTint="@color/background_header"
-                    android:text="@string/update"
+                    android:text="@string/atualizar"
                     android:textColor="@color/white"
                     app:icon="@drawable/ic_baseline_update_24" />
 

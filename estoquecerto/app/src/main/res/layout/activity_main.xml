@@ -81,6 +81,23 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <Button
+                android:id="@+id/btnNewProviderScreen"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Tela de Novo Fornecedor"
+                android:textColor="@color/black"
+                app:strokeColor="@color/background_header"
+                app:strokeWidth="3dp" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 
