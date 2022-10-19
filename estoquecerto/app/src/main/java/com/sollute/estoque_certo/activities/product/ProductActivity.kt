@@ -27,8 +27,7 @@ class ProductActivity : AppCompatActivity() {
         binding = ActivityProductBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val bundle: Bundle? = getIntent().getExtras()
-        val idEmpresa = bundle!!.getInt("idEmp", 0)
+        val idEmpresa = intent.getIntExtra("idEmp", 0)
 
         list(idEmpresa)
         binding.tvPageName.setOnClickListener { list(idEmpresa) }

@@ -23,21 +23,26 @@ class EditProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityEditProductBinding.inflate(layoutInflater)
-        val bundle: Bundle? = getIntent().getExtras()
 
-        nome = bundle!!.getString("productName")!!
-        val idEmpresa = bundle.getInt("idEmp", 0)
+        nome = intent.getStringExtra("productName")!!
+        val idEmpresa = intent.getIntExtra("idEmp", 0)
+
         setContentView(binding.root)
 
-        binding.btnBackToStep1.setOnClickListener { goBack() }
+        binding.btnBackToStep1.setOnClickListener { goBack(idEmpresa) }
         binding.btnDeleteProduct.setOnClickListener { delete(idEmpresa) }
         binding.btnEditProduct.setOnClickListener { edit(idEmpresa) }
 
         getInfo(nome, idEmpresa)
     }
 
-    private fun goBack() {
-        startActivity(Intent(baseContext, ProductActivity::class.java))
+    private fun goBack(idEmpresa: Int) {
+        val productScreen = Intent(
+            this,
+            ProductActivity::class.java
+        )
+        productScreen.putExtra("idEmp", idEmpresa)
+        startActivity(productScreen)
     }
 
     private fun getInfo(
@@ -99,7 +104,7 @@ class EditProductActivity : AppCompatActivity() {
                             "Produto editado com sucesso",
                             Toast.LENGTH_LONG
                         ).show()
-                        goBack()
+                        goBack(idEmpresa)
                     }
                 }
             }
@@ -130,7 +135,7 @@ class EditProductActivity : AppCompatActivity() {
                             "Produto excluído com sucesso",
                             Toast.LENGTH_LONG
                         ).show()
-                        goBack()
+                        goBack(idEmpresa)
                     }
                 }
             }
