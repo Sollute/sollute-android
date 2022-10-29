@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.sollute.estoque_certo.activities.employee.EmployeeActivity
 import com.sollute.estoque_certo.adapters.AdapterProduct
 import com.sollute.estoque_certo.databinding.ActivityProductBinding
 import com.sollute.estoque_certo.models.product.ListProduct
@@ -18,8 +19,8 @@ import retrofit2.Response
 
 class ProductActivity : AppCompatActivity() {
 
-    private val httpClient: Product = Rest.getInstance().create(Product::class.java)
     private lateinit var binding: ActivityProductBinding
+    private val httpClient: Product = Rest.getInstance().create(Product::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,14 @@ class ProductActivity : AppCompatActivity() {
         list(idEmpresa)
         binding.tvPageName.setOnClickListener { list(idEmpresa) }
         binding.tvProduct.setOnClickListener { list(idEmpresa) }
+        binding.tvUser.setOnClickListener {
+            val productScreen = Intent(
+                this,
+                EmployeeActivity::class.java
+            )
+            productScreen.putExtra("idEmp", idEmpresa)
+            startActivity(productScreen)
+        }
         binding.tvNewProduct.setOnClickListener {
             val productScreen = Intent(
                 this,
@@ -41,7 +50,6 @@ class ProductActivity : AppCompatActivity() {
             startActivity(productScreen)
         }
     }
-
 
     private fun list(idEmpresa: Int) {
         val listProducts: MutableList<ListProduct> = mutableListOf()

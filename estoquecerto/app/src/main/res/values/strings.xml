@@ -7,6 +7,9 @@
     <string name="login">Login</string>
     <string name="finalizar">Finalizar</string>
     <string name="atualizar">Atualizar</string>
+    <string name="example_full_name">Nome Completo</string>
+    <string name="example_number">Telefone</string>
+    <string name="example_salary">Salário</string>
 
     <!--  Produto  -->
     <string name="product_name">Produtos</string>
@@ -70,6 +73,13 @@
     <string name="provider_description_1">Dados Gerais</string>
     <string name="provider_new">Novo Fornecedor</string>
     <string name="provider_edit">Editar Fornecedor</string>
+
+    <!--  Funcionario  -->
+    <string name="employee_name">Funcionário</string>
+    <string name="employee_description">Dados Gerais</string>
+    <string name="employee_new">Novo Funcionário</string>
+    <string name="employee_edit">Editar Funcionário</string>
+    <string name="employee_cpf">CPF</string>
 
 
 </resources>
