@@ -26,6 +26,7 @@ class EditEmployeeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnEditEmployee.setOnClickListener { edit(idEmpresa) }
+        binding.btnDeleteEmployee.setOnClickListener { delete(idEmpresa) }
         binding.btnBack.setOnClickListener { goBack(idEmpresa) }
     }
 
@@ -36,6 +37,43 @@ class EditEmployeeActivity : AppCompatActivity() {
         )
         productScreen.putExtra("idEmp", idEmpresa)
         startActivity(productScreen)
+    }
+
+    private fun delete(idEmpresa: Int) {
+
+        httpClient.deleteEmployee(
+            cpfFuncionario = binding.etEmployeeCPF.text.toString(),
+            idEmpresa = idEmpresa
+        ).enqueue(object : Callback<Void> {
+
+            override fun onResponse(
+                call: Call<Void>,
+                response: Response<Void>
+            ) {
+                when {
+                    (response.isSuccessful) -> {
+                        Toast.makeText(
+                            baseContext,
+                            "Funcionário excluído com sucesso",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        goBack(idEmpresa)
+                    }
+                }
+            }
+
+            override fun onFailure(
+                call: Call<Void>,
+                t: Throwable
+            ) {
+                Toast.makeText(
+                    baseContext,
+                    t.message,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
+
     }
 
     private fun edit(idEmpresa: Int) {
@@ -87,7 +125,11 @@ class EditEmployeeActivity : AppCompatActivity() {
                 call: Call<Void>,
                 t: Throwable
             ) {
-                print("not ok")
+                Toast.makeText(
+                    baseContext,
+                    t.message,
+                    Toast.LENGTH_LONG
+                ).show()
             }
 
         })

@@ -87,7 +87,11 @@ class NewEmployeeActivity : AppCompatActivity() {
                 call: Call<Void>,
                 t: Throwable
             ) {
-                print("not ok")
+                Toast.makeText(
+                    baseContext,
+                    t.message,
+                    Toast.LENGTH_LONG
+                ).show()
             }
 
         })
