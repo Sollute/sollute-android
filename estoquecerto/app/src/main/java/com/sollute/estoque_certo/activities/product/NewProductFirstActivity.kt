@@ -8,18 +8,16 @@ import com.sollute.estoque_certo.databinding.ActivityNewProductFirstBinding
 class NewProductFirstActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNewProductFirstBinding
-    var bundle: Bundle? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityNewProductFirstBinding.inflate(layoutInflater)
-        bundle = getIntent().getExtras()!!
 
-        val idEmpresa = bundle?.getInt("idEmp", 0)
+        val idEmpresa = intent.getIntExtra("idEmp", 0)
         setContentView(binding.root)
 
-        binding.btnNextPageRegisterProduct.setOnClickListener { nextStep(idEmpresa!!) }
+        binding.btnNextPageRegisterProduct.setOnClickListener { nextStep(idEmpresa) }
         binding.goBack.setOnClickListener { onBackPressed() }
     }
 

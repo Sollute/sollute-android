@@ -11,7 +11,7 @@ object Rest {
     // URL Base para Celular fisico
     // private val baseURL = "http://192.168.3.6:8080/"
 
-    private val baseURL = "http://sollute.ddns.net:8080"
+    private val baseURL = "http://18.234.13.69:8080"
 
     fun getInstance(): Retrofit {
         return Retrofit.Builder()

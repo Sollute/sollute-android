@@ -15,32 +15,38 @@ import retrofit2.Response
 class NewProductSecondActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityNewProductSecondBinding
-    var bundle: Bundle? = null
     private val httpClient: Product = Rest.getInstance().create(Product::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityNewProductSecondBinding.inflate(layoutInflater)
-        bundle = getIntent().getExtras()!!
 
-        val idEmpresa = bundle?.getInt("idEmp", 0)
+        val idEmpresa = intent.getIntExtra("idEmp", 0)
+
         setContentView(binding.root)
 
         binding.btnBackToStep1.setOnClickListener { onBackPressed() }
-        binding.btnFinishProduct.setOnClickListener { postProduct(idEmpresa!!) }
+        binding.btnFinishProduct.setOnClickListener { postProduct(idEmpresa) }
     }
 
-    private fun goBack() { startActivity(Intent(this, ProductActivity::class.java)) }
+    private fun goBack(idEmpresa: Int) {
+        val productScreen = Intent(
+            this,
+            ProductActivity::class.java
+        )
+        productScreen.putExtra("idEmp", idEmpresa)
+        startActivity(productScreen)
+    }
 
     private fun postProduct(idEmpresa: Int) {
 
-        val productCode = bundle!!.getString("productCode")!!
-        val productName = bundle!!.getString("productName")!!
-        val productBrand = bundle!!.getString("productBrand")!!
-        val productCategory = bundle!!.getString("productCategory")!!
-        val productWeight = bundle!!.getDouble("productWeight")
-        val productSize = bundle!!.getString("productSize")!!
+        val productCode = intent!!.getStringExtra("productCode")!!
+        val productName = intent!!.getStringExtra("productName")!!
+        val productBrand = intent!!.getStringExtra("productBrand")!!
+        val productCategory = intent!!.getStringExtra("productCategory")!!
+        val productWeight = intent!!.getDoubleExtra("productWeight", 0.0)
+        val productSize = intent!!.getStringExtra("productSize")!!
         val initialInventory = binding.etInitialInventory.text.toString().toInt()
         val minimumStock = binding.etMinimumStock.text.toString().toInt()
         val maximumStock = binding.etMaximumStock.text.toString().toInt()
@@ -71,6 +77,7 @@ class NewProductSecondActivity : AppCompatActivity() {
                             "Produto criado com sucesso",
                             Toast.LENGTH_LONG
                         ).show()
+                        goBack(idEmpresa)
                     }
                     (response.code() == 409) -> {
                         Toast.makeText(
