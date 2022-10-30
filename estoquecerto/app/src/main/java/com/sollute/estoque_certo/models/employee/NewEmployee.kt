@@ -4,5 +4,5 @@ data class NewEmployee(
     val nomeFuncionario: String,
     val cpfFuncionario: String,
     val telefoneFuncionario: String,
-    val salario: Double
+    val salarioFuncionario: Double
 )

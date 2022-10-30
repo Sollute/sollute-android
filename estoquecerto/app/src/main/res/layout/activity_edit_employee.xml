@@ -83,9 +83,11 @@
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etEmployeeName"
@@ -97,7 +99,7 @@
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    tools:text="Roberto Aparecido" />
+                    android:text="Roberto Aparecido" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,9 +112,11 @@
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="11"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etEmployeeCPF"
@@ -123,7 +127,7 @@
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    tools:text="29490011800" />
+                    android:text="29490011800" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -136,9 +140,11 @@
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etEmployeePhone"
@@ -149,7 +155,7 @@
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    tools:text="11 987906081" />
+                    android:text="11 987906081" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -162,9 +168,11 @@
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
                 app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/background_header"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/background_header">
 
                 <EditText
                     android:id="@+id/etEmployeeSalary"
@@ -174,7 +182,7 @@
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    tools:text="2.000" />
+                    android:text="2.000" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

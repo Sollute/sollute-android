@@ -42,12 +42,13 @@
                 tools:ignore="UnusedAttribute" />
 
             <ImageView
-                android:id="@+id/tvNewProduct"
+                android:id="@+id/tvSwitch"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
                 android:layout_weight="1.5"
+                android:src="@drawable/gift"
                 android:gravity="end"
                 android:textColor="@color/white" />
 
