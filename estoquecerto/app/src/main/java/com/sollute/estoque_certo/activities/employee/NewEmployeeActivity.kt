@@ -44,7 +44,7 @@ class NewEmployeeActivity : AppCompatActivity() {
             nomeFuncionario = binding.etEmployeeName.text.toString(),
             cpfFuncionario = binding.etEmployeeCPF.text.toString(),
             telefoneFuncionario = binding.etEmployeePhone.text.toString(),
-            salario = binding.etEmployeeSalary.text.toString().toDouble()
+            salarioFuncionario = binding.etEmployeeSalary.text.toString().toDouble()
         )
 
         httpClient.postEmployee(

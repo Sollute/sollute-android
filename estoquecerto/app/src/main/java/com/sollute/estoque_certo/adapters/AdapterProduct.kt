@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sollute.estoque_certo.R
@@ -42,8 +41,8 @@ class AdapterProduct(
     override fun getItemCount(): Int = products.size
 
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val productName = itemView.findViewById<TextView>(R.id.tvProductNameItem)
+        val productName = itemView.findViewById<TextView>(R.id.tvExtractName)
         val productPrice = itemView.findViewById<TextView>(R.id.tvProductPrice)
-        val productQuantity = itemView.findViewById<TextView>(R.id.tvProductQuantity)
+        val productQuantity = itemView.findViewById<TextView>(R.id.tvExtractAmount)
     }
 }

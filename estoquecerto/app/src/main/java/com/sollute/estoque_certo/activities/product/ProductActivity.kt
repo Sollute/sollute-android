@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sollute.estoque_certo.activities.employee.EmployeeActivity
+import com.sollute.estoque_certo.activities.extract.ExtractActivity
 import com.sollute.estoque_certo.adapters.AdapterProduct
 import com.sollute.estoque_certo.databinding.ActivityProductBinding
 import com.sollute.estoque_certo.models.product.ListProduct
@@ -33,6 +34,14 @@ class ProductActivity : AppCompatActivity() {
         list(idEmpresa)
         binding.tvPageName.setOnClickListener { list(idEmpresa) }
         binding.tvProduct.setOnClickListener { list(idEmpresa) }
+        binding.tvSell.setOnClickListener {
+            val productScreen = Intent(
+                this,
+                ExtractActivity::class.java
+            )
+            productScreen.putExtra("idEmp", idEmpresa)
+            startActivity(productScreen)
+        }
         binding.tvUser.setOnClickListener {
             val productScreen = Intent(
                 this,
