@@ -5,80 +5,103 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:background="@drawable/border_item_1">
+    android:background="@drawable/bg_card_border_blue">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+        android:id="@+id/ivProductPhoto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvExtractName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/border_item_2"
-        android:paddingBottom="8dp"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="3dp">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivProductPhoto"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="XPTO" />
 
+    <TextView
+        android:id="@+id/tvExtractTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="30dp"
+        android:text="Estoque: "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/ivProductPhoto"
+        app:layout_constraintTop_toBottomOf="@id/tvExtractName" />
 
-        <ImageView
-            android:id="@+id/ivProductPhoto"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/item"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tvExtractAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="30dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tvExtractTime"
+        app:layout_constraintTop_toBottomOf="@id/tvExtractName"
+        tools:text="XPTO" />
 
-        <TextView
-            android:id="@+id/tvExtractName"
-            android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/ivProductPhoto"
+        app:layout_constraintTop_toBottomOf="@id/tvExtractAmount"
+        tools:text="XPTO" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/btnMinus"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:maxLines="1"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ivProductPhoto"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:backgroundTint="@color/background_header"
+            android:text="-"
+            android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/tvExtractTime"
+            android:id="@+id/quantityItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="30dp"
-            android:text="Estoque: "
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/ivProductPhoto"
-            app:layout_constraintTop_toBottomOf="@id/tvExtractName" />
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="0" />
 
-        <TextView
-            android:id="@+id/tvExtractAmount"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="30dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tvExtractTime"
-            app:layout_constraintTop_toBottomOf="@id/tvExtractName" />
-
-        <TextView
-            android:id="@+id/tvProductPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@android:color/holo_green_dark"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/ivProductPhoto"
-            app:layout_constraintTop_toBottomOf="@id/tvExtractAmount" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:backgroundTint="@color/background_header"
+            android:text="+"
+            android:textAlignment="center" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

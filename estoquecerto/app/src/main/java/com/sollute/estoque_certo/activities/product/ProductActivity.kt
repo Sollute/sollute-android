@@ -2,15 +2,16 @@ package com.sollute.estoque_certo.activities.product
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sollute.estoque_certo.activities.employee.EmployeeActivity
 import com.sollute.estoque_certo.activities.extract.ExtractActivity
 import com.sollute.estoque_certo.adapters.AdapterProduct
 import com.sollute.estoque_certo.databinding.ActivityProductBinding
+import com.sollute.estoque_certo.databinding.ActivityProductItemBinding
 import com.sollute.estoque_certo.models.product.ListProduct
 import com.sollute.estoque_certo.rest.Rest
 import com.sollute.estoque_certo.services.product.Product
@@ -66,7 +67,10 @@ class ProductActivity : AppCompatActivity() {
         reciclewView.layoutManager = LinearLayoutManager(this)
         reciclewView.setHasFixedSize(true)
 
-        val adapterProduct = AdapterProduct(this, listProducts) {
+        val adapterProduct = AdapterProduct(
+            this,
+            listProducts,
+        ) {
             Toast.makeText(baseContext, it.productName, Toast.LENGTH_SHORT).show()
             val productScreen = Intent(
                 this,

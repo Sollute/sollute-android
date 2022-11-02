@@ -4,9 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sollute.estoque_certo.R
+import com.sollute.estoque_certo.databinding.ActivityProductItemBinding
 import com.sollute.estoque_certo.models.product.ListProduct
 
 class AdapterProduct(
@@ -28,11 +30,22 @@ class AdapterProduct(
         )
     }
 
-    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.productName.text = products[position].productName
-        holder.productPrice.text = products[position].productPrice.toString()
-        holder.productQuantity.text = products[position].productQuantity.toString()
+    private fun diminuirProduto(produto: ListProduct, itemView: TextView) {
+        if (produto.vender > 0) {
+            produto.vender -= 1
+            itemView.text = produto.vender.toString()
+        }
+    }
 
+    private fun aumentarProduto(produto: ListProduct, itemView: TextView) {
+        if (produto.productQuantity <= produto.vender + 1) {
+            produto.vender += 1
+            itemView.text = produto.vender.toString()
+        }
+    }
+
+    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
+        holder.bind(products[position])
         holder.itemView.setOnClickListener {
             clickLestener(products[position])
         }
@@ -41,8 +54,19 @@ class AdapterProduct(
     override fun getItemCount(): Int = products.size
 
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val productName = itemView.findViewById<TextView>(R.id.tvExtractName)
-        val productPrice = itemView.findViewById<TextView>(R.id.tvProductPrice)
-        val productQuantity = itemView.findViewById<TextView>(R.id.tvExtractAmount)
+        fun bind(product: ListProduct) {
+            itemView.findViewById<TextView>(R.id.tvExtractName).text = product.productName
+            itemView.findViewById<TextView>(R.id.tvProductPrice).text =
+                product.productPrice.toString()
+            itemView.findViewById<TextView>(R.id.quantityItem).text =
+                product.productQuantity.toString()
+
+            itemView.findViewById<Button>(R.id.btnMinus).setOnClickListener {
+                diminuirProduto(product, itemView.findViewById<TextView>(R.id.quantityItem))
+            }
+            itemView.findViewById<Button>(R.id.btnPlus).setOnClickListener {
+                aumentarProduto(product, itemView.findViewById<TextView>(R.id.quantityItem))
+            }
+        }
     }
 }
