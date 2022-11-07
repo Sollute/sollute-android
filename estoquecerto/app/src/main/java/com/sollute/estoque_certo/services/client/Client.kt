@@ -13,7 +13,7 @@ interface Client {
 
     @POST("/clientes/criar-cliente/{idEmpresa}")
     fun postClient(
-        @Path("idEmpresa") idEmpresa: Long,
+        @Path("idEmpresa") idEmpresa: Int,
         @Body newClient: NewClient
     ): Call<Void>
 
@@ -26,7 +26,7 @@ interface Client {
 
     @GET("/clientes/listar-clientes/{idEmpresa}")
     fun listClients(
-        @Path("idEmpresa") idEmpresa: Long
+        @Path("idEmpresa") idEmpresa: Int
     ): Call<ListProduct>
 
 }

@@ -61,6 +61,7 @@
     <string name="client_description_1">Dados Gerais</string>
     <string name="client_new">Novo Cliente</string>
     <string name="client_edit">Editar Cliente</string>
+    <string name="client_name">Clientes</string>
 
     <!-- Login -->
     <string name="login_description">Login</string>
