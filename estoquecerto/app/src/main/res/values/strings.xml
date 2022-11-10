@@ -81,5 +81,8 @@
     <string name="employee_edit">Editar Funcionário</string>
     <string name="employee_cpf">CPF</string>
 
+    <!-- Dashboard -->
+    <string name="dash_value">R$XX,XX</string>
+
 
 </resources>
