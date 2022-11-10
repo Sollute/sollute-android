@@ -74,6 +74,8 @@
     <string name="provider_description_1">Dados Gerais</string>
     <string name="provider_new">Novo Fornecedor</string>
     <string name="provider_edit">Editar Fornecedor</string>
+    <string name="provider_name">Fornecedores</string>
+    <string name="provider_yours">Seus Fornecedores</string>
 
     <!--  Funcionario  -->
     <string name="employee_name">Funcionário</string>
