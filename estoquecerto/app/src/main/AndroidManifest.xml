@@ -17,6 +17,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activities.start.Start4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.start.Start3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.start.Start2Activity"
+            android:exported="false" />
+        <activity
             android:name=".activities.employee.EditEmployeeActivity"
             android:exported="false">
             <meta-data
@@ -83,8 +92,8 @@
             android:name=".activities.provider.NewProviderActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.login.Login"
-            android:exported="true">
+            android:name=".activities.start.Start1Activity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

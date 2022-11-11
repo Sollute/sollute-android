@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.start.Start1Activity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="590dp"
+            android:background="@drawable/borderbottom"
+            android:bottomLeftRadius="20dp"
+            android:bottomRightRadius="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:topLeftRadius="0dp"
+            android:topRightRadius="0dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:layout_marginBottom="90dp"
+                android:src="@drawable/sollute" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sub_titulo"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_margin="50dp"
+        android:backgroundTint="@color/background_header"
+        android:text="@string/button_comecar"
+        android:textSize="18sp" />
+
+
+
+</LinearLayout>
