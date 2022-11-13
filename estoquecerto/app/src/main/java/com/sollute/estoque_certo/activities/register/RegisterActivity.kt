@@ -16,6 +16,7 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.goBack.setOnClickListener { onBackPressed() }
         binding.btnNextPageRegisterProduct.setOnClickListener { nextStep() }
         binding.tvLogin.setOnClickListener { login() }
     }
@@ -32,14 +33,15 @@ class RegisterActivity : AppCompatActivity() {
             binding.etSenha.error = "As senhas não conferem"
             binding.etConfirmeSenha.error = "As senhas não conferem"
         } else {
+
             val nextScreen = Intent(
                 this,
                 Register2Activity::class.java
-            )
-
-            nextScreen.putExtra("companyEmail", companyEmail)
-            nextScreen.putExtra("companyPass", companyPass)
-            nextScreen.putExtra("companyPassConfirm", companyPassConfirm)
+            ).apply {
+                this.putExtra("companyEmail", companyEmail)
+                this.putExtra("companyPass", companyPass)
+                this.putExtra("companyPassConfirm", companyPassConfirm)
+            }
 
             startActivity(nextScreen)
         }

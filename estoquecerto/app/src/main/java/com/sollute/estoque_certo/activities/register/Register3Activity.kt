@@ -16,28 +16,28 @@ import retrofit2.Response
 class Register3Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegister3Binding
-    var bundle: Bundle? = null
     private val httpClient: Register = Rest.getInstance().create(Register::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityRegister3Binding.inflate(layoutInflater)
-        bundle = intent.extras!!
         setContentView(binding.root)
 
+        binding.goBack.setOnClickListener { onBackPressed() }
+        binding.tvLogin.setOnClickListener { login() }
         binding.btnNextPageRegisterProduct.setOnClickListener { postCompany() }
     }
 
+    private fun login() = startActivity(Intent(this, Login::class.java))
+
     private fun postCompany() {
 
-        val companyEmail = bundle!!.getString("companyEmail")!!
-        val companyPass = bundle!!.getString("companyPass")!!
-        val companyPassConfirm = bundle!!.getString("companyPassConfirm")!!
-        val companyName = bundle!!.getString("companyName")!!
-        val companyComplementName = bundle!!.getString("companyComplementName")!!
-        val companyCnpj = bundle!!.getString("companyCnpj")!!
-        val companyPhone = bundle!!.getString("companyPhone")!!
+        val companyEmail = intent!!.getStringExtra("companyEmail")!!
+        val companyPass = intent!!.getStringExtra("companyPass")!!
+        val companyName = intent!!.getStringExtra("companyName")!!
+        val companyComplementName = intent!!.getStringExtra("companyComplementName")!!
+        val companyCnpj = intent!!.getStringExtra("companyCnpj")!!
         val companyCep = binding.etCep.text.toString()
         val companyUf = binding.etUf.text.toString()
         val companyCity = binding.etCidade.text.toString()

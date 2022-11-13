@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sollute.estoque_certo.activities.employee.EmployeeActivity
 import com.sollute.estoque_certo.activities.product.ProductActivity
+import com.sollute.estoque_certo.activities.user.UserActivity
 import com.sollute.estoque_certo.adapters.AdapterExtract
 import com.sollute.estoque_certo.databinding.ActivityExtractBinding
 import com.sollute.estoque_certo.models.extract.ListExtract
@@ -22,11 +23,13 @@ class ExtractActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityExtractBinding
     private val httpClient: Extract = Rest.getInstance().create(Extract::class.java)
+    private var isOnline: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val idEmpresa = intent.getIntExtra("idEmp", 0)
+        isOnline = intent.getBooleanExtra("isOnline", true)
 
         binding = ActivityExtractBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -37,7 +40,7 @@ class ExtractActivity : AppCompatActivity() {
                 this,
                 NewRecipeActivity::class.java
             )
-            productScreen.putExtra("isOnline", true)
+            productScreen.putExtra("isOnline", isOnline)
             productScreen.putExtra("idEmp", idEmpresa)
             startActivity(productScreen)
         }
@@ -46,14 +49,14 @@ class ExtractActivity : AppCompatActivity() {
                 this,
                 ProductActivity::class.java
             )
-            productScreen.putExtra("isOnline", true)
+            productScreen.putExtra("isOnline", isOnline)
             productScreen.putExtra("idEmp", idEmpresa)
             startActivity(productScreen)
         }
         binding.tvUser.setOnClickListener {
             val productScreen = Intent(
                 this,
-                EmployeeActivity::class.java
+                UserActivity::class.java
             )
             productScreen.putExtra("isOnline", true)
             productScreen.putExtra("idEmp", idEmpresa)

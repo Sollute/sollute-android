@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sollute.estoque_certo.activities.employee.EmployeeActivity
 import com.sollute.estoque_certo.activities.extract.ExtractActivity
+import com.sollute.estoque_certo.activities.user.UserActivity
 import com.sollute.estoque_certo.adapters.AdapterProduct
 import com.sollute.estoque_certo.databinding.ActivityProductBinding
 import com.sollute.estoque_certo.models.product.ListProduct
@@ -52,7 +53,7 @@ class ProductActivity : AppCompatActivity() {
         binding.tvUser.setOnClickListener {
             val productScreen = Intent(
                 this,
-                EmployeeActivity::class.java
+                UserActivity::class.java
             )
             productScreen.putExtra("isOnline", isOnline)
             productScreen.putExtra("idEmp", idEmpresa)
@@ -131,6 +132,7 @@ class ProductActivity : AppCompatActivity() {
                     reciclewView.adapter = adapterProduct
                 }
             } else {
+                reciclewView.adapter = adapterProduct
                 binding.tvYourProducts.text = "Você não possui produtos cadastrados"
                 binding.SearchProduct.visibility = View.INVISIBLE
             }
