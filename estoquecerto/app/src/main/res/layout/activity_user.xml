@@ -73,12 +73,14 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvNomeFantasia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Nome Fantasia:"
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvRazaoSocial"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -86,6 +88,7 @@
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvCNPJ"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -93,6 +96,7 @@
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvEndereco"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -100,6 +104,7 @@
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -107,6 +112,7 @@
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvTelefone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"

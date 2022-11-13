@@ -28,7 +28,7 @@ class Start3Activity : AppCompatActivity() {
     private fun irTelaStart4() {
         val tela4 = Intent(
             this,
-            Start3Activity::class.java
+            Start4Activity::class.java
         )
         startActivity(tela4)
     }

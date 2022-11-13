@@ -8,20 +8,22 @@ import com.sollute.estoque_certo.databinding.ActivityNewProductFirstBinding
 class NewProductFirstActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNewProductFirstBinding
+    var isOnline: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityNewProductFirstBinding.inflate(layoutInflater)
 
+        isOnline = intent.getBooleanExtra("isOnline", true)
         val idEmpresa = intent.getIntExtra("idEmp", 0)
         setContentView(binding.root)
 
-        binding.btnNextPageRegisterProduct.setOnClickListener { nextStep(idEmpresa) }
+        binding.btnNextPageRegisterProduct.setOnClickListener { nextStep(idEmpresa, isOnline) }
         binding.goBack.setOnClickListener { onBackPressed() }
     }
 
-    private fun nextStep(idEmpresa: Int) {
+    private fun nextStep(idEmpresa: Int, isOnline: Boolean) {
 
         val productName = binding.etProductName.text.toString()
         val productCode = binding.etProductCode.text.toString()
@@ -36,6 +38,8 @@ class NewProductFirstActivity : AppCompatActivity() {
         )
 
         nextScreen.putExtra("idEmp", idEmpresa)
+        nextScreen.putExtra("isOnline", isOnline)
+
         nextScreen.putExtra("productName", productName)
         nextScreen.putExtra("productCode", productCode)
         nextScreen.putExtra("productBrand", productBrand)

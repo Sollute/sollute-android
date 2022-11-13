@@ -17,6 +17,7 @@ class Start1Activity : AppCompatActivity() {
 
         binding = ActivityStart1Binding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.tittle.text = "${binding.tittle.text} + oi"
         binding.btnStart.setOnClickListener{
             irTelaStart2()
         }

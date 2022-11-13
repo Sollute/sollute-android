@@ -12,6 +12,7 @@ import com.sollute.estoque_certo.activities.extract.ExtractActivity
 import com.sollute.estoque_certo.adapters.AdapterProduct
 import com.sollute.estoque_certo.databinding.ActivityProductBinding
 import com.sollute.estoque_certo.models.product.ListProduct
+import com.sollute.estoque_certo.models.product.NewProduct
 import com.sollute.estoque_certo.rest.Rest
 import com.sollute.estoque_certo.services.product.Product
 import retrofit2.Call
@@ -22,6 +23,8 @@ class ProductActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductBinding
     private val httpClient: Product = Rest.getInstance().create(Product::class.java)
+    private val listProducts: MutableList<ListProduct> = mutableListOf()
+    private var isOnline: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,15 +33,19 @@ class ProductActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val idEmpresa = intent.getIntExtra("idEmp", 0)
+        isOnline = intent.getBooleanExtra("isOnline", true)
 
-        list(idEmpresa)
-        binding.tvPageName.setOnClickListener { list(idEmpresa) }
-        binding.tvProduct.setOnClickListener { list(idEmpresa) }
+        val productCreated = intent.extras?.getParcelable<NewProduct>("product")
+
+        list(idEmpresa, isOnline, productCreated)
+        binding.tvPageName.setOnClickListener { list(idEmpresa, isOnline, productCreated) }
+        binding.tvProduct.setOnClickListener { list(idEmpresa, isOnline, productCreated) }
         binding.tvSell.setOnClickListener {
             val productScreen = Intent(
                 this,
                 ExtractActivity::class.java
             )
+            productScreen.putExtra("isOnline", isOnline)
             productScreen.putExtra("idEmp", idEmpresa)
             startActivity(productScreen)
         }
@@ -47,6 +54,7 @@ class ProductActivity : AppCompatActivity() {
                 this,
                 EmployeeActivity::class.java
             )
+            productScreen.putExtra("isOnline", isOnline)
             productScreen.putExtra("idEmp", idEmpresa)
             startActivity(productScreen)
         }
@@ -55,14 +63,16 @@ class ProductActivity : AppCompatActivity() {
                 this,
                 NewProductFirstActivity::class.java
             )
+            productScreen.putExtra("isOnline", isOnline)
             productScreen.putExtra("idEmp", idEmpresa)
             startActivity(productScreen)
         }
     }
 
-    private fun list(idEmpresa: Int) {
-        val listProducts: MutableList<ListProduct> = mutableListOf()
+    private fun list(idEmpresa: Int, isOnline: Boolean, productCreated: NewProduct?) {
+
         val reciclewView = binding.rvProductList
+
         reciclewView.layoutManager = LinearLayoutManager(this)
         reciclewView.setHasFixedSize(true)
 
@@ -77,37 +87,55 @@ class ProductActivity : AppCompatActivity() {
             startActivity(productScreen)
         }
 
-        httpClient.listProducts(idEmpresa).enqueue(object : Callback<List<ListProduct>> {
-            @SuppressLint("SetTextI18n")
-            override fun onResponse(
-                call: Call<List<ListProduct>>,
-                response: Response<List<ListProduct>>
-            ) {
-                when {
-                    (response.code() == 200) -> {
-                        for (index in response.body()!!) {
-                            listProducts.add(index)
+        if (isOnline) {
+            httpClient.listProducts(idEmpresa).enqueue(object : Callback<List<ListProduct>> {
+                @SuppressLint("SetTextI18n")
+                override fun onResponse(
+                    call: Call<List<ListProduct>>,
+                    response: Response<List<ListProduct>>
+                ) {
+                    when {
+                        (response.code() == 200) -> {
+                            for (index in response.body()!!) {
+                                listProducts.add(index)
+                            }
+                            reciclewView.adapter = adapterProduct
                         }
-                        reciclewView.adapter = adapterProduct
-                    }
-                    (response.code() == 204) -> {
-                        binding.tvYourProducts.text = "Você não possui produtos cadastrados"
-                        binding.SearchProduct.visibility = View.INVISIBLE
+                        (response.code() == 204) -> {
+                            binding.tvYourProducts.text = "Você não possui produtos cadastrados"
+                            binding.SearchProduct.visibility = View.INVISIBLE
+                        }
                     }
                 }
-            }
 
-            override fun onFailure(
-                call: Call<List<ListProduct>>,
-                t: Throwable
-            ) {
-                Toast.makeText(
-                    baseContext,
-                    t.message,
-                    Toast.LENGTH_LONG
-                ).show()
+                override fun onFailure(
+                    call: Call<List<ListProduct>>,
+                    t: Throwable
+                ) {
+                    Toast.makeText(
+                        baseContext,
+                        t.message,
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            })
+        } else {
+            if (productCreated != null) {
+                listProducts.add(
+                    ListProduct(
+                        productName = productCreated.nome,
+                        productPrice = productCreated.precoVenda,
+                        productQuantity = productCreated.estoque
+                    )
+                ).also {
+                    reciclewView.adapter = adapterProduct
+                }
+            } else {
+                binding.tvYourProducts.text = "Você não possui produtos cadastrados"
+                binding.SearchProduct.visibility = View.INVISIBLE
             }
-        })
+        }
+
     }
 
 }

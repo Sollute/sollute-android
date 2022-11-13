@@ -185,67 +185,6 @@
 
                 </LinearLayout>
 
-                <!--                <LinearLayout-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginStart="20dp"-->
-                <!--                    android:layout_marginTop="70dp"-->
-                <!--                    android:layout_marginEnd="20dp">-->
-
-                <!--                    <ImageView-->
-                <!--                        android:layout_width="0dp"-->
-                <!--                        android:layout_height="wrap_content"-->
-                <!--                        android:layout_gravity="center"-->
-                <!--                        android:layout_weight="1"-->
-                <!--                        android:src="@drawable/line_white" />-->
-
-                <!--                    <TextView-->
-                <!--                        android:layout_width="0dp"-->
-                <!--                        android:layout_height="wrap_content"-->
-                <!--                        android:layout_weight="1.5"-->
-                <!--                        android:textStyle="bold"-->
-                <!--                        android:text="ou entre com"-->
-                <!--                        android:textAlignment="center" />-->
-
-                <!--                    <ImageView-->
-                <!--                        android:layout_width="0dp"-->
-                <!--                        android:layout_height="wrap_content"-->
-                <!--                        android:layout_gravity="center"-->
-                <!--                        android:layout_weight="1"-->
-                <!--                        android:src="@drawable/line_white" />-->
-
-                <!--                </LinearLayout>-->
-
-                <!--                <LinearLayout-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginStart="20dp"-->
-                <!--                    android:layout_marginTop="20dp"-->
-                <!--                    android:layout_marginEnd="20dp">-->
-
-                <!--                    <ImageView-->
-                <!--                        android:layout_width="0dp"-->
-                <!--                        android:layout_height="32dp"-->
-                <!--                        android:layout_gravity="center"-->
-                <!--                        android:layout_weight="1"-->
-                <!--                        android:src="@drawable/instagram" />-->
-
-                <!--                    <ImageView-->
-                <!--                        android:layout_width="0dp"-->
-                <!--                        android:layout_height="32dp"-->
-                <!--                        android:layout_gravity="center"-->
-                <!--                        android:layout_weight="1"-->
-                <!--                        android:src="@drawable/google" />-->
-
-                <!--                    <ImageView-->
-                <!--                        android:layout_width="0dp"-->
-                <!--                        android:layout_height="32dp"-->
-                <!--                        android:layout_gravity="center"-->
-                <!--                        android:layout_weight="1"-->
-                <!--                        android:src="@drawable/facebook" />-->
-
-                <!--                </LinearLayout>-->
-
             </LinearLayout>
 
         </LinearLayout>
