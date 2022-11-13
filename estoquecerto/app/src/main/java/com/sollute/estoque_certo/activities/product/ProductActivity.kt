@@ -30,6 +30,7 @@ class ProductActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val idEmpresa = intent.getIntExtra("idEmp", 0)
+        val isOnline = intent.getBooleanExtra("isOnline", true)
 
         list(idEmpresa)
         binding.tvPageName.setOnClickListener { list(idEmpresa) }

@@ -37,7 +37,6 @@ class RegisterActivity : AppCompatActivity() {
             nextScreen.putExtra("companyPass", companyPass)
             nextScreen.putExtra("companyPassConfirm", companyPassConfirm)
 
-
             startActivity(nextScreen)
         }
 
