@@ -237,11 +237,12 @@
 
                         <ImageButton
                             android:id="@+id/goBack"
+                            style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginEnd="25dp"
-                            android:background="@color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
                             android:minWidth="48dp"
                             android:minHeight="48dp"
                             android:src="@drawable/chevron_left" />

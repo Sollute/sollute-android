@@ -37,6 +37,7 @@ class ExtractActivity : AppCompatActivity() {
                 this,
                 NewRecipeActivity::class.java
             )
+            productScreen.putExtra("isOnline", true)
             productScreen.putExtra("idEmp", idEmpresa)
             startActivity(productScreen)
         }
@@ -45,6 +46,7 @@ class ExtractActivity : AppCompatActivity() {
                 this,
                 ProductActivity::class.java
             )
+            productScreen.putExtra("isOnline", true)
             productScreen.putExtra("idEmp", idEmpresa)
             startActivity(productScreen)
         }
@@ -53,6 +55,7 @@ class ExtractActivity : AppCompatActivity() {
                 this,
                 EmployeeActivity::class.java
             )
+            productScreen.putExtra("isOnline", true)
             productScreen.putExtra("idEmp", idEmpresa)
             startActivity(productScreen)
         }

@@ -90,6 +90,9 @@
             android:name=".activities.provider.NewProviderActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.login.Login"
+            android:exported="false" />
+        <activity
             android:name=".activities.start.Start1Activity"
             android:exported="true">
             <intent-filter>

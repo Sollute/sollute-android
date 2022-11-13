@@ -1,6 +1,7 @@
 package com.sollute.estoque_certo.activities.login
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -19,8 +20,8 @@ import retrofit2.Response
 class Login : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    val request = Rest.getInstance().create(AuthLogin::class.java)
-    var isOnline: Boolean = false
+    private val request: AuthLogin = Rest.getInstance().create(AuthLogin::class.java)
+    private var isOnline: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,7 @@ class Login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        checkStatus().wait()
+        checkStatus()
 
         binding.btnLogin.setOnClickListener { tryLogin(isOnline) }
         binding.btnGoRegister.setOnClickListener { goRegister() }
@@ -41,12 +42,12 @@ class Login : AppCompatActivity() {
             this,
             ProductActivity::class.java
         )
-        productScreen.putExtra("isOnline", true)
+        productScreen.putExtra("isOnline", isOnline)
         productScreen.putExtra("idEmp", idEmpresa)
         startActivity(productScreen)
     }
 
-    private fun checkStatus() =
+    private fun checkStatus() {
         request.check().enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 isOnline = true
@@ -56,6 +57,7 @@ class Login : AppCompatActivity() {
                 isOnline = false
             }
         })
+    }
 
     private fun tryLogin(isOnline: Boolean) {
 
