@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.sollute.estoque_certo">
+    xmlns:tools="http://schemas.android.com/tools">
     <!-- permissions for INTERNET -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,6 +15,13 @@
         android:theme="@style/Theme.Estoquecerto"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".SaleCompleted"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".activities.start.Start4Activity"
             android:exported="false" />

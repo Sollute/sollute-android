@@ -10,6 +10,8 @@
     <string name="example_full_name">Nome Completo</string>
     <string name="example_number">Telefone</string>
     <string name="example_salary">Salário</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
 
     <!--  Produto  -->
     <string name="product_name">Produtos</string>
@@ -89,5 +91,7 @@
     <string name="s3_titulo">EQUIPE DE SUPORTE DISPONÍVEL 24 HORAS POR DIA</string>
     <string name="s3_subtitulo">Nossos profissionais são treinados para prestarem o melhor service com o menor tempo possível à você.</string>
 
+    <!--  Venda  -->
+    <string name="sale_completed">Venda Finalizada</string>
 
 </resources>
