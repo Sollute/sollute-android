@@ -55,11 +55,9 @@
                     android:layout_marginTop="30dp"
                     android:text="@string/cadastro"
                     android:textAlignment="center"
-                    android:textColor="@color/roxo"
-                    android:textFontWeight="900"
-                    android:textSize="26sp"
                     android:textStyle="bold"
-                    tools:targetApi="p" />
+                    android:textColor="@color/roxo"
+                    android:textSize="26sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -237,6 +235,7 @@
                         tools:targetApi="p" />
 
                     <TextView
+                        android:id="@+id/tvLogin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="6dp"
