@@ -55,11 +55,9 @@
                     android:layout_marginTop="30dp"
                     android:text="@string/cadastro"
                     android:textAlignment="center"
-                    android:textColor="@color/roxo"
-                    android:textFontWeight="900"
-                    android:textSize="26sp"
                     android:textStyle="bold"
-                    tools:targetApi="p" />
+                    android:textColor="@color/roxo"
+                    android:textSize="26sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -95,15 +93,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    app:boxStrokeColor="@color/background_header"
-                    app:hintTextColor="@color/background_header"
                     android:layout_marginRight="10dp"
                     android:hint="@string/social"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    app:endIconMode="none">
+                    app:boxStrokeColor="@color/background_header"
+                    app:endIconMode="none"
+                    app:hintTextColor="@color/background_header">
 
                     <EditText
                         android:id="@+id/etRazaoSocial"
@@ -122,15 +120,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    app:boxStrokeColor="@color/background_header"
-                    app:hintTextColor="@color/background_header"
                     android:layout_marginRight="10dp"
                     android:hint="@string/cnpj_nome"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    app:endIconMode="none">
+                    app:boxStrokeColor="@color/background_header"
+                    app:endIconMode="none"
+                    app:hintTextColor="@color/background_header">
 
                     <EditText
                         android:id="@+id/etCNPJ"
@@ -151,13 +149,13 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:hint="@string/telefone_celular"
-                    app:boxStrokeColor="@color/background_header"
-                    app:hintTextColor="@color/background_header"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    app:endIconMode="none">
+                    app:boxStrokeColor="@color/background_header"
+                    app:endIconMode="none"
+                    app:hintTextColor="@color/background_header">
 
                     <EditText
                         android:id="@+id/etTelefoneCelular"
@@ -198,11 +196,12 @@
 
                         <ImageButton
                             android:id="@+id/goBack"
+                            style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginEnd="25dp"
-                            android:background="@color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
                             android:minWidth="48dp"
                             android:minHeight="48dp"
                             android:src="@drawable/chevron_left" />
@@ -236,6 +235,7 @@
                         tools:targetApi="p" />
 
                     <TextView
+                        android:id="@+id/tvLogin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="6dp"

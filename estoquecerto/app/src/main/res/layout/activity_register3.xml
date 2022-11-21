@@ -56,10 +56,8 @@
                     android:text="@string/cadastro"
                     android:textAlignment="center"
                     android:textColor="@color/roxo"
-                    android:textFontWeight="900"
                     android:textSize="26sp"
-                    android:textStyle="bold"
-                    tools:targetApi="p" />
+                    android:textStyle="bold" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -237,11 +235,12 @@
 
                         <ImageButton
                             android:id="@+id/goBack"
+                            style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginEnd="25dp"
-                            android:background="@color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
                             android:minWidth="48dp"
                             android:minHeight="48dp"
                             android:src="@drawable/chevron_left" />
@@ -275,6 +274,7 @@
                         tools:targetApi="p" />
 
                     <TextView
+                        android:id="@+id/tvLogin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="6dp"

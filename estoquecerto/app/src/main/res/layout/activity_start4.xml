@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.start.Start4Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="590dp"
+        android:background="@drawable/borderbottom"
+        android:bottomLeftRadius="20dp"
+        android:bottomRightRadius="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:topLeftRadius="0dp"
+        android:topRightRadius="0dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/connected_world_cuate_2" />
+
+        <TextView
+            android:layout_width="238dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/s3_titulo"
+            android:textAllCaps="true"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/s3_subtitulo"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:src="@drawable/tres_pontos_3" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp">
+
+        <ImageButton
+            android:id="@+id/goBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="25dp"
+            android:background="@color/white"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:src="@drawable/chevron_left" />
+
+        <Button
+            android:id="@+id/btnNextPageStart"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/background_header"
+            android:text="@string/next_page" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -16,30 +16,36 @@ class NewProductSecondActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityNewProductSecondBinding
     private val httpClient: Product = Rest.getInstance().create(Product::class.java)
+    private var isOnline: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityNewProductSecondBinding.inflate(layoutInflater)
 
+        isOnline = intent.getBooleanExtra("isOnline", true)
         val idEmpresa = intent.getIntExtra("idEmp", 0)
 
         setContentView(binding.root)
 
         binding.btnBackToStep1.setOnClickListener { onBackPressed() }
-        binding.btnFinishProduct.setOnClickListener { postProduct(idEmpresa) }
+        binding.btnFinishProduct.setOnClickListener { postProduct(idEmpresa, isOnline) }
     }
 
-    private fun goBack(idEmpresa: Int) {
+    private fun goBack(idEmpresa: Int, newProduct: NewProduct) {
         val productScreen = Intent(
             this,
             ProductActivity::class.java
         )
+
+        productScreen.putExtra("product", newProduct)
+        productScreen.putExtra("isOnline", isOnline)
         productScreen.putExtra("idEmp", idEmpresa)
+
         startActivity(productScreen)
     }
 
-    private fun postProduct(idEmpresa: Int) {
+    private fun postProduct(idEmpresa: Int, isOnline: Boolean) {
 
         val productCode = intent!!.getStringExtra("productCode")!!
         val productName = intent!!.getStringExtra("productName")!!
@@ -67,41 +73,46 @@ class NewProductSecondActivity : AppCompatActivity() {
             estoqueMax = maximumStock,
         )
 
-        httpClient.postProduct(idEmpresa, newProduct).enqueue(object : Callback<Void> {
-            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+        if (isOnline) {
+            httpClient.postProduct(idEmpresa, newProduct).enqueue(object : Callback<Void> {
+                override fun onResponse(call: Call<Void>, response: Response<Void>) {
 
-                when {
-                    (response.isSuccessful) -> {
-                        Toast.makeText(
-                            baseContext,
-                            "Produto criado com sucesso",
-                            Toast.LENGTH_LONG
-                        ).show()
-                        goBack(idEmpresa)
+                    when {
+                        (response.isSuccessful) -> {
+                            Toast.makeText(
+                                baseContext,
+                                "Produto criado com sucesso",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            goBack(idEmpresa, newProduct)
+                        }
+                        (response.code() == 409) -> {
+                            Toast.makeText(
+                                baseContext,
+                                "Código ou nome já existe. Por favor, escolha outro",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                        (response.code() == 400) -> {
+                            Toast.makeText(
+                                baseContext,
+                                "ERRO 400",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
                     }
-                    (response.code() == 409) -> {
-                        Toast.makeText(
-                            baseContext,
-                            "Código ou nome já existe. Por favor, escolha outro",
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }
-                    (response.code() == 400) -> {
-                        Toast.makeText(
-                            baseContext,
-                            "ERRO 400",
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }
+
                 }
 
-            }
+                override fun onFailure(call: Call<Void>, t: Throwable) {
+                    print("not ok")
+                }
 
-            override fun onFailure(call: Call<Void>, t: Throwable) {
-                print("not ok")
-            }
+            })
+        } else {
+            goBack(idEmpresa, newProduct)
+        }
 
-        })
     }
 
 }

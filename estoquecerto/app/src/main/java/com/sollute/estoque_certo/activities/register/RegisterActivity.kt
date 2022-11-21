@@ -3,6 +3,7 @@ package com.sollute.estoque_certo.activities.register
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sollute.estoque_certo.activities.login.Login
 import com.sollute.estoque_certo.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
@@ -15,8 +16,12 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.goBack.setOnClickListener { onBackPressed() }
         binding.btnNextPageRegisterProduct.setOnClickListener { nextStep() }
+        binding.tvLogin.setOnClickListener { login() }
     }
+
+    private fun login() = startActivity(Intent(this, Login::class.java))
 
     private fun nextStep() {
 
@@ -28,15 +33,15 @@ class RegisterActivity : AppCompatActivity() {
             binding.etSenha.error = "As senhas não conferem"
             binding.etConfirmeSenha.error = "As senhas não conferem"
         } else {
+
             val nextScreen = Intent(
                 this,
                 Register2Activity::class.java
-            )
-
-            nextScreen.putExtra("companyEmail", companyEmail)
-            nextScreen.putExtra("companyPass", companyPass)
-            nextScreen.putExtra("companyPassConfirm", companyPassConfirm)
-
+            ).apply {
+                this.putExtra("companyEmail", companyEmail)
+                this.putExtra("companyPass", companyPass)
+                this.putExtra("companyPassConfirm", companyPassConfirm)
+            }
 
             startActivity(nextScreen)
         }

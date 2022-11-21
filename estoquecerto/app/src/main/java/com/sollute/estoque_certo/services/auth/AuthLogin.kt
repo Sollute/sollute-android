@@ -4,6 +4,7 @@ import com.sollute.estoque_certo.models.login.Login
 import com.sollute.estoque_certo.models.login.LoginResponse
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface AuthLogin {
@@ -12,5 +13,8 @@ interface AuthLogin {
     fun login(
         @Body body: Login
     ): Call<LoginResponse>
+
+    @GET("/health-check")
+    fun check(): Call<Void>
 
 }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  APP  -->
+    <string name="app_name">Estoque Certo</string>
+    <string name="next_page">Next</string>
+    <string name="back_page">Back</string>
+    <string name="save">Save</string>
+    <string name="login">Login</string>
+    <string name="finalizar">Finished</string>
+    <string name="atualizar">Update</string>
+    <string name="example_full_name">Full Name</string>
+    <string name="example_number">Phone</string>
+    <string name="example_salary">Salary</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!--  Produto  -->
+    <string name="product_name">Product</string>
+    <string name="product_new">New Product</string>
+    <string name="product_edit">Edit Product</string>
+    <string name="product_description_1">General Data</string>
+    <string name="product_description_2">Inventory</string>
+    <string name="product_description_3">Price</string>
+
+    <!--  Extrato  -->
+    <string name="extract_name">Extract</string>
+    <string name="extract_description">Release History</string>
+    <string name="extract_name_recipe">New Recipe</string>
+    <string name="extract_name_expense">New Expense</string>
+
+    <!-- Cadastro -->
+    <string name="e_mail">E-mail</string>
+    <string name="email_value">sollute2@gmail.com</string>
+    <string name="senha">sollute123456</string>
+    <string name="possui">Already have an account?</string>
+    <string name="entre">Login to your account</string>
+    <string name="sollute">Sollute FAKE</string>
+    <string name="nome_fantasia">fantasy name</string>
+    <string name="social">corporate name</string>
+    <string name="sollute_sa">Sollute SA FAKE</string>
+    <string name="confirme_sua_senha">confirm your password</string>
+    <string name="cnpj">33099701000189</string>
+    <string name="cnpj_nome">CNPJ</string>
+    <string name="telefone_celular">cell phone</string>
+    <string name="numero">(11) 98099-2290</string>
+    <string name="cep">CEP</string>
+    <string name="sp">SP</string>
+    <string name="uf">UF</string>
+    <string name="cidade">city</string>
+    <string name="sao_paulo">São Paulo</string>
+    <string name="logradouro">public place</string>
+    <string name="nome_logradouro">Rua Haddock Lobo, 595</string>
+    <string name="ponto_referencia">reference point</string>
+    <string name="referencia">close to paulista avenue</string>
+    <string name="finish">FINALIZE</string>
+    <string name="nome_fantasia_user">Fantasy Name:</string>
+    <string name="user_social">Corporate Name:</string>
+    <string name="cnpj_user">CNPJ:</string>
+    <string name="cadastro">REGISTER</string>
+    <string name="titulo_senha">PASSWORD</string>
+    <string name="text_cep">20260130</string>
+
+    <!--  Cliente  -->
+    <string name="client_description_1">General Data</string>
+    <string name="client_new">New Client</string>
+    <string name="client_edit">Edit Client</string>
+
+    <!-- Login -->
+    <string name="login_description">Login</string>
+    <string name="entrar">ENTER</string>
+    <string name="ainda_n_possui_conta">Don\'t have an account yet?</string>
+    <string name="criar_agora">Create yours now</string>
+    <string name="esqueceu_sua_senha">Forgot your password?</string>
+
+    <!--  Fornecedor  -->
+    <string name="provider_description_1">General Data</string>
+    <string name="provider_new">New Provider</string>
+    <string name="provider_edit">Edit Provider</string>
+
+    <!--  Funcionario  -->
+    <string name="employee_name">Employee</string>
+    <string name="employee_description">General Data</string>
+    <string name="employee_new">New Employee</string>
+    <string name="employee_edit">Edit Employee</string>
+    <string name="employee_cpf">CPF</string>
+
+    <!-- Telas inicias -->
+    <string name="sub_titulo">Managing your business intelligently</string>
+    <string name="button_comecar">START</string>
+    <string name="s1_titulo">DOMINATE THE ORGANIZATION OF YOUR COMPANY</string>
+    <string name="s1_subtitulo">Keep your company organized, with everything in its place, plan smartly. All this in the palm of your hand.</string>
+    <string name="s2_titulo">INVEST IN THE BEST FOR YOUR BUSINESS</string>
+    <string name="s2_subtitulo">More explanatory sentence, with a little more detail compared to the previous message</string>
+    <string name="s3_titulo">SUPPORT TEAM AVAILABLE 24 HOURS A DAY</string>
+    <string name="s3_subtitulo">Our professionals are trained to provide you with the best service in the shortest possible time.</string>
+
+    <!--  Venda  -->
+    <string name="sale_completed">Finished sale</string>
+</resources>
