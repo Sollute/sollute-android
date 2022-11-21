@@ -48,10 +48,10 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="100dp"
                         android:paddingStart="9dp"
                         android:paddingEnd="9dp"
-                        android:src="@drawable/user" />
+                        android:src="@drawable/sollute_svg" />
 
                 </RelativeLayout>
 
@@ -73,44 +73,50 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvNomeFantasia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nome Fantasia:"
+                        android:text="Nome Fantasia: "
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvRazaoSocial"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Razão Social:"
+                        android:text="Razão Social: "
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvCNPJ"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="CNPJ:"
+                        android:text="CNPJ: "
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Endereço:"
+                        android:text="E-mail: "
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvLogradouro"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="E-mail:"
+                        android:text="Logradouro: "
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvCidade"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Telefone:"
+                        android:text="Cidade: "
                         android:textSize="14sp" />
 
                 </LinearLayout>

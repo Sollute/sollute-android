@@ -10,6 +10,8 @@
     <string name="example_full_name">Nome Completo</string>
     <string name="example_number">Telefone</string>
     <string name="example_salary">Salário</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
 
     <!--  Produto  -->
     <string name="product_name">Produtos</string>
@@ -82,5 +84,20 @@
     <string name="employee_edit">Editar Funcionário</string>
     <string name="employee_cpf">CPF</string>
 
+    <!-- Dashboard -->
+    <string name="dash_value">R$XX,XX</string>
+
+    <!-- Telas inicias -->
+    <string name="sub_titulo">Gerenciando sua empresa com inteligência</string>
+    <string name="button_comecar">COMEÇAR</string>
+    <string name="s1_titulo">DOMINE A ORGANIZAÇÃO DA SUA EMPRESA</string>
+    <string name="s1_subtitulo">Mantenha a sua empresa organizada, com tudo em seu devido lugar, planeje-se de maneira inteligente. Tudo isso na palma da sua mão.</string>
+    <string name="s2_titulo">INVISTA NO MELHOR PARA O SEU NEGÓCIO</string>
+    <string name="s2_subtitulo">Frase mais explicativa, com um pouco mais de detalhes comparado a mensagem anterior</string>
+    <string name="s3_titulo">EQUIPE DE SUPORTE DISPONÍVEL 24 HORAS POR DIA</string>
+    <string name="s3_subtitulo">Nossos profissionais são treinados para prestarem o melhor service com o menor tempo possível à você.</string>
+
+    <!--  Venda  -->
+    <string name="sale_completed">Venda Finalizada</string>
 
 </resources>
