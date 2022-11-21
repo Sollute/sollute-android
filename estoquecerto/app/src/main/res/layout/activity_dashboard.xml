@@ -42,19 +42,6 @@
         </LinearLayout>
 
         <!-- Barra -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/borderbottom"
-            android:bottomLeftRadius="20dp"
-            android:bottomRightRadius="20dp"
-            android:gravity="center"
-            android:topLeftRadius="0dp"
-            android:topRightRadius="0dp">
-
-
-        </LinearLayout>
 
 
         <!-- Principal -->
