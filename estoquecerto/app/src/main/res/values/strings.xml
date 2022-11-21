@@ -82,6 +82,8 @@
     <string name="employee_new">Novo Funcionário</string>
     <string name="employee_edit">Editar Funcionário</string>
     <string name="employee_cpf">CPF</string>
+
+    <!-- Telas inicias -->
     <string name="sub_titulo">Gerenciando sua empresa com inteligência</string>
     <string name="button_comecar">COMEÇAR</string>
     <string name="s1_titulo">DOMINE A ORGANIZAÇÃO DA SUA EMPRESA</string>
