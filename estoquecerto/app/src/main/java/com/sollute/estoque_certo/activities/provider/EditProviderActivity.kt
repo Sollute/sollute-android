@@ -3,10 +3,11 @@ package com.sollute.estoque_certo.activities.provider
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.MainActivity
 import com.sollute.estoque_certo.databinding.ActivityEditProviderBinding
 
-class EditProviderActivity: AppCompatActivity() {
+class EditProviderActivity: DrawerBaseActivity() {
     private lateinit var binding: ActivityEditProviderBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +17,7 @@ class EditProviderActivity: AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnUpdate.setOnClickListener { createEditProvider() }
-
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
     }
 
     private fun createEditProvider() {

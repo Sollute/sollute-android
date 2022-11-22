@@ -1,9 +1,9 @@
 package com.sollute.estoque_certo.activities.employee
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.databinding.ActivityNewEmployeeBinding
 import com.sollute.estoque_certo.models.employee.NewEmployee
 import com.sollute.estoque_certo.rest.Rest
@@ -12,7 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class NewEmployeeActivity : AppCompatActivity() {
+class NewEmployeeActivity : DrawerBaseActivity() {
 
     private lateinit var binding: ActivityNewEmployeeBinding
     private val httpClient: Employee = Rest.getInstance().create(Employee::class.java)
@@ -21,21 +21,17 @@ class NewEmployeeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNewEmployeeBinding.inflate(layoutInflater)
 
-        val idEmpresa = intent.getIntExtra("idEmp", 0)
+        val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
         setContentView(binding.root)
 
+        binding.btnBack.setOnClickListener { goBack() }
         binding.btnFinishEmployee.setOnClickListener { postEmployee(idEmpresa) }
-        binding.btnBack.setOnClickListener { goBack(idEmpresa) }
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
     }
 
-    private fun goBack(idEmpresa: Int) {
-        val productScreen = Intent(
-            this,
-            EmployeeActivity::class.java
-        )
-        productScreen.putExtra("idEmp", idEmpresa)
-        startActivity(productScreen)
+    private fun goBack() {
+        startActivity(Intent(this, EmployeeActivity::class.java))
     }
 
     private fun postEmployee(idEmpresa: Int) {
@@ -63,7 +59,7 @@ class NewEmployeeActivity : AppCompatActivity() {
                             "Funcionário criado com sucesso",
                             Toast.LENGTH_LONG
                         ).show()
-                        goBack(idEmpresa)
+                        goBack()
                     }
                     (response.code() == 409) -> {
                         Toast.makeText(
@@ -95,6 +91,5 @@ class NewEmployeeActivity : AppCompatActivity() {
             }
 
         })
-
     }
 }

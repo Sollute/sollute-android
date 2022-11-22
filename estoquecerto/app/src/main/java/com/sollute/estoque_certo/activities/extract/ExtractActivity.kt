@@ -2,12 +2,11 @@ package com.sollute.estoque_certo.activities.extract
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sollute.estoque_certo.activities.employee.EmployeeActivity
+import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.activities.user.UserActivity
 import com.sollute.estoque_certo.adapters.AdapterExtract
@@ -19,56 +18,42 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ExtractActivity : AppCompatActivity() {
+class ExtractActivity : DrawerBaseActivity() {
 
     private lateinit var binding: ActivityExtractBinding
     private val httpClient: Extract = Rest.getInstance().create(Extract::class.java)
-    private var isOnline: Boolean = false
+    private var isOnline: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val idEmpresa = intent.getIntExtra("idEmp", 0)
-        isOnline = intent.getBooleanExtra("isOnline", true)
+        val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
+        isOnline = getPreferences(MODE_PRIVATE).getBoolean("isOnline", true)
 
         binding = ActivityExtractBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        list(idEmpresa)
+
         binding.tvPageName.setOnClickListener { list(idEmpresa) }
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
+
         binding.tvNewExtract.setOnClickListener {
-            val productScreen = Intent(
-                this,
-                NewRecipeActivity::class.java
-            )
-            productScreen.putExtra("isOnline", isOnline)
-            productScreen.putExtra("idEmp", idEmpresa)
-            startActivity(productScreen)
+            startActivity(Intent(this, NewRecipeActivity::class.java))
         }
         binding.tvProduct.setOnClickListener {
-            val productScreen = Intent(
-                this,
-                ProductActivity::class.java
-            )
-            productScreen.putExtra("isOnline", isOnline)
-            productScreen.putExtra("idEmp", idEmpresa)
-            startActivity(productScreen)
+            startActivity(Intent(this, ProductActivity::class.java))
         }
         binding.tvUser.setOnClickListener {
-            val productScreen = Intent(
-                this,
-                UserActivity::class.java
-            )
-            productScreen.putExtra("isOnline", true)
-            productScreen.putExtra("idEmp", idEmpresa)
-            startActivity(productScreen)
+            startActivity(Intent(this, UserActivity::class.java))
         }
     }
 
     private fun list(idEmpresa: Int) {
         val listExtract: MutableList<ListExtract> = mutableListOf()
-        val reciclewView = binding.rvExtractList
-        reciclewView.layoutManager = LinearLayoutManager(this)
-        reciclewView.setHasFixedSize(true)
+        val recyclerView = binding.rvExtractList
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
 
         val adapterExtract = AdapterExtract(this, listExtract)
 
@@ -83,7 +68,7 @@ class ExtractActivity : AppCompatActivity() {
                         for (index in response.body()!!) {
                             listExtract.add(index)
                         }
-                        reciclewView.adapter = adapterExtract
+                        recyclerView.adapter = adapterExtract
                     }
                     (response.code() == 204) -> {
                         binding.tvTittleExtract.text =

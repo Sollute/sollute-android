@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.databinding.ActivityNewProductSecondBinding
 import com.sollute.estoque_certo.models.product.NewProduct
 import com.sollute.estoque_certo.rest.Rest
@@ -12,35 +13,34 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class NewProductSecondActivity : AppCompatActivity() {
+class NewProductSecondActivity : DrawerBaseActivity() {
 
     lateinit var binding: ActivityNewProductSecondBinding
     private val httpClient: Product = Rest.getInstance().create(Product::class.java)
-    private var isOnline: Boolean = false
+    private var isOnline: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityNewProductSecondBinding.inflate(layoutInflater)
 
-        isOnline = intent.getBooleanExtra("isOnline", true)
-        val idEmpresa = intent.getIntExtra("idEmp", 0)
+        val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
+        isOnline = getPreferences(MODE_PRIVATE).getBoolean("isOnline", true)
 
         setContentView(binding.root)
 
         binding.btnBackToStep1.setOnClickListener { onBackPressed() }
         binding.btnFinishProduct.setOnClickListener { postProduct(idEmpresa, isOnline) }
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
     }
 
-    private fun goBack(idEmpresa: Int, newProduct: NewProduct) {
+    private fun goBack(newProduct: NewProduct) {
         val productScreen = Intent(
             this,
             ProductActivity::class.java
-        )
-
-        productScreen.putExtra("product", newProduct)
-        productScreen.putExtra("isOnline", isOnline)
-        productScreen.putExtra("idEmp", idEmpresa)
+        ).also {
+            it.putExtra("product", newProduct)
+        }
 
         startActivity(productScreen)
     }
@@ -84,7 +84,7 @@ class NewProductSecondActivity : AppCompatActivity() {
                                 "Produto criado com sucesso",
                                 Toast.LENGTH_LONG
                             ).show()
-                            goBack(idEmpresa, newProduct)
+                            goBack(newProduct)
                         }
                         (response.code() == 409) -> {
                             Toast.makeText(
@@ -110,9 +110,7 @@ class NewProductSecondActivity : AppCompatActivity() {
 
             })
         } else {
-            goBack(idEmpresa, newProduct)
+            goBack(newProduct)
         }
-
     }
-
 }

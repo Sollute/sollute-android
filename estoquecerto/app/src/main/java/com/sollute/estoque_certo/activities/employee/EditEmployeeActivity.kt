@@ -1,9 +1,9 @@
 package com.sollute.estoque_certo.activities.employee
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.databinding.ActivityEditEmployeeBinding
 import com.sollute.estoque_certo.models.employee.EditEmployee
 import com.sollute.estoque_certo.rest.Rest
@@ -12,7 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class EditEmployeeActivity : AppCompatActivity() {
+class EditEmployeeActivity : DrawerBaseActivity() {
 
     private lateinit var binding: ActivityEditEmployeeBinding
     private val httpClient: Employee = Rest.getInstance().create(Employee::class.java)
@@ -21,22 +21,18 @@ class EditEmployeeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditEmployeeBinding.inflate(layoutInflater)
 
-        val idEmpresa = intent.getIntExtra("idEmp", 0)
+        val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
         setContentView(binding.root)
 
+        binding.btnBack.setOnClickListener { goBack() }
         binding.btnEditEmployee.setOnClickListener { edit(idEmpresa) }
         binding.btnDeleteEmployee.setOnClickListener { delete(idEmpresa) }
-        binding.btnBack.setOnClickListener { goBack(idEmpresa) }
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
     }
 
-    private fun goBack(idEmpresa: Int) {
-        val productScreen = Intent(
-            this,
-            EmployeeActivity::class.java
-        )
-        productScreen.putExtra("idEmp", idEmpresa)
-        startActivity(productScreen)
+    private fun goBack() {
+        startActivity(Intent(this, EmployeeActivity::class.java))
     }
 
     private fun delete(idEmpresa: Int) {
@@ -57,7 +53,7 @@ class EditEmployeeActivity : AppCompatActivity() {
                             "Funcionário excluído com sucesso",
                             Toast.LENGTH_LONG
                         ).show()
-                        goBack(idEmpresa)
+                        goBack()
                     }
                 }
             }
@@ -102,7 +98,7 @@ class EditEmployeeActivity : AppCompatActivity() {
                             "Funcionário editado com sucesso",
                             Toast.LENGTH_LONG
                         ).show()
-                        goBack(idEmpresa)
+                        goBack()
                     }
                     (response.code() == 404) -> {
                         Toast.makeText(

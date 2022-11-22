@@ -2,11 +2,11 @@ package com.sollute.estoque_certo.activities.client
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.employee.EmployeeActivity
 import com.sollute.estoque_certo.activities.extract.ExtractActivity
 import com.sollute.estoque_certo.adapters.AdapterClient
@@ -18,7 +18,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ClientActivity : AppCompatActivity() {
+class ClientActivity : DrawerBaseActivity() {
+
     private lateinit var binding: ActivityClientBinding
     private val httpClient: Client = Rest.getInstance().create(Client::class.java)
 
@@ -28,51 +29,37 @@ class ClientActivity : AppCompatActivity() {
         binding = ActivityClientBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val idEmpresa = intent.getIntExtra("idEmp", 0)
+        val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
-        list(idEmpresa)
-        binding.tvPageName.setOnClickListener { list(idEmpresa) }
-        binding.tvProduct.setOnClickListener { list(idEmpresa) }
+//        list(idEmpresa)
+
+//        binding.tvPageName.setOnClickListener { list(idEmpresa) }
+//        binding.tvProduct.setOnClickListener { list(idEmpresa) }
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
+
         binding.tvSell.setOnClickListener {
-            val clientScreen = Intent(
-                this,
-                ExtractActivity::class.java
-            )
-            clientScreen.putExtra("idEmp", idEmpresa)
-            startActivity(clientScreen)
+            startActivity(Intent(this, ExtractActivity::class.java))
         }
         binding.tvUser.setOnClickListener {
-            val clientScreen = Intent(
-                this,
-                EmployeeActivity::class.java
-            )
-            clientScreen.putExtra("idEmp", idEmpresa)
-            startActivity(clientScreen)
+            startActivity(Intent(this, EmployeeActivity::class.java))
         }
         binding.tvNewClient.setOnClickListener {
-            val clientScreen = Intent(
-                this,
-                NewClientActivity::class.java
-            )
-            clientScreen.putExtra("idEmp", idEmpresa)
-            startActivity(clientScreen)
+            startActivity(Intent(this, NewClientActivity::class.java))
         }
     }
 
     private fun list(idEmpresa: Int) {
         val listClients: MutableList<ListClient> = mutableListOf()
-        val reciclewView = binding.rvClientList
-        reciclewView.layoutManager = LinearLayoutManager(this)
-        reciclewView.setHasFixedSize(true)
+        val recyclerView = binding.rvClientList
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
 
         val adapterClient = AdapterClient(this, listClients) {
-            Toast.makeText(baseContext, it.clientName, Toast.LENGTH_SHORT).show()
             val clientScreen = Intent(
                 this,
                 EditClientActivity::class.java
             )
             clientScreen.putExtra("clientName", it.clientName)
-            clientScreen.putExtra("idEmp", idEmpresa)
             startActivity(clientScreen)
         }
 
@@ -89,7 +76,7 @@ class ClientActivity : AppCompatActivity() {
                             for (index in response.body()!!) {
                                 listClients.add(index)
                             }
-                            reciclewView.adapter = adapterClient
+                            recyclerView.adapter = adapterClient
                         }
                         (response.code() == 204) -> {
                             binding.tvYourClients.text = "Você não possui clientes cadastrados"

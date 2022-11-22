@@ -1,13 +1,13 @@
 package com.sollute.estoque_certo.activities.employee
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.extract.ExtractActivity
 import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.databinding.ActivityEmployeeBinding
 
-class EmployeeActivity : AppCompatActivity() {
+class EmployeeActivity : DrawerBaseActivity() {
 
     private lateinit var binding: ActivityEmployeeBinding
 
@@ -15,33 +15,20 @@ class EmployeeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEmployeeBinding.inflate(layoutInflater)
 
-        val idEmpresa = intent.getIntExtra("idEmp", 0)
+        val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
         setContentView(binding.root)
 
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
         binding.tvNewEmployee.setOnClickListener {
-            val productScreen = Intent(
-                this,
-                NewEmployeeActivity::class.java
-            )
-            productScreen.putExtra("idEmp", idEmpresa)
-            startActivity(productScreen)
+            startActivity(Intent(this, NewEmployeeActivity::class.java))
         }
         binding.tvProduct.setOnClickListener {
-            val productScreen = Intent(
-                this,
-                ProductActivity::class.java
-            )
-            productScreen.putExtra("idEmp", idEmpresa)
-            startActivity(productScreen)
+            startActivity(Intent(this, ProductActivity::class.java))
         }
         binding.tvSell.setOnClickListener {
-            val productScreen = Intent(
-                this,
-                ExtractActivity::class.java
-            )
-            productScreen.putExtra("idEmp", idEmpresa)
-            startActivity(productScreen)
+            startActivity(Intent(this, ExtractActivity::class.java))
         }
     }
+
 }

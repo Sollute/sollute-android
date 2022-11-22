@@ -73,11 +73,11 @@
             </LinearLayout>
 
 
-            <com.anychart.AnyChartView
-                android:id="@+id/any_chart_view"
-                android:layout_marginVertical="15sp"
-                android:layout_width="match_parent"
-                android:layout_height="200dp" />
+<!--            <com.anychart.AnyChartView-->
+<!--                android:id="@+id/any_chart_view"-->
+<!--                android:layout_marginVertical="15sp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="200dp" />-->
 
 
             <LinearLayout

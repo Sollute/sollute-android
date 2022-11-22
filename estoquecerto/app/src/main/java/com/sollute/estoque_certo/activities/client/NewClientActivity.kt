@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.databinding.ActivityNewClientBinding
 import com.sollute.estoque_certo.models.client.NewClient
 import com.sollute.estoque_certo.rest.Rest
@@ -13,7 +14,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class NewClientActivity : AppCompatActivity() {
+class NewClientActivity : DrawerBaseActivity() {
     private lateinit var binding: ActivityNewClientBinding
     private val httpClient: Client = Rest.getInstance().create(Client::class.java)
 
@@ -28,7 +29,7 @@ class NewClientActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnFinished.setOnClickListener { postClient(idEmpresa) }
-
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
     }
 
     private fun goBack(idEmpresa: Int) {
