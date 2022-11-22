@@ -134,7 +134,7 @@
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
-                android:src="@drawable/user_selected" />
+                android:src="@drawable/usercircle" />
 
         </LinearLayout>
 

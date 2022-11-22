@@ -21,7 +21,7 @@ class Login : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private val request: AuthLogin = Rest.getInstance().create(AuthLogin::class.java)
-    private var isOnline: Boolean = false
+    private var isOnline: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,23 +37,23 @@ class Login : AppCompatActivity() {
 
     private fun goRegister() = startActivity(Intent(this, RegisterActivity::class.java))
 
-    private fun productScreen(idEmpresa: Int) {
+    private fun productScreen() {
         val productScreen = Intent(
             this,
             ProductActivity::class.java
         )
-        productScreen.putExtra("isOnline", isOnline)
-        productScreen.putExtra("idEmp", idEmpresa)
         startActivity(productScreen)
     }
 
     private fun checkStatus() {
         request.check().enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                getPreferences(MODE_PRIVATE).also { it.edit().putBoolean("isOnline", true).apply() }
                 isOnline = true
             }
 
             override fun onFailure(call: Call<Void>, t: Throwable) {
+                getPreferences(MODE_PRIVATE).also {it.edit().putBoolean("isOnline", false).apply() }
                 isOnline = false
             }
         })
@@ -74,7 +74,12 @@ class Login : AppCompatActivity() {
                 ) {
                     when {
                         response.code() == 200 -> {
-                            productScreen(response.body()!!.idEmpresa)
+                            val sharedPreferences: SharedPreferences = getPreferences(MODE_PRIVATE)
+                                .also {
+                                    it.edit().putInt("idEmpresa", response.body()!!.idEmpresa)
+                                        .apply()
+                                }
+                            productScreen()
                         }
                         (response.code() == 401) -> {
                             Toast.makeText(
@@ -102,7 +107,7 @@ class Login : AppCompatActivity() {
             })
         } else {
             if (body.login.equals("sollute@gmail.com") && (body.senha.equals("sollute123"))) {
-                productScreen(1)
+                productScreen()
             } else {
                 Toast.makeText(
                     baseContext,

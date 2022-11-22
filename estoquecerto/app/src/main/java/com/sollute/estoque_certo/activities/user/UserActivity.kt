@@ -1,5 +1,6 @@
 package com.sollute.estoque_certo.activities.user
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,7 +18,6 @@ class UserActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserBinding
     private val httpClient: User = Rest.getInstance().create(User::class.java)
-    private var isOnline: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,32 +25,26 @@ class UserActivity : AppCompatActivity() {
         binding = ActivityUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val idEmpresa = intent.getIntExtra("idEmp", 0)
-        isOnline = intent.getBooleanExtra("isOnline", true)
+        val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
-        getInfo(idEmpresa)
+//        getInfo(idEmpresa)
 
         binding.tvProduct.setOnClickListener {
-            val productScreen = Intent(
-                this,
-                ProductActivity::class.java
-            )
-            productScreen.putExtra("idEmp", idEmpresa)
-            productScreen.putExtra("isOnline", isOnline)
-            startActivity(productScreen)
+            startActivity(Intent(this, ProductActivity::class.java))
         }
 
     }
 
     private fun getInfo(idEmpresa: Int) {
         httpClient.getInfo(idEmpresa).enqueue(object : Callback<UserResponse> {
+            @SuppressLint("SetTextI18n")
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                binding.tvNomeFantasia.text = "${binding.tvNomeFantasia.text}+ ${response.body()!!.nomeFantasia}"
-                binding.tvRazaoSocial.text = "${binding.tvRazaoSocial.text}+ ${response.body()!!.razaoSocial}"
-                binding.tvCNPJ.text = "${binding.tvCNPJ.text}+ ${response.body()!!.cnpj}"
-                binding.tvEmail.text = "${binding.tvEmail.text}+ ${response.body()!!.email}"
-                binding.tvLogradouro.text = "${binding.tvLogradouro.text}+ ${response.body()!!.logradouro}"
-                binding.tvCidade.text = "${binding.tvCidade.text}+ ${response.body()!!.cidade}"
+                binding.tvNomeFantasia.text = "${binding.tvNomeFantasia.text} + ${response.body()!!.nomeFantasia}"
+                binding.tvRazaoSocial.text = "${binding.tvRazaoSocial.text} + ${response.body()!!.razaoSocial}"
+                binding.tvCNPJ.text = "${binding.tvCNPJ.text} + ${response.body()!!.cnpj}"
+                binding.tvEmail.text = "${binding.tvEmail.text} + ${response.body()!!.email}"
+                binding.tvLogradouro.text = "${binding.tvLogradouro.text} + ${response.body()!!.logradouro}"
+                binding.tvCidade.text = "${binding.tvCidade.text} + ${response.body()!!.cidade}"
             }
 
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {

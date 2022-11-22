@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.MainActivity
 import com.sollute.estoque_certo.activities.client.ClientActivity
 import com.sollute.estoque_certo.databinding.ActivityNewProviderBinding
@@ -15,7 +16,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class NewProviderActivity: AppCompatActivity() {
+class NewProviderActivity: DrawerBaseActivity() {
     private lateinit var binding: ActivityNewProviderBinding
     private val httpClient: Provider = Rest.getInstance().create(Provider::class.java)
 
@@ -27,7 +28,7 @@ class NewProviderActivity: AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnFinished.setOnClickListener { postProvider(idEmpresa) }
-
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
     }
 
     private fun goBack(idEmpresa: Int) {

@@ -2,20 +2,15 @@ package com.sollute.estoque_certo.activities.provider
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sollute.estoque_certo.activities.client.EditClientActivity
-import com.sollute.estoque_certo.activities.client.NewClientActivity
+import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.employee.EmployeeActivity
 import com.sollute.estoque_certo.activities.extract.ExtractActivity
-import com.sollute.estoque_certo.adapters.AdapterClient
 import com.sollute.estoque_certo.adapters.AdapterProvider
 import com.sollute.estoque_certo.databinding.ActivityProviderBinding
-import com.sollute.estoque_certo.models.client.ListClient
-import com.sollute.estoque_certo.models.provider.EditProvider
 import com.sollute.estoque_certo.models.provider.ListProvider
 import com.sollute.estoque_certo.rest.Rest
 import com.sollute.estoque_certo.services.provider.Provider
@@ -23,7 +18,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ProviderActivity : AppCompatActivity() {
+class ProviderActivity : DrawerBaseActivity() {
 
     private lateinit var binding: ActivityProviderBinding
     private val httpClient: Provider = Rest.getInstance().create(Provider::class.java)
@@ -37,13 +32,14 @@ class ProviderActivity : AppCompatActivity() {
         list(idEmpresa)
         binding.tvPageName.setOnClickListener { list(idEmpresa) }
         binding.tvProduct.setOnClickListener { list(idEmpresa) }
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
         binding.tvSell.setOnClickListener {
-            val providerScreen = Intent(
+            val extractScreen = Intent(
                 this,
                 ExtractActivity::class.java
             )
-            providerScreen.putExtra("idEmp", idEmpresa)
-            startActivity(providerScreen)
+            extractScreen.putExtra("idEmp", idEmpresa)
+            startActivity(extractScreen)
         }
         binding.tvUser.setOnClickListener {
             val clientScreen = Intent(

@@ -4,7 +4,7 @@
     <string name="next_page">Próximo</string>
     <string name="back_page">Voltar</string>
     <string name="save">Salvar</string>
-    <string name="login">Login</string>
+    <string name="login">LOGIN</string>
     <string name="finalizar">Finalizar</string>
     <string name="atualizar">Atualizar</string>
     <string name="example_full_name">Nome Completo</string>
@@ -101,5 +101,9 @@
 
     <!--  Venda  -->
     <string name="sale_completed">Venda Finalizada</string>
+
+    <!-- Menu -->
+    <string name="menu_drawer_open">Drawer Open</string>
+    <string name="menu_drawer_close">Drawer Close</string>
 
 </resources>
