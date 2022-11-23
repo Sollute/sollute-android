@@ -8,12 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sollute.estoque_certo.R
 import com.sollute.estoque_certo.models.client.ListClient
-import com.sollute.estoque_certo.models.product.ListProduct
 
 class AdapterClient (
     private val context: Context,
     private val clients: MutableList<ListClient>,
-    private val clickLestener: (ListClient) -> Unit
+    private val clickListener: (ListClient) -> Unit
 ) : RecyclerView.Adapter<AdapterClient.ClientViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -22,7 +21,7 @@ class AdapterClient (
     ): ClientViewHolder {
         return ClientViewHolder(
             LayoutInflater.from(context).inflate(
-                R.layout.activity_product_item,
+                R.layout.activity_client_item,
                 parent,
                 false
             )
@@ -30,20 +29,18 @@ class AdapterClient (
     }
 
     override fun onBindViewHolder(holder: ClientViewHolder, position: Int) {
-        holder.clientName.text = clients[position].clientName
-        holder.clientPhone.text = clients[position].clientPhone.toString()
-        holder.clientCell.text = clients[position].clientCell.toString()
+        holder.clientName.text = clients[position].nomeCliente
+        holder.clientPhone.text = clients[position].telefoneCliente
 
         holder.itemView.setOnClickListener {
-            clickLestener(clients[position])
+            clickListener(clients[position])
         }
     }
 
     override fun getItemCount(): Int = clients.size
 
     inner class ClientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val clientName = itemView.findViewById<TextView>(R.id.tvClietName)
+        val clientName = itemView.findViewById<TextView>(R.id.tvClientName)
         val clientPhone = itemView.findViewById<TextView>(R.id.tvClientPhone)
-        val clientCell = itemView.findViewById<TextView>(R.id.tvClientCell)
     }
 }

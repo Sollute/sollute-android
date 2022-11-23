@@ -5,10 +5,7 @@ import com.sollute.estoque_certo.models.client.ListClient
 import com.sollute.estoque_certo.models.client.NewClient
 import com.sollute.estoque_certo.models.product.ListProduct
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface Client {
 
@@ -18,10 +15,10 @@ interface Client {
         @Body newClient: NewClient
     ): Call<Void>
 
-    @POST("/clientes/editar-cliente/{idEmpresa}/{idCliente}")
+    @POST("/clientes/editar-cliente/{idEmpresa}/{nome}")
     fun editClient(
         @Path("idEmpresa") idEmpresa: Int,
-        @Path("idCliente") idCliente: Int,
+        @Path("nome") nome: String,
         @Body editClient: EditClient
     ): Call<Void>
 
@@ -29,5 +26,11 @@ interface Client {
     fun listClients(
         @Path("idEmpresa") idEmpresa: Int
     ): Call<List<ListClient>>
+
+    @DELETE("/clientes/deletar-cliente-nome/{nomeCliente}/{idEmpresa}")
+    fun deleteClient(
+        @Path("nomeCliente") nomeCliente: String,
+        @Path("idEmpresa") idEmpresa: Int
+    ): Call<Void>
 
 }

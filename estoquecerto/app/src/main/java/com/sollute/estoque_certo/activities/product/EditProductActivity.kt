@@ -72,7 +72,10 @@ class EditProductActivity : DrawerBaseActivity() {
         })
     }
 
-    private fun edit(idEmpresa: Int, nome: String) {
+    private fun edit(
+        idEmpresa: Int,
+        nome: String
+    ) {
 
         val prod = EditProduct(
             binding.etInitialInventory.text.toString().toInt(),
