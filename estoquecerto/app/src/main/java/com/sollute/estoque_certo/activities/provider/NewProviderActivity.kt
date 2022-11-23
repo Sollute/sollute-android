@@ -16,7 +16,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class NewProviderActivity: DrawerBaseActivity() {
+class NewProviderActivity : DrawerBaseActivity() {
     private lateinit var binding: ActivityNewProviderBinding
     private val httpClient: Provider = Rest.getInstance().create(Provider::class.java)
 
@@ -27,7 +27,8 @@ class NewProviderActivity: DrawerBaseActivity() {
         val idEmpresa = intent.getIntExtra("idEmp", 0)
         setContentView(binding.root)
 
-        binding.btnFinished.setOnClickListener { postProvider(idEmpresa) }
+        binding.goBack.setOnClickListener { onBackPressed() }
+        binding.btnFinishProvider.setOnClickListener { postProvider(idEmpresa) }
         binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
     }
 

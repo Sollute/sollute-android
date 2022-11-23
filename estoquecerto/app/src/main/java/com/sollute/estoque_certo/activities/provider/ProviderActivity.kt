@@ -1,6 +1,5 @@
 package com.sollute.estoque_certo.activities.provider
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -21,6 +20,7 @@ import retrofit2.Response
 class ProviderActivity : DrawerBaseActivity() {
 
     private lateinit var binding: ActivityProviderBinding
+    private val listProviders: MutableList<ListProvider> = mutableListOf()
     private val httpClient: Provider = Rest.getInstance().create(Provider::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,81 +34,65 @@ class ProviderActivity : DrawerBaseActivity() {
         binding.tvProduct.setOnClickListener { list(idEmpresa) }
         binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
         binding.tvSell.setOnClickListener {
-            val extractScreen = Intent(
-                this,
-                ExtractActivity::class.java
-            )
-            extractScreen.putExtra("idEmp", idEmpresa)
-            startActivity(extractScreen)
+            startActivity(Intent(this, ExtractActivity::class.java))
         }
         binding.tvUser.setOnClickListener {
-            val clientScreen = Intent(
-                this,
-                EmployeeActivity::class.java
-            )
-            clientScreen.putExtra("idEmp", idEmpresa)
-            startActivity(clientScreen)
+            startActivity(Intent(this, EmployeeActivity::class.java))
         }
         binding.tvNewProvider.setOnClickListener {
-            val providerScreen = Intent(
-                this,
-                NewProviderActivity::class.java
-            )
-            providerScreen.putExtra("idEmp", idEmpresa)
-            startActivity(providerScreen)
+            startActivity(Intent(this, NewProviderActivity::class.java))
         }
     }
 
     private fun list(idEmpresa: Int) {
-        val listProvider: MutableList<ListProvider> = mutableListOf()
+
         val reciclewView = binding.rvProviderList
+
         reciclewView.layoutManager = LinearLayoutManager(this)
         reciclewView.setHasFixedSize(true)
 
-        val adapterProvider = AdapterProvider(this, listProvider) {
-            Toast.makeText(baseContext, it.providerName, Toast.LENGTH_SHORT).show()
+        val adapterProvider = AdapterProvider(this, listProviders) {
+            Toast.makeText(baseContext, it.nomeFornecedor, Toast.LENGTH_SHORT).show()
             val providerScreen = Intent(
                 this,
                 EditProviderActivity::class.java
             )
-            providerScreen.putExtra("providerName", it.providerName)
-            providerScreen.putExtra("idEmp", idEmpresa)
+            providerScreen.putExtra("providerName", it.nomeFornecedor)
             startActivity(providerScreen)
         }
 
-        with(httpClient) {
+        httpClient.listProvider(idEmpresa).enqueue(object : Callback<List<ListProvider>> {
 
-            listProvider(idEmpresa).enqueue(object : Callback<List<ListProvider>> {
-                @SuppressLint("SetTextI18n")
-                override fun onResponse(
-                    call: Call<List<ListProvider>>,
-                    response: Response<List<ListProvider>>
-                ) {
-                    when {
-                        (response.code() == 200) -> {
-                            for (index in response.body()!!) {
-                                listProvider.add(index)
-                            }
-                            reciclewView.adapter = adapterProvider
+            override fun onResponse(
+                call: Call<List<ListProvider>>,
+                response: Response<List<ListProvider>>
+            ) {
+                when {
+                    (response.code() == 200) -> {
+                        listProviders.clear()
+                        for (index in response.body()!!) {
+                            listProviders.add(index)
                         }
-                        (response.code() == 204) -> {
-                            binding.tvYourProvider.text = "Você não possui fornecedores cadastrados"
-                            binding.SearchProvider.visibility = View.INVISIBLE
-                        }
+                        reciclewView.adapter = adapterProvider
+                    }
+                    (response.code() == 204) -> {
+                        binding.tvYourProvider.text = "Você não possui fornecedores cadastrados"
+                        binding.SearchProvider.visibility = View.INVISIBLE
                     }
                 }
+            }
 
-                override fun onFailure(
-                    call: Call<List<ListProvider>>,
-                    t: Throwable
-                ) {
-                    Toast.makeText(
-                        baseContext,
-                        t.message,
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            })
-        }
+            override fun onFailure(
+                call: Call<List<ListProvider>>,
+                t: Throwable
+            ) {
+                Toast.makeText(
+                    baseContext,
+                    t.message,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
+
     }
 }
