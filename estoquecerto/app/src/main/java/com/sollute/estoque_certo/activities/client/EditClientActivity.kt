@@ -2,8 +2,8 @@ package com.sollute.estoque_certo.activities.client
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import com.sollute.estoque_certo.DrawerBaseActivity
-import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.databinding.ActivityEditClientBinding
 import com.sollute.estoque_certo.models.client.EditClient
 import com.sollute.estoque_certo.rest.Rest
@@ -13,8 +13,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class EditClientActivity : DrawerBaseActivity() {
+
     lateinit var binding: ActivityEditClientBinding
-    var nome: String = ""
     private val httpClient: Client = Rest.getInstance().create(Client::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,14 +22,15 @@ class EditClientActivity : DrawerBaseActivity() {
 
         binding = ActivityEditClientBinding.inflate(layoutInflater)
 
-        nome = intent.getStringExtra("clientName")!!
+        val nome = intent.getStringExtra("clientName")!!
         val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
         setContentView(binding.root)
 
         binding.btnBackToStep1.setOnClickListener { goBack() }
+        binding.btnEditClient.setOnClickListener { edit(idEmpresa, nome) }
         binding.btnMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
-//        binding.btnEditClient.setOnClickListener { edit(idEmpresa) }
+        binding.btnDeleteClient.setOnClickListener { delete(idEmpresa, nome) }
 
 //        getInfo(idEmpresa)
     }
@@ -41,6 +42,12 @@ class EditClientActivity : DrawerBaseActivity() {
 //    private fun getInfo(
 //        idEmpresa: Int
 //    ) {
+
+//        Precisa fazer um endpoint para recuperar as informações do cliente
+//        Precisa fazer um endpoint para recuperar as informações do cliente
+//        Precisa fazer um endpoint para recuperar as informações do cliente
+//        Precisa fazer um endpoint para recuperar as informações do cliente
+
 //        httpClient.listClients(idEmpresa).enqueue(object : Callback<EditClient> {
 //            override fun onResponse(
 //                call: Call<EditClient>,
@@ -68,46 +75,80 @@ class EditClientActivity : DrawerBaseActivity() {
 //        })
 //    }
 
-//    private fun edit(idEmpresa: Int) {
-//
-//        val prod = EditClient(
-//            binding.etClientName.text.toString(),
-//            binding.etClientPhone.text.toString(),
-//            binding.etClientCell.text.toString(),
-//        )
-//
-//        httpClient.editClient(
-//            idEmpresa = idEmpresa,
-//            nome = nome,
-//            editClient = prod
-//        ).enqueue(object : Callback<Void> {
-//            override fun onResponse(
-//                call: Call<Void>,
-//                response: Response<Void>
-//            ) {
-//                when {
-//                    (response.isSuccessful) -> {
-//                        Toast.makeText(
-//                            baseContext,
-//                            "Cliente editado com sucesso",
-//                            Toast.LENGTH_LONG
-//                        ).show()
-//                        goBack(idEmpresa)
-//                    }
-//                }
-//            }
-//
-//            override fun onFailure(
-//                call: Call<Void>,
-//                t: Throwable
-//            ) {
-//                Toast.makeText(
-//                    baseContext,
-//                    t.message,
-//                    Toast.LENGTH_LONG
-//                ).show()
-//            }
-//        })
-//    }
+    private fun edit(
+        idEmpresa: Int,
+        nome: String
+    ) {
 
+        val editClient = EditClient(
+            binding.etClientName.text.toString(),
+            binding.etClientPhone.text.toString(),
+            binding.etClientCell.text.toString(),
+        )
+
+        httpClient.editClient(
+            idEmpresa = idEmpresa,
+            nome = nome,
+            editClient = editClient
+        ).enqueue(object : Callback<Void> {
+            override fun onResponse(
+                call: Call<Void>,
+                response: Response<Void>
+            ) {
+                when {
+                    (response.isSuccessful) -> {
+                        Toast.makeText(
+                            baseContext,
+                            "Cliente editado com sucesso",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        goBack()
+                    }
+                }
+            }
+
+            override fun onFailure(
+                call: Call<Void>,
+                t: Throwable
+            ) {
+                Toast.makeText(
+                    baseContext,
+                    t.message,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
+    }
+
+    private fun delete(idEmpresa: Int, nome: String) {
+
+        httpClient.deleteClient(nome, idEmpresa).enqueue(object : Callback<Void> {
+            override fun onResponse(
+                call: Call<Void>,
+                response: Response<Void>
+            ) {
+                when {
+                    (response.isSuccessful) -> {
+                        Toast.makeText(
+                            baseContext,
+                            "Cliente excluído com sucesso",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        goBack()
+                    }
+                }
+            }
+
+            override fun onFailure(
+                call: Call<Void>,
+                t: Throwable
+            ) {
+                Toast.makeText(
+                    baseContext,
+                    t.message,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
+    }
 }

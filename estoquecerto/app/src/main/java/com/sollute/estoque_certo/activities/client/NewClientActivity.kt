@@ -24,33 +24,27 @@ class NewClientActivity : DrawerBaseActivity() {
 
         binding = ActivityNewClientBinding.inflate(layoutInflater)
 
-        val idEmpresa = intent.getIntExtra("idEmp", 0)
+        val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
         setContentView(binding.root)
 
-        binding.btnFinished.setOnClickListener { postClient(idEmpresa) }
+        binding.goBack.setOnClickListener { onBackPressed() }
+        binding.btnFinishClient.setOnClickListener { postClient(idEmpresa) }
         binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
     }
 
-    private fun goBack(idEmpresa: Int) {
-        val clientScreen = Intent(
-            this,
-            ClientActivity::class.java
-        )
-        clientScreen.putExtra("idEmp", idEmpresa)
-        startActivity(clientScreen)
+    private fun goBack() {
+        startActivity(Intent(this, ClientActivity::class.java))
     }
 
     private fun postClient(idEmpresa: Int) {
 
         val clientName = binding.etClientName.text.toString()
         val clientPhone = binding.etClientPhone.text.toString()
-        val clientCell = binding.etClientCell.text.toString()
 
         val newClient = NewClient(
             nomeCliente = clientName,
-            telefoneCliente = clientPhone,
-            celularCliente = clientCell,
+            telefoneCliente = clientPhone
         )
 
         httpClient.postClient(idEmpresa, newClient).enqueue(object : Callback<Void> {
@@ -63,7 +57,7 @@ class NewClientActivity : DrawerBaseActivity() {
                             "Cliente cadastrado com sucesso!",
                             Toast.LENGTH_LONG
                         ).show()
-                        goBack(idEmpresa)
+                        goBack()
                     }
                     (response.code() == 409) -> {
                         Toast.makeText(

@@ -29,6 +29,9 @@
             android:name=".activities.sale.SaleCompleted"
             android:exported="false" />
         <activity
+            android:name=".activities.client.EditClientActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.client.ClientActivity"
             android:exported="false">
             <meta-data

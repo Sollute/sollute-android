@@ -22,13 +22,13 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="10dp"
-            android:src="@drawable/ic_baseline_account_circle_24"
+            android:src="@drawable/ic_baseline_person_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             tools:text="Gabriel"
-            android:id="@+id/tvClietName"
+            android:id="@+id/tvClientName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="120dp"
@@ -52,7 +52,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/ivProductPhoto"
-            app:layout_constraintTop_toBottomOf="@id/tvClietName"
+            app:layout_constraintTop_toBottomOf="@id/tvClientName"
             tools:text="11 9806081 " />
 
         <TextView
