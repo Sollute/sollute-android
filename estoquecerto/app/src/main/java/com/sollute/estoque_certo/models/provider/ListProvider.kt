@@ -1,7 +1,9 @@
 package com.sollute.estoque_certo.models.provider
 
 data class ListProvider(
-    val providerName: String,
-    val providerPhone: String,
-    val providerProduct: String
+    val idFornecedor: Int,
+    val nomeFornecedor: String,
+    val telefoneFornecedor: String,
+    val nomeProduto: String,
+    val qtd: Int
 )
