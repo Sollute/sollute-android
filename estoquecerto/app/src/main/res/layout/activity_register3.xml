@@ -205,12 +205,24 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <CheckBox
+                        android:id="@+id/checkbox_terms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/terms" />
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginTop="70dp"
+                    android:layout_marginTop="20dp"
                     android:gravity="bottom|center"
                     tools:ignore="ObsoleteLayoutParam">
 
@@ -246,11 +258,11 @@
                             android:src="@drawable/chevron_left" />
 
                         <Button
-                            android:id="@+id/btnNextPageRegisterProduct"
+                            android:id="@+id/btnNextPageRegister"
                             android:layout_width="match_parent"
                             android:layout_height="55dp"
                             android:layout_gravity="center"
-                            android:backgroundTint="@color/background_header"
+                            android:backgroundTint="@color/background_text"
                             android:text="@string/finish" />
 
                     </LinearLayout>
