@@ -13,6 +13,7 @@
     <string name="example_salary">Salary</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="terms">I have read and agree to the terms of use</string>
 
     <!--  Produto  -->
     <string name="product_name">Product</string>

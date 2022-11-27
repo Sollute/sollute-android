@@ -12,6 +12,7 @@
     <string name="example_salary">Salário</string>
     <string name="yes">Sim</string>
     <string name="no">Não</string>
+    <string name="terms">Eu li e concordo com os termos de uso.</string>
 
     <!--  Produto  -->
     <string name="product_name">Produtos</string>

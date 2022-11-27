@@ -1,9 +1,14 @@
 package com.sollute.estoque_certo.activities.register
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.CheckBox
 import android.widget.Toast
+import com.sollute.estoque_certo.R
 import com.sollute.estoque_certo.activities.login.Login
 import com.sollute.estoque_certo.databinding.ActivityRegister3Binding
 import com.sollute.estoque_certo.models.company.NewCompany
@@ -26,10 +31,23 @@ class Register3Activity : AppCompatActivity() {
 
         binding.goBack.setOnClickListener { onBackPressed() }
         binding.tvLogin.setOnClickListener { login() }
-        binding.btnNextPageRegisterProduct.setOnClickListener { postCompany() }
+        binding.btnNextPageRegister.setOnClickListener { postCompany() }
+        binding.checkboxTerms.setOnClickListener { validRegister() }
     }
 
     private fun login() = startActivity(Intent(this, Login::class.java))
+
+    private fun validRegister() {
+        val check = binding.btnNextPageRegister
+
+        if (binding.checkboxTerms.isChecked) {
+            check.setBackgroundColor(getColor(R.color.background_header))
+            check.isEnabled = true
+        } else {
+            check.setBackgroundColor(getColor(R.color.background_text))
+            check.isEnabled = false
+        }
+    }
 
     private fun postCompany() {
 
