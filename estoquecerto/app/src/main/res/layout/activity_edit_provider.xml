@@ -40,21 +40,23 @@
                 android:textSize="20sp"
                 tools:ignore="UnusedAttribute" />
 
-            <ImageView
-                android:id="@+id/tvNewProduct"
+            <ImageButton
+                android:id="@+id/btnDeleteProvider"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
                 android:layout_weight="1.5"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:gravity="end"
-                android:textColor="@color/white" />
+                android:src="@drawable/trash_full" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="600dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="100dp"
             android:layout_marginRight="30dp"
@@ -151,33 +153,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Celular"
-                app:boxCornerRadiusBottomEnd="8dp"
-                app:boxCornerRadiusBottomStart="8dp"
-                app:boxCornerRadiusTopEnd="8dp"
-                app:boxCornerRadiusTopStart="8dp"
-                app:boxStrokeColor="@color/background_header"
-                app:counterEnabled="true"
-                app:counterMaxLength="25"
-                app:endIconMode="clear_text"
-                app:hintTextColor="@color/background_header">
-
-                <EditText
-                    android:id="@+id/etProviderCell"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/background_text"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    tools:text="11 987906081" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
 
         <LinearLayout
@@ -189,36 +164,31 @@
             android:layout_marginRight="20dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp">
 
-                <Button
-                    android:id="@+id/btnBackPage"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="210dp"
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:text="@string/back_page"
-                    android:textColor="@color/background_header"
-                    app:icon="@drawable/baseline_arrow_back_ios_24"
-                    app:strokeColor="@color/background_header"
-                    app:strokeWidth="3dp" />
+                    android:layout_marginEnd="25dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    android:src="@drawable/chevron_left"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
-                    android:id="@+id/btnUpdate"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="210dp"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/btnEditProvider"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:backgroundTint="@color/background_header"
-                    android:text="@string/atualizar"
-                    android:textColor="@color/white"
-                    app:icon="@drawable/ic_baseline_update_24" />
+                    android:text="@string/atualizar" />
 
             </LinearLayout>
 

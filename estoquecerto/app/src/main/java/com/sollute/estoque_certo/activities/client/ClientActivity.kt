@@ -20,8 +20,8 @@ import retrofit2.Response
 class ClientActivity : DrawerBaseActivity() {
 
     private lateinit var binding: ActivityClientBinding
-    private val httpClient: Client = Rest.getInstance().create(Client::class.java)
     private val listClients: MutableList<ListClient> = mutableListOf()
+    private val httpClient: Client = Rest.getInstance().create(Client::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +36,6 @@ class ClientActivity : DrawerBaseActivity() {
         binding.tvPageName.setOnClickListener { list(idEmpresa) }
         binding.tvProduct.setOnClickListener { list(idEmpresa) }
         binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
-
         binding.tvSell.setOnClickListener {
             startActivity(Intent(this, ExtractActivity::class.java))
         }
@@ -48,7 +47,9 @@ class ClientActivity : DrawerBaseActivity() {
         }
     }
 
-    private fun list(idEmpresa: Int) {
+    private fun list(
+        idEmpresa: Int
+    ) {
 
         val recyclerView = binding.rvClientList
 

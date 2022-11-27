@@ -22,7 +22,7 @@ open class DrawerBaseActivity : AppCompatActivity(),
     NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var drawerLayout: DrawerLayout
-    var idEmpresa = 1
+    private var idEmpresa = 1
 
     override fun setContentView(view: View?) {
         drawerLayout = layoutInflater.inflate(R.layout.activity_drawer_base, null) as DrawerLayout

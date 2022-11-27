@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <!-- permissions for INTERNET -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -22,6 +23,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".activities.provider.EditProviderActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.provider.ProviderActivity"
             android:exported="false" />

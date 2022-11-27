@@ -3,7 +3,6 @@ package com.sollute.estoque_certo.activities.client
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.databinding.ActivityNewClientBinding
 import com.sollute.estoque_certo.models.client.NewClient
@@ -13,11 +12,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class NewClientActivity : DrawerBaseActivity() {
+
     private lateinit var binding: ActivityNewClientBinding
     private val httpClient: Client = Rest.getInstance().create(Client::class.java)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,18 +35,24 @@ class NewClientActivity : DrawerBaseActivity() {
         startActivity(Intent(this, ClientActivity::class.java))
     }
 
-    private fun postClient(idEmpresa: Int) {
-
-        val clientName = binding.etClientName.text.toString()
-        val clientPhone = binding.etClientPhone.text.toString()
+    private fun postClient(
+        idEmpresa: Int
+    ) {
 
         val newClient = NewClient(
-            nomeCliente = clientName,
-            telefoneCliente = clientPhone
+            nomeCliente = binding.etClientName.text.toString(),
+            telefoneCliente = binding.etClientPhone.text.toString()
         )
 
-        httpClient.postClient(idEmpresa, newClient).enqueue(object : Callback<Void> {
-            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+        httpClient.postClient(
+            idEmpresa = idEmpresa,
+            newClient = newClient
+        ).enqueue(object : Callback<Void> {
+
+            override fun onResponse(
+                call: Call<Void>,
+                response: Response<Void>
+            ) {
 
                 when {
                     (response.isSuccessful) -> {
@@ -77,7 +81,10 @@ class NewClientActivity : DrawerBaseActivity() {
 
             }
 
-            override fun onFailure(call: Call<Void>, t: Throwable) {
+            override fun onFailure(
+                call: Call<Void>,
+                t: Throwable
+            ) {
                 print("not ok")
             }
 

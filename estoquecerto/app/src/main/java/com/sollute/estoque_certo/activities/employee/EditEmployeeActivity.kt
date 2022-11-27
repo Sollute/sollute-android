@@ -1,5 +1,6 @@
 package com.sollute.estoque_certo.activities.employee
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -19,23 +20,43 @@ class EditEmployeeActivity : DrawerBaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityEditEmployeeBinding.inflate(layoutInflater)
 
         val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
+        val employeeName = binding.etEmployeeName.text.toString()
 
         setContentView(binding.root)
 
         binding.btnBack.setOnClickListener { goBack() }
         binding.btnEditEmployee.setOnClickListener { edit(idEmpresa) }
-        binding.btnDeleteEmployee.setOnClickListener { delete(idEmpresa) }
+        binding.btnDeleteEmployee.setOnClickListener { confirmation(employeeName, idEmpresa) }
         binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
     }
 
-    private fun goBack() {
-        startActivity(Intent(this, EmployeeActivity::class.java))
-    }
+    private fun goBack() = startActivity(Intent(this, EmployeeActivity::class.java))
 
-    private fun delete(idEmpresa: Int) {
+    private fun confirmation(
+        employeeName: String,
+        idEmpresa: Int
+    ) = AlertDialog.Builder(this)
+        .also {
+            it.setTitle("Atenção")
+            it.setMessage("Tem certeza que deseja excluir o funcionário $employeeName ?")
+            it.setPositiveButton("Excluir") { _, _ -> delete(idEmpresa) }
+            it.setNegativeButton("Cancelar") { option, _ ->
+                option.cancel()
+                Toast.makeText(
+                    this,
+                    "Ação cancelada",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }.create().show()
+
+    private fun delete(
+        idEmpresa: Int
+    ) {
 
         httpClient.deleteEmployee(
             cpfFuncionario = binding.etEmployeeCPF.text.toString(),
@@ -72,7 +93,9 @@ class EditEmployeeActivity : DrawerBaseActivity() {
 
     }
 
-    private fun edit(idEmpresa: Int) {
+    private fun edit(
+        idEmpresa: Int
+    ) {
 
         val editEmployee = EditEmployee(
             nomeFuncionario = binding.etEmployeeName.text.toString(),
@@ -131,4 +154,5 @@ class EditEmployeeActivity : DrawerBaseActivity() {
         })
 
     }
+
 }

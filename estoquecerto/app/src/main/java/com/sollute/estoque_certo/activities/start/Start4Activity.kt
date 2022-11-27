@@ -3,9 +3,7 @@ package com.sollute.estoque_certo.activities.start
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.sollute.estoque_certo.R
 import com.sollute.estoque_certo.activities.register.RegisterActivity
-import com.sollute.estoque_certo.databinding.ActivityStart2Binding
 import com.sollute.estoque_certo.databinding.ActivityStart4Binding
 
 class Start4Activity : AppCompatActivity() {
@@ -16,29 +14,18 @@ class Start4Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityStart4Binding.inflate(layoutInflater)
-        setContentView(binding.root)
-        binding.btnNextPageStart.setOnClickListener {
-            irTelaRegister()
-        }
 
-        binding.goBack.setOnClickListener {
-            irTelaStart3()
-        }
+        setContentView(binding.root)
+
+        binding.btnNextPageStart.setOnClickListener { irTelaRegister() }
+        binding.goBack.setOnClickListener { irTelaStart3() }
     }
 
     private fun irTelaRegister() {
-        val telaRegister = Intent(
-            this,
-            RegisterActivity::class.java
-        )
-        startActivity(telaRegister)
+        startActivity(Intent(this, RegisterActivity::class.java))
     }
 
     private fun irTelaStart3() {
-        val tela3 = Intent(
-            this,
-            Start1Activity::class.java
-        )
-        startActivity(tela3)
+        startActivity(Intent(this, Start1Activity::class.java))
     }
 }

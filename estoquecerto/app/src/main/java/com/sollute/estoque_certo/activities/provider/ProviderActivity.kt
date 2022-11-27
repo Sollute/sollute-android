@@ -25,11 +25,14 @@ class ProviderActivity : DrawerBaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityProviderBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val idEmpresa = intent.getIntExtra("idEmp", 0)
+
+        val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
         list(idEmpresa)
+
         binding.tvPageName.setOnClickListener { list(idEmpresa) }
         binding.tvProduct.setOnClickListener { list(idEmpresa) }
         binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
@@ -44,12 +47,14 @@ class ProviderActivity : DrawerBaseActivity() {
         }
     }
 
-    private fun list(idEmpresa: Int) {
+    private fun list(
+        idEmpresa: Int
+    ) {
 
-        val reciclewView = binding.rvProviderList
+        val recyclerView = binding.rvProviderList
 
-        reciclewView.layoutManager = LinearLayoutManager(this)
-        reciclewView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
 
         val adapterProvider = AdapterProvider(this, listProviders) {
             Toast.makeText(baseContext, it.nomeFornecedor, Toast.LENGTH_SHORT).show()
@@ -73,7 +78,7 @@ class ProviderActivity : DrawerBaseActivity() {
                         for (index in response.body()!!) {
                             listProviders.add(index)
                         }
-                        reciclewView.adapter = adapterProvider
+                        recyclerView.adapter = adapterProvider
                     }
                     (response.code() == 204) -> {
                         binding.tvYourProvider.text = "Você não possui fornecedores cadastrados"
