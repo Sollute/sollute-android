@@ -1,5 +1,6 @@
 package com.sollute.estoque_certo.activities.product
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -22,28 +23,45 @@ class EditProductActivity : DrawerBaseActivity() {
 
         binding = ActivityEditProductBinding.inflate(layoutInflater)
 
-        val nome = intent.getStringExtra("productName")!!
+        val name = intent.getStringExtra("productName")!!
         val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
         setContentView(binding.root)
 
         binding.btnBackToStep1.setOnClickListener { goBack() }
-        binding.btnDeleteProduct.setOnClickListener { delete(idEmpresa, nome) }
-        binding.btnEditProduct.setOnClickListener { edit(idEmpresa, nome) }
+        binding.btnEditProduct.setOnClickListener { edit(idEmpresa, name) }
+        binding.btnDeleteProduct.setOnClickListener { confirmation(name, idEmpresa) }
         binding.btnMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
 
-        getInfo(nome, idEmpresa)
+        getInfo(name, idEmpresa)
     }
 
-    private fun goBack() {
-        startActivity(Intent(this, ProductActivity::class.java))
-    }
+    private fun goBack() = startActivity(Intent(this, ProductActivity::class.java))
+
+    private fun confirmation(
+        productName: String,
+        idEmpresa: Int
+    ) = AlertDialog.Builder(this)
+        .also {
+            it.setTitle("Atenção")
+            it.setMessage("Tem certeza que deseja excluir o produto $productName ?")
+            it.setCancelable(false)
+            it.setPositiveButton("Excluir") { _, _ -> delete(idEmpresa, productName) }
+            it.setNegativeButton("Cancelar") { option, _ ->
+                option.cancel()
+                Toast.makeText(
+                    this,
+                    "Ação cancelada",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }.create().show()
 
     private fun getInfo(
-        name: String,
+        productName: String,
         idEmpresa: Int
     ) {
-        httpClient.getInfo(name, idEmpresa).enqueue(object : Callback<EditProduct> {
+        httpClient.getInfo(productName, idEmpresa).enqueue(object : Callback<EditProduct> {
             override fun onResponse(
                 call: Call<EditProduct>,
                 response: Response<EditProduct>
@@ -74,7 +92,7 @@ class EditProductActivity : DrawerBaseActivity() {
 
     private fun edit(
         idEmpresa: Int,
-        nome: String
+        productName: String
     ) {
 
         val prod = EditProduct(
@@ -87,7 +105,7 @@ class EditProductActivity : DrawerBaseActivity() {
 
         httpClient.editProduct(
             idEmpresa = idEmpresa,
-            nome = nome,
+            nome = productName,
             editProduct = prod
         ).enqueue(object : Callback<Void> {
             override fun onResponse(
@@ -119,8 +137,12 @@ class EditProductActivity : DrawerBaseActivity() {
         })
     }
 
-    private fun delete(idEmpresa: Int, nome: String) {
-        httpClient.deleteProduct(nome, idEmpresa).enqueue(object : Callback<Void> {
+    private fun delete(
+        idEmpresa: Int,
+        productName: String
+    ) {
+
+        httpClient.deleteProduct(productName, idEmpresa).enqueue(object : Callback<Void> {
             override fun onResponse(
                 call: Call<Void>,
                 response: Response<Void>

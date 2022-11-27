@@ -1,5 +1,6 @@
 package com.sollute.estoque_certo.activities.client
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -22,32 +23,49 @@ class EditClientActivity : DrawerBaseActivity() {
 
         binding = ActivityEditClientBinding.inflate(layoutInflater)
 
-        val nome = intent.getStringExtra("clientName")!!
+        val clientName = intent.getStringExtra("clientName")!!
         val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
         setContentView(binding.root)
 
         binding.btnBackToStep1.setOnClickListener { goBack() }
-        binding.btnEditClient.setOnClickListener { edit(idEmpresa, nome) }
+        binding.btnEditClient.setOnClickListener { edit(idEmpresa, clientName) }
         binding.btnMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
-        binding.btnDeleteClient.setOnClickListener { delete(idEmpresa, nome) }
+        binding.btnDeleteClient.setOnClickListener { confirmation(clientName, idEmpresa) }
 
 //        getInfo(idEmpresa)
     }
 
-    private fun goBack() {
-        startActivity(Intent(this, ClientActivity::class.java))
-    }
+    private fun goBack() = startActivity(Intent(this, ClientActivity::class.java))
+
+    private fun confirmation(
+        clientName: String,
+        idEmpresa: Int
+    ) = AlertDialog.Builder(this)
+        .also {
+            it.setTitle("Atenção")
+            it.setMessage("Tem certeza que deseja excluir o cliente $clientName ?")
+            it.setPositiveButton("Excluir") { _, _ -> delete(idEmpresa, clientName) }
+            it.setNegativeButton("Cancelar") { option, _ ->
+                option.cancel()
+                Toast.makeText(
+                    this,
+                    "Ação cancelada",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }.create().show()
+
 
 //    private fun getInfo(
 //        idEmpresa: Int
 //    ) {
-
-//        Precisa fazer um endpoint para recuperar as informações do cliente
-//        Precisa fazer um endpoint para recuperar as informações do cliente
-//        Precisa fazer um endpoint para recuperar as informações do cliente
-//        Precisa fazer um endpoint para recuperar as informações do cliente
-
+//
+////        Precisa fazer um endpoint para recuperar as informações do cliente
+////        Precisa fazer um endpoint para recuperar as informações do cliente
+////        Precisa fazer um endpoint para recuperar as informações do cliente
+////        Precisa fazer um endpoint para recuperar as informações do cliente
+//
 //        httpClient.listClients(idEmpresa).enqueue(object : Callback<EditClient> {
 //            override fun onResponse(
 //                call: Call<EditClient>,
@@ -75,9 +93,10 @@ class EditClientActivity : DrawerBaseActivity() {
 //        })
 //    }
 
+
     private fun edit(
         idEmpresa: Int,
-        nome: String
+        clientName: String
     ) {
 
         val editClient = EditClient(
@@ -88,9 +107,10 @@ class EditClientActivity : DrawerBaseActivity() {
 
         httpClient.editClient(
             idEmpresa = idEmpresa,
-            nome = nome,
+            nome = clientName,
             editClient = editClient
         ).enqueue(object : Callback<Void> {
+
             override fun onResponse(
                 call: Call<Void>,
                 response: Response<Void>
@@ -120,9 +140,16 @@ class EditClientActivity : DrawerBaseActivity() {
         })
     }
 
-    private fun delete(idEmpresa: Int, nome: String) {
+    private fun delete(
+        idEmpresa: Int,
+        clientName: String
+    ) {
 
-        httpClient.deleteClient(nome, idEmpresa).enqueue(object : Callback<Void> {
+        httpClient.deleteClient(
+            clientName,
+            idEmpresa
+        ).enqueue(object : Callback<Void> {
+
             override fun onResponse(
                 call: Call<Void>,
                 response: Response<Void>
@@ -150,5 +177,6 @@ class EditClientActivity : DrawerBaseActivity() {
                 ).show()
             }
         })
+
     }
 }
