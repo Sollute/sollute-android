@@ -8,44 +8,68 @@ import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
+import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.R
+import com.sollute.estoque_certo.databinding.ActivityDashboardBinding
 
-class DashboardActivity : AppCompatActivity() {
+class DashboardActivity : DrawerBaseActivity() {
 
-    lateinit var barChart:BarChart
+    lateinit var barChart: BarChart
+    lateinit var binding: ActivityDashboardBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+        binding = ActivityDashboardBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
 
+        barChart = findViewById(R.id.bar_chart)
 
-        barChart=findViewById(R.id.bar_chart)
+        val list1: ArrayList<BarEntry> = arrayListOf(BarEntry(100f, 150f))
+        val list2: ArrayList<BarEntry> = arrayListOf(BarEntry(101f, 120f))
+        val list3: ArrayList<BarEntry> = arrayListOf(BarEntry(102f, 100f))
+        val list4: ArrayList<BarEntry> = arrayListOf(BarEntry(103f, 80f))
+        val list5: ArrayList<BarEntry> = arrayListOf(BarEntry(104f, 80f))
 
+        val barDataSet1 = BarDataSet(list1, "Produto 1")
+        val barDataSet2 = BarDataSet(list2, "Produto 2")
+        val barDataSet3 = BarDataSet(list3, "Produto 3")
+        val barDataSet4 = BarDataSet(list4, "Produto 4")
+        val barDataSet5 = BarDataSet(list5, "Produto 5")
 
-        val list: ArrayList<BarEntry> = ArrayList()
+        barDataSet1.setColors(ColorTemplate.rgb("#daa520"), 255)
+        barDataSet1.valueTextColor = Color.BLACK
+        barDataSet2.setColors(ColorTemplate.rgb("#c0c0c0"), 255)
+        barDataSet2.valueTextColor = Color.BLACK
+        barDataSet3.setColors(ColorTemplate.rgb("#cd7f32"), 255)
+        barDataSet3.valueTextColor = Color.BLACK
+        barDataSet4.setColors(ColorTemplate.rgb("#56c2de"), 255)
+        barDataSet4.valueTextColor = Color.BLACK
+        barDataSet5.setColors(ColorTemplate.rgb("#de7256"), 255)
+        barDataSet5.valueTextColor = Color.BLACK
 
-        list.add(BarEntry(100f,100f))
-        list.add(BarEntry(101f,200f))
-        list.add(BarEntry(102f,300f))
-        list.add(BarEntry(103f,400f))
-        list.add(BarEntry(104f,200f))
+        val barData1 = BarData(barDataSet1, barDataSet2, barDataSet3, barDataSet4, barDataSet5)
 
-
-        val barDataSet= BarDataSet(list,"List")
-
-        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS,255)
-        barDataSet.valueTextColor=Color.BLACK
-
-        val barData= BarData(barDataSet)
-
-        barChart.setFitBars(true)
-
-        barChart.data= barData
-
-        barChart.description.text= "Bar Chart"
-
+        barChart.setFitBars(false)
+        barChart.data = barData1
         barChart.animateY(2000)
+
+    }
+
+
+    inner class Formatter(
+        private var mValues: ArrayList<String>
+    ) : IndexAxisValueFormatter() {
+
+        fun Formatter(values: ArrayList<String>) {
+            this.mValues = values
+        }
+
+        override fun getFormattedValue(value: Float): String {
+            return super.getFormattedValue(value)
+        }
 
     }
 }

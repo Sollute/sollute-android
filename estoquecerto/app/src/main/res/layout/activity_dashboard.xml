@@ -38,7 +38,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="100dp"
                 android:layout_weight="5"
-                android:text="@string/dash_value"
+                android:text="@string/dash_chart"
                 android:textColor="@color/white"
                 android:textSize="40dp" />
 
@@ -64,7 +64,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Vendas Do Dia"
+                    android:text="Produtos mais vendidos"
                     android:textAlignment="center"
                     android:textSize="30dp"
                     android:textStyle="bold" />
@@ -73,7 +73,8 @@
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/bar_chart"
                 android:layout_width="match_parent"
-                android:layout_height="500dp">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="85dp">
 
             </com.github.mikephil.charting.charts.BarChart>
         </LinearLayout>
