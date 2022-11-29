@@ -123,7 +123,14 @@
         <!--        </activity>-->
 
         <!--        =========================        -->
+        <activity android:name=".activities.dashboard.DashboardActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activities.client.NewClientActivity"
             android:exported="false" />
@@ -135,13 +142,8 @@
             android:exported="false" />
         <activity
             android:name=".activities.start.Start1Activity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

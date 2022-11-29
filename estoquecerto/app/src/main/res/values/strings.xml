@@ -88,7 +88,7 @@
     <string name="employee_cpf">CPF</string>
 
     <!-- Dashboard -->
-    <string name="dash_value">R$XX,XX</string>
+    <string name="dash_chart">Gráficos</string>
 
     <!-- Telas inicias -->
     <string name="sub_titulo">Gerenciando sua empresa com inteligência</string>
