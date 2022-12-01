@@ -1,5 +1,6 @@
 package com.sollute.estoque_certo.activities.dashboard;
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import com.github.mikephil.charting.charts.BarChart
@@ -9,6 +10,9 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.sollute.estoque_certo.R
 import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
+import com.sollute.estoque_certo.activities.product.NewProductFirstActivity
+import com.sollute.estoque_certo.activities.product.ProductActivity
+import com.sollute.estoque_certo.activities.user.UserActivity
 import com.sollute.estoque_certo.databinding.ActivityDashboardBinding
 import com.sollute.estoque_certo.models.dashboard.ListTop
 import com.sollute.estoque_certo.rest.Rest
@@ -33,8 +37,14 @@ class DashboardActivity : DrawerBaseActivity() {
 
         binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
 
-        barChart = findViewById(R.id.bar_chart)
+        binding.tvUser.setOnClickListener {
+            startActivity(Intent(this, UserActivity::class.java))
+        }
+        binding.tvProduct.setOnClickListener {
+            startActivity(Intent(this, ProductActivity::class.java))
+        }
 
+        barChart = findViewById(R.id.bar_chart)
     }
 
     private fun getList(idEmpresa: Int) {
@@ -68,13 +78,12 @@ class DashboardActivity : DrawerBaseActivity() {
                     barDataSet5.setColors(ColorTemplate.rgb("#de7256"), 255)
                     barDataSet5.valueTextColor = Color.BLACK
 
-                    val barData1 = BarData(
-                        barDataSet1, barDataSet2, barDataSet3, barDataSet4, barDataSet5
-                    )
+                    val barData1 = BarData(barDataSet1, barDataSet2, barDataSet3)
 
                     barChart.setFitBars(false)
                     barChart.data = barData1
                     barChart.animateY(2000)
+
                 } else {
                     val list1: ArrayList<BarEntry> =
                         arrayListOf(BarEntry(100f, response.body()!![0].qtdVendidos.toFloat()))
@@ -104,12 +113,11 @@ class DashboardActivity : DrawerBaseActivity() {
                     barDataSet5.setColors(ColorTemplate.rgb("#de7256"), 255)
                     barDataSet5.valueTextColor = Color.BLACK
 
-                    val barData1 =
-                        BarData(barDataSet1, barDataSet2, barDataSet3, barDataSet4, barDataSet5)
+                    val barData1 = BarData(barDataSet1, barDataSet2, barDataSet3)
 
                     barChart.setFitBars(false)
                     barChart.data = barData1
-                    barChart.animateY(2000)
+                    barChart.animateY(3000)
                 }
             }
         })
