@@ -3,7 +3,7 @@ package com.sollute.estoque_certo.activities.provider
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import com.sollute.estoque_certo.DrawerBaseActivity
+import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.databinding.ActivityNewProviderBinding
 import com.sollute.estoque_certo.models.provider.NewProvider
 import com.sollute.estoque_certo.rest.Rest

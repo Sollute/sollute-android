@@ -2,7 +2,7 @@ package com.sollute.estoque_certo.activities.employee
 
 import android.content.Intent
 import android.os.Bundle
-import com.sollute.estoque_certo.DrawerBaseActivity
+import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.extract.ExtractActivity
 import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.databinding.ActivityEmployeeBinding
@@ -10,6 +10,8 @@ import com.sollute.estoque_certo.databinding.ActivityEmployeeBinding
 class EmployeeActivity : DrawerBaseActivity() {
 
     private lateinit var binding: ActivityEmployeeBinding
+    //private val l: MutableList<ListClient> = mutableListOf()
+    //    private val httpClient: Client = Rest.getInstance().create(Client::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
