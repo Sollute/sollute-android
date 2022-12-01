@@ -59,12 +59,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="35dp"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="100dp"
             android:layout_marginRight="35dp"
             android:layout_marginBottom="80dp">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvProductList"
+                android:id="@+id/rvEmployeeList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

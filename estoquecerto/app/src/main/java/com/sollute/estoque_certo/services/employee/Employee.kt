@@ -2,6 +2,7 @@ package com.sollute.estoque_certo.services.employee
 
 import com.sollute.estoque_certo.models.employee.NewEmployee
 import com.sollute.estoque_certo.models.employee.EditEmployee
+import com.sollute.estoque_certo.models.employee.ListEmployee
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -25,5 +26,10 @@ interface Employee {
         @Path("cpfFuncionario") cpfFuncionario: String,
         @Path("idEmpresa") idEmpresa: Int
     ): Call<Void>
+
+    @GET("/funcionarios/listar-funcionarios/{idEmpresa}")
+    fun listEmployees(
+        @Path("idEmpresa") idEmpresa: Int
+    ): Call<List<ListEmployee>>
 
 }

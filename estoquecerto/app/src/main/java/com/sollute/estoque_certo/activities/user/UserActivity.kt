@@ -2,9 +2,9 @@ package com.sollute.estoque_certo.activities.user
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.databinding.ActivityUserBinding
 import com.sollute.estoque_certo.models.user.UserResponse
@@ -14,7 +14,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class UserActivity : AppCompatActivity() {
+class UserActivity : DrawerBaseActivity() {
 
     private lateinit var binding: ActivityUserBinding
     private val httpClient: User = Rest.getInstance().create(User::class.java)
