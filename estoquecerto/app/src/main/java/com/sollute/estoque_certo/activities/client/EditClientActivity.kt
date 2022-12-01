@@ -4,7 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import com.sollute.estoque_certo.DrawerBaseActivity
+import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.databinding.ActivityEditClientBinding
 import com.sollute.estoque_certo.models.client.EditClient
 import com.sollute.estoque_certo.rest.Rest
@@ -42,19 +42,17 @@ class EditClientActivity : DrawerBaseActivity() {
         clientName: String,
         idEmpresa: Int
     ) = AlertDialog.Builder(this)
-        .also {
-            it.setTitle("Atenção")
-            it.setMessage("Tem certeza que deseja excluir o cliente $clientName ?")
-            it.setPositiveButton("Excluir") { _, _ -> delete(idEmpresa, clientName) }
-            it.setNegativeButton("Cancelar") { option, _ ->
-                option.cancel()
-                Toast.makeText(
-                    this,
-                    "Ação cancelada",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }.create().show()
+        .setTitle("Atenção")
+        .setMessage("Tem certeza que deseja excluir o cliente $clientName ?")
+        .setPositiveButton("Excluir") { option, _ ->
+            option.cancel()
+            delete(idEmpresa, clientName)
+        }
+        .setNegativeButton("Cancelar") { option, _ ->
+            option.cancel()
+            Toast.makeText(this, "Ação cancelada", Toast.LENGTH_SHORT).show()
+        }
+        .create().show()
 
 
 //    private fun getInfo(

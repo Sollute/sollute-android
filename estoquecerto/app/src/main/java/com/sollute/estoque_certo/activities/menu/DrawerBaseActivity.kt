@@ -1,15 +1,16 @@
-package com.sollute.estoque_certo
+package com.sollute.estoque_certo.activities.menu
 
 import android.content.Intent
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.sollute.estoque_certo.R
 import com.sollute.estoque_certo.activities.client.ClientActivity
 import com.sollute.estoque_certo.activities.dashboard.DashboardActivity
 import com.sollute.estoque_certo.activities.employee.EmployeeActivity
