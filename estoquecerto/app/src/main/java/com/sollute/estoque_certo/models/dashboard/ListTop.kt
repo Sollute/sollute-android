@@ -7,6 +7,7 @@ data class ListTop(
     val marca: String,
     val categoria: String,
     val tamanho: String,
+    val peso: Double,
     val precoCompra: Double,
     val precoVenda: Double,
     val estoque: Int,
