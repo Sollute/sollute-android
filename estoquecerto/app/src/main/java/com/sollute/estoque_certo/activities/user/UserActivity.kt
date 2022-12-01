@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import com.sollute.estoque_certo.activities.dashboard.DashboardActivity
 import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.databinding.ActivityUserBinding
@@ -29,6 +30,9 @@ class UserActivity : DrawerBaseActivity() {
 
 //        getInfo(idEmpresa)
 
+        binding.tvDashboard.setOnClickListener {
+            startActivity(Intent(this, DashboardActivity::class.java))
+        }
         binding.tvProduct.setOnClickListener {
             startActivity(Intent(this, ProductActivity::class.java))
         }
