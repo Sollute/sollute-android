@@ -15,6 +15,7 @@ import com.sollute.estoque_certo.activities.client.ClientActivity
 import com.sollute.estoque_certo.activities.dashboard.DashboardActivity
 import com.sollute.estoque_certo.activities.employee.EmployeeActivity
 import com.sollute.estoque_certo.activities.extract.ExtractActivity
+import com.sollute.estoque_certo.activities.login.Login
 import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.activities.provider.ProviderActivity
 import com.sollute.estoque_certo.activities.user.UserActivity
@@ -90,6 +91,8 @@ open class DrawerBaseActivity : AppCompatActivity(),
                 return true
             }
             R.id.nav_logout -> {
+                startActivity(Intent(this, Login::class.java))
+                getPreferences(MODE_PRIVATE).apply { this.edit().clear().apply() }
                 return true
             }
         }

@@ -10,6 +10,8 @@ import com.sollute.estoque_certo.databinding.ActivityEmployeeBinding
 class EmployeeActivity : DrawerBaseActivity() {
 
     private lateinit var binding: ActivityEmployeeBinding
+    //private val l: MutableList<ListClient> = mutableListOf()
+    //    private val httpClient: Client = Rest.getInstance().create(Client::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

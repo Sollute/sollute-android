@@ -1,22 +1,18 @@
 package com.sollute.estoque_certo.activities.dashboard;
 
-
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
-import com.sollute.estoque_certo.DrawerBaseActivity
 import com.sollute.estoque_certo.R
+import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.databinding.ActivityDashboardBinding
 import com.sollute.estoque_certo.models.dashboard.ListTop
 import com.sollute.estoque_certo.rest.Rest
 import com.sollute.estoque_certo.services.dashboard.Dashboard
-import com.sollute.estoque_certo.services.product.Product
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
