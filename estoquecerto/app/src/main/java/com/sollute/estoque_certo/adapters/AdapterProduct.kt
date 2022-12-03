@@ -12,7 +12,7 @@ import com.sollute.estoque_certo.models.product.ListProduct
 class AdapterProduct(
     private val context: Context,
     private val products: MutableList<ListProduct>,
-    private val clickLestener: (ListProduct) -> Unit
+    private val clickListener: (ListProduct) -> Unit
 ) : RecyclerView.Adapter<AdapterProduct.ProductViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -34,7 +34,7 @@ class AdapterProduct(
         holder.productQuantity.text = products[position].productQuantity.toString()
 
         holder.itemView.setOnClickListener {
-            clickLestener(products[position])
+            clickListener(products[position])
         }
     }
 

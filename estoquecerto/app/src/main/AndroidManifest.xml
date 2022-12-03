@@ -19,14 +19,17 @@
 
         <!-- Start -->
 
+        <!--        <activity-->
+        <!--            android:name=".activities.start.Start1Activity"-->
+        <!--            android:exported="true">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
         <activity
             android:name=".activities.start.Start1Activity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".activities.start.Start2Activity"
             android:exported="false" />
@@ -160,7 +163,12 @@
 
         <activity
             android:name=".activities.extract.ExtractActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activities.extract.NewExpenseActivity"
             android:exported="false" />

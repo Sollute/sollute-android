@@ -1,11 +1,11 @@
 package com.sollute.estoque_certo.activities.extract
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.sollute.estoque_certo.R
 import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.activities.user.UserActivity
@@ -58,7 +58,7 @@ class ExtractActivity : DrawerBaseActivity() {
         val adapterExtract = AdapterExtract(this, listExtract)
 
         httpClient.list(idEmpresa).enqueue(object : Callback<List<ListExtract>> {
-            @SuppressLint("SetTextI18n")
+
             override fun onResponse(
                 call: Call<List<ListExtract>>,
                 response: Response<List<ListExtract>>
