@@ -108,5 +108,6 @@
     <string name="menu_drawer_close">Drawer Close</string>
     <string name="finalizar_venda">Finalizar Venda</string>
     <string name="adcionar_venda">Adcionar Venda</string>
+    <string name="produtos_mais_vendidos">Produtos mais vendidos</string>
 
 </resources>

@@ -3,7 +3,7 @@ package com.sollute.estoque_certo.activities.product
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.sollute.estoque_certo.DrawerBaseActivity
+import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.databinding.ActivityNewProductFirstBinding
 
 class NewProductFirstActivity : DrawerBaseActivity() {

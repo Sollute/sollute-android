@@ -1,5 +1,6 @@
 package com.sollute.estoque_certo.models.login
 
 data class LoginResponse(
-    val idEmpresa: Int
+    val idEmpresa: Int,
+    val nomeEmpresa: String
 )

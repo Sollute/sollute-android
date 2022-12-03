@@ -12,7 +12,6 @@ import com.sollute.estoque_certo.models.login.Login
 import com.sollute.estoque_certo.models.login.LoginResponse
 import com.sollute.estoque_certo.rest.Rest
 import com.sollute.estoque_certo.services.auth.AuthLogin
-import okhttp3.internal.wait
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

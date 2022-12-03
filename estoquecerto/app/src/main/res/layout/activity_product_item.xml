@@ -18,7 +18,7 @@
 
 
         <ImageView
-            android:id="@+id/ivProductPhoto"
+            android:id="@+id/ivEmployeePhoto"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="10dp"
@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvExtractName"
+            android:id="@+id/tvProductName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="120dp"
@@ -38,11 +38,11 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ivProductPhoto"
+            app:layout_constraintStart_toEndOf="@id/ivEmployeePhoto"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvExtractTime"
+            android:id="@+id/tvProductStock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -51,19 +51,19 @@
             android:text="Estoque: "
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/ivProductPhoto"
-            app:layout_constraintTop_toBottomOf="@id/tvExtractName" />
+            app:layout_constraintStart_toEndOf="@id/ivEmployeePhoto"
+            app:layout_constraintTop_toBottomOf="@id/tvProductName" />
 
         <TextView
-            android:id="@+id/tvExtractAmount"
+            android:id="@+id/tvProductAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginEnd="30dp"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tvExtractTime"
-            app:layout_constraintTop_toBottomOf="@id/tvExtractName" />
+            app:layout_constraintStart_toEndOf="@id/tvProductStock"
+            app:layout_constraintTop_toBottomOf="@id/tvProductName" />
 
         <TextView
             android:id="@+id/tvProductPrice"
@@ -76,8 +76,8 @@
             android:textColor="@android:color/holo_green_dark"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/ivProductPhoto"
-            app:layout_constraintTop_toBottomOf="@id/tvExtractAmount" />
+            app:layout_constraintStart_toEndOf="@id/ivEmployeePhoto"
+            app:layout_constraintTop_toBottomOf="@id/tvProductAmount" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

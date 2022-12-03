@@ -1,7 +1,7 @@
 package com.sollute.estoque_certo.activities.sale
 
 import android.os.Bundle
-import com.sollute.estoque_certo.DrawerBaseActivity
+import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.databinding.ActivitySaleCompletedBinding
 
 class SaleCompleted : DrawerBaseActivity() {

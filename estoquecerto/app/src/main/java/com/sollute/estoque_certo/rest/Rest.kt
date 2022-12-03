@@ -19,5 +19,4 @@ object Rest {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
 }

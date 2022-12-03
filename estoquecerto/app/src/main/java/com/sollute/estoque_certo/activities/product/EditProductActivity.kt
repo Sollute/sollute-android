@@ -1,10 +1,13 @@
 package com.sollute.estoque_certo.activities.product
 
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import com.sollute.estoque_certo.DrawerBaseActivity
+import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
+import com.sollute.estoque_certo.activities.client.ClientActivity
+import com.sollute.estoque_certo.activities.start.Start1Activity
 import com.sollute.estoque_certo.databinding.ActivityEditProductBinding
 import com.sollute.estoque_certo.models.product.EditProduct
 import com.sollute.estoque_certo.rest.Rest
@@ -42,19 +45,16 @@ class EditProductActivity : DrawerBaseActivity() {
         productName: String,
         idEmpresa: Int
     ) = AlertDialog.Builder(this)
-        .also {
-            it.setTitle("Atenção")
-            it.setMessage("Tem certeza que deseja excluir o produto $productName ?")
-            it.setCancelable(false)
-            it.setPositiveButton("Excluir") { _, _ -> delete(idEmpresa, productName) }
-            it.setNegativeButton("Cancelar") { option, _ ->
-                option.cancel()
-                Toast.makeText(
-                    this,
-                    "Ação cancelada",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
+        .setTitle("Atenção")
+        .setMessage("Tem certeza que deseja excluir o produto $productName ?")
+        .setCancelable(false)
+        .setPositiveButton("Excluir") { option, _ ->
+            option.cancel()
+            delete(idEmpresa, productName)
+        }
+        .setNegativeButton("Cancelar") { option, _ ->
+            option.cancel()
+            Toast.makeText(this, "Ação cancelada", Toast.LENGTH_SHORT).show()
         }.create().show()
 
     private fun getInfo(

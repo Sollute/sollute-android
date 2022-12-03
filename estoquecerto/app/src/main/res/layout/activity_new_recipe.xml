@@ -43,8 +43,8 @@
 
             <ImageButton
                 android:id="@+id/tvSwitch"
-                android:layout_width="0dp"
                 style="?attr/borderlessButtonStyle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
@@ -93,6 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:maxLength="25"
+                    android:text="Teste receita"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -119,6 +120,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:text="200"
                     android:textColor="@color/background_text"
                     android:textSize="12sp"
                     android:textStyle="bold" />
