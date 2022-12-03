@@ -106,5 +106,7 @@
     <!-- Menu -->
     <string name="menu_drawer_open">Drawer Open</string>
     <string name="menu_drawer_close">Drawer Close</string>
+    <string name="finalizar_venda">Finalizar Venda</string>
+    <string name="adcionar_venda">Adcionar Venda</string>
 
 </resources>
