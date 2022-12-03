@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.sollute.estoque_certo.R
 import com.sollute.estoque_certo.models.extract.ListExtract
@@ -32,9 +33,9 @@ class AdapterExtract(
         holder.extractTime.text = extracts[position].extractTime
         holder.extractAmount.text = extracts[position].extractAmount.toString()
         when (extracts[position].extractType) {
-            1 -> holder.extractAmount.setBackgroundColor(R.color.red)
-            2 -> holder.extractAmount.setBackgroundColor(R.color.red)
-            3 -> holder.extractAmount.setBackgroundColor(R.color.red)
+            1 -> holder.extractAmount.setTextColor(AppCompatResources.getColorStateList(this, R.color.red))
+            2 -> holder.extractAmount.setTextColor(AppCompatResources.getColorStateList(this, R.color.green))
+            3 -> holder.extractAmount.setTextColor(AppCompatResources.getColorStateList(this, R.color.blue))
         }
     }
 
