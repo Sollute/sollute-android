@@ -1,12 +1,8 @@
 package com.sollute.estoque_certo.activities.register
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.CheckBox
 import android.widget.Toast
 import com.sollute.estoque_certo.R
 import com.sollute.estoque_certo.activities.login.Login

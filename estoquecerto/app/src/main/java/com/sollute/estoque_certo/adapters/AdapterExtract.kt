@@ -1,6 +1,5 @@
 package com.sollute.estoque_certo.adapters
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -12,37 +11,32 @@ import com.sollute.estoque_certo.models.extract.ListExtract
 
 class AdapterExtract(
     private val context: Context,
-    private val extracts: MutableList<ListExtract>,
-//    private val clickListener: (ListExtract) -> Unit
+    private val extracts: MutableList<ListExtract>
 ) : RecyclerView.Adapter<AdapterExtract.ExtractViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ExtractViewHolder {
-        return ExtractViewHolder(
-            LayoutInflater.from(context).inflate(
-                R.layout.activity_extract_item,
-                parent,
-                false
-            )
+    ) = ExtractViewHolder(
+        LayoutInflater.from(context).inflate(
+            R.layout.activity_extract_item,
+            parent,
+            false
         )
-    }
+    )
+
+    override fun getItemCount(): Int = extracts.size
 
     override fun onBindViewHolder(holder: ExtractViewHolder, position: Int) {
-
         holder.extractName.text = extracts[position].extractName
         holder.extractTime.text = extracts[position].extractTime
         holder.extractAmount.text = extracts[position].extractAmount.toString()
-        if (extracts[position].extractType == 1) {
-            holder.extractAmount.setTextColor(R.color.red.toInt())
-        } else {
-            holder.extractAmount.setTextColor(R.color.green.toInt())
+        when (extracts[position].extractType) {
+            1 -> holder.extractAmount.setBackgroundColor(R.color.red)
+            2 -> holder.extractAmount.setBackgroundColor(R.color.red)
+            3 -> holder.extractAmount.setBackgroundColor(R.color.red)
         }
-        //holder.itemView.setOnClickListener { clickListener(extracts[position]) }
     }
-
-    override fun getItemCount(): Int = extracts.size
 
     inner class ExtractViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val extractName = itemView.findViewById<TextView>(R.id.tvExtractName)

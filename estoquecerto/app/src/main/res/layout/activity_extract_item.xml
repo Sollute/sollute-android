@@ -17,11 +17,11 @@
         tools:layout_editor_absoluteY="3dp">
 
         <ImageView
-            android:id="@+id/ivEmployeePhoto"
+            android:id="@+id/ivExtractPhoto"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="10dp"
-            android:src="@drawable/extract_photo"
+            android:src="@drawable/ic_extract"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,14 +29,14 @@
             android:id="@+id/tvExtractName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="110dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:maxLines="1"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/ivEmployeePhoto"
+            app:layout_constraintStart_toEndOf="@id/ivExtractPhoto"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Aluguel da Loja" />
 
@@ -44,27 +44,26 @@
             android:id="@+id/tvExtractTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10.5dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="20.5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/ivEmployeePhoto"
+            app:layout_constraintStart_toEndOf="@id/ivExtractPhoto"
             app:layout_constraintTop_toBottomOf="@id/tvExtractName"
             tools:text="10/09/2022 00:05" />
 
         <TextView
             android:id="@+id/tvExtractAmount"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20.5dp"
+            android:layout_marginTop="10dp"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvExtractName"
+            app:layout_constraintStart_toEndOf="@id/ivExtractPhoto"
+            app:layout_constraintTop_toBottomOf="@id/tvExtractTime"
             tools:text="R$1.500,00" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
