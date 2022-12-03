@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FinishSaleActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/background_header">
+
+            <ImageButton
+                android:id="@+id/tvMenuHamburguer"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_weight="1.5"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/hamburger_lg" />
+
+            <TextView
+                android:id="@+id/tvPageName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="10"
+                android:fontFamily="sans-serif-thin"
+                android:gravity="center"
+                android:text="@string/adcionar_venda"
+                android:textColor="@color/white"
+                android:textFontWeight="600"
+                android:textSize="20sp"
+                tools:targetApi="p" />
+
+            <ImageButton
+                android:id="@+id/tvNewProduct"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="20sp"
+                android:layout_weight="1.5"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:gravity="end"
+                android:src="@drawable/add_plus"
+                tools:ignore="UnusedAttribute" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="80dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProductList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="500dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/border_item_1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_item_2"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subtotal:"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total:"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="560dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/border_item_1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_item_2"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pagamento:"
+                    android:textColor="@color/black"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="520dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp">
+
+            <Button
+                android:id="@+id/btnEditClient"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/background_header"
+                android:text="@string/finalizar_venda" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="380dp"
+            android:layout_height="65dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/border">
+
+            <ImageButton
+                android:id="@+id/tvSell"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:src="@drawable/shopping_cart_03" />
+
+            <ImageButton
+                android:id="@+id/tvDashboard"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:src="@drawable/chart_line" />
+
+            <ImageButton
+                android:id="@+id/tvAdd"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:src="@drawable/add_plus_circle" />
+
+            <ImageButton
+                android:id="@+id/tvProduct"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:src="@drawable/gift" />
+
+            <ImageButton
+                android:id="@+id/tvUser"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20sp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:src="@drawable/usercircle" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

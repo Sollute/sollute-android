@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- permissions for INTERNET -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -28,6 +27,15 @@
         <!--            </intent-filter>-->
         <!--        </activity>-->
         <activity
+            android:name=".FinishSaleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DrawerBaseActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
             android:name=".activities.start.Start1Activity"
             android:exported="false" />
         <activity
@@ -200,6 +208,39 @@
         <!-- Menu Lateral -->
 
         <activity
+            android:name=".activities.product.ProductActivity"
+            android:exported="false" /> <!-- USO EXCLUSIVO PARA TESTES -->
+        <!-- <activity -->
+        <!-- android:name=".activities.product.ProductActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <!-- ========================= -->
+        <activity
+            android:name=".activities.dashboard.DashboardActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.client.NewClientActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.provider.NewProviderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.login.Login"
+            android:exported="false" />
+        <activity
+            android:name=".activities.start.Start1Activity"
+            android:exported="true" />
             android:name=".activities.menu.DrawerBaseActivity"
             android:exported="false">
             <meta-data

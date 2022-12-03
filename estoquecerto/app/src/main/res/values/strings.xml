@@ -14,9 +14,6 @@
     <string name="no">Não</string>
     <string name="terms">Eu li e concordo com os termos de uso.</string>
 
-
-
-
     <!--  Produto  -->
     <string name="product_name">Produtos</string>
     <string name="product_new">Novo Produto</string>
@@ -109,6 +106,8 @@
     <!-- Menu -->
     <string name="menu_drawer_open">Drawer Open</string>
     <string name="menu_drawer_close">Drawer Close</string>
+    <string name="finalizar_venda">Finalizar Venda</string>
+    <string name="adcionar_venda">Adcionar Venda</string>
     <string name="produtos_mais_vendidos">Produtos mais vendidos</string>
 
 </resources>
