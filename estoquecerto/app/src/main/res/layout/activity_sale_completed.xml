@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.product.ProductActivity">
+    tools:context=".activities.sale.SaleCompleted">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -92,17 +92,17 @@
                 android:textSize="20sp" />
 
             <LinearLayout
-                android:layout_marginTop="50dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="20dp">
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp">
 
                 <Button
                     android:id="@+id/btnYes"
                     android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/background_header"
                     android:text="@string/yes"
@@ -142,7 +142,7 @@
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
-                android:src="@drawable/shopping_cart_01" />
+                android:src="@drawable/shopping_cart_03" />
 
             <ImageButton
                 android:id="@+id/tvDashboard"

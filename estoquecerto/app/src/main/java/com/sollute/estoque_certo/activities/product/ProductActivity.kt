@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sollute.estoque_certo.activities.dashboard.DashboardActivity
 import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
+import com.sollute.estoque_certo.activities.sale.AddSaleActivity
 import com.sollute.estoque_certo.activities.user.UserActivity
 import com.sollute.estoque_certo.adapters.AdapterProduct
 import com.sollute.estoque_certo.databinding.ActivityProductBinding
@@ -42,6 +43,9 @@ class ProductActivity : DrawerBaseActivity() {
         binding.tvProduct.setOnClickListener { list(idEmpresa, isOnline, productCreated) }
         binding.tvPageName.setOnClickListener { list(idEmpresa, isOnline, productCreated) }
 
+        binding.tvSell.setOnClickListener {
+            startActivity(Intent(this, AddSaleActivity::class.java))
+        }
         binding.tvDashboard.setOnClickListener {
             startActivity(Intent(this, DashboardActivity::class.java))
         }

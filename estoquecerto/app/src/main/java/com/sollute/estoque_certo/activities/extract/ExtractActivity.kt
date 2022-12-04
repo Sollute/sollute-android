@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sollute.estoque_certo.R
 import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.product.ProductActivity
 import com.sollute.estoque_certo.activities.user.UserActivity
@@ -20,7 +19,7 @@ import retrofit2.Response
 
 class ExtractActivity : DrawerBaseActivity() {
 
-    private lateinit var binding: ActivityExtractBinding
+    public lateinit var bindingExtract: ActivityExtractBinding
     private val httpClient: Extract = Rest.getInstance().create(Extract::class.java)
     private var isOnline: Boolean = true
 
@@ -30,28 +29,28 @@ class ExtractActivity : DrawerBaseActivity() {
         val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
         isOnline = getPreferences(MODE_PRIVATE).getBoolean("isOnline", true)
 
-        binding = ActivityExtractBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        bindingExtract = ActivityExtractBinding.inflate(layoutInflater)
+        setContentView(bindingExtract.root)
 
         list(idEmpresa)
 
-        binding.tvPageName.setOnClickListener { list(idEmpresa) }
-        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
+        bindingExtract.tvPageName.setOnClickListener { list(idEmpresa) }
+        bindingExtract.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
 
-        binding.tvNewExtract.setOnClickListener {
+        bindingExtract.tvNewExtract.setOnClickListener {
             startActivity(Intent(this, NewRecipeActivity::class.java))
         }
-        binding.tvProduct.setOnClickListener {
+        bindingExtract.tvProduct.setOnClickListener {
             startActivity(Intent(this, ProductActivity::class.java))
         }
-        binding.tvUser.setOnClickListener {
+        bindingExtract.tvUser.setOnClickListener {
             startActivity(Intent(this, UserActivity::class.java))
         }
     }
 
     private fun list(idEmpresa: Int) {
         val listExtract: MutableList<ListExtract> = mutableListOf()
-        val recyclerView = binding.rvExtractList
+        val recyclerView = bindingExtract.rvExtractList
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
@@ -71,9 +70,9 @@ class ExtractActivity : DrawerBaseActivity() {
                         recyclerView.adapter = adapterExtract
                     }
                     (response.code() == 204) -> {
-                        binding.tvTittleExtract.text =
+                        bindingExtract.tvTittleExtract.text =
                             "Você não possui nenhum histórico de lançamento"
-                        binding.SearchExtract.visibility = View.INVISIBLE
+                        bindingExtract.SearchExtract.visibility = View.INVISIBLE
                     }
                 }
             }

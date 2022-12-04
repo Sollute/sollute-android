@@ -39,7 +39,6 @@ class NewExpenseActivity : DrawerBaseActivity() {
 
         val newExpense = NewExtract(
             extractName = binding.etExpenseName.text.toString(),
-//            extractTime = "bbbb",
             extractTime = SimpleDateFormat("dd/M/yyyy      hh:mm:ss").format(Date()),
             extractAmount = binding.etExpenseValue.text.toString().toDouble(),
             extract_type = 1

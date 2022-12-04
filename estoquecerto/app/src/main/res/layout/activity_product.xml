@@ -124,7 +124,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvProductList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                tools:listitem="@layout/activity_product_item" />
 
         </LinearLayout>
 

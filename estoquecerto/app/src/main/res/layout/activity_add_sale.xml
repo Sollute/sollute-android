@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.sale.FinishSaleActivity">
+    tools:context=".activities.sale.AddSaleActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,6 +12,7 @@
 
         <!-- Menu Superior -->
         <LinearLayout
+            android:id="@+id/LLMenuSuperior"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@color/background_header">
@@ -35,31 +36,53 @@
                 android:layout_weight="10"
                 android:fontFamily="sans-serif-thin"
                 android:gravity="center"
-                android:text="@string/finalizar_venda"
+                android:text="@string/adicionar_venda"
                 android:textColor="@color/white"
                 android:textFontWeight="600"
                 android:textSize="20sp"
                 tools:targetApi="p" />
 
             <ImageButton
-                style="?attr/borderlessButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="20sp"
                 android:layout_weight="1.5"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:gravity="end" />
+
+        </LinearLayout>
+
+        <!-- Label Produtos -->
+        <LinearLayout
+            android:id="@+id/LLLabelProdutos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LLMenuSuperior"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvLabelProdutos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Produtos"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <!-- RecyclewView -->
         <LinearLayout
-            android:id="@+id/LLRecyclerView"
+            android:id="@+id/LLRecycler"
             android:layout_width="match_parent"
-            android:layout_height="360dp"
+            android:layout_height="400dp"
+            android:layout_below="@+id/LLLabelProdutos"
             android:layout_marginLeft="35dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginRight="35dp">
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="80dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvProductList"
@@ -69,90 +92,33 @@
 
         </LinearLayout>
 
-        <!-- SUBTOTAL E TOTAL -->
-        <LinearLayout
-            android:id="@+id/LLSubTotalAndTotal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/LLRecyclerView"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="40dp"
-            android:background="@drawable/border_item_1"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/border_item_2"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <TextView
-                    android:id="@+id/tvTotal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Total:"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- Pagamento -->
-        <LinearLayout
-            android:id="@+id/LLPagamento"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/LLSubTotalAndTotal"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="40dp"
-            android:background="@drawable/border_item_1"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/border_item_2"
-                android:padding="5dp">
-
-                <TextView
-                    android:id="@+id/tvPayment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Pagamento:"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- BOTÃO FINALIZAR VENDA -->
+        <!-- Botão Continuar -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/LLPagamento"
+            android:layout_above="@+id/LLMenuInferior"
             android:layout_marginStart="100dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="50dp"
             android:layout_marginEnd="100dp">
 
             <Button
-                android:id="@+id/btnFinishSell"
+                android:id="@+id/btnNextPage"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/background_header"
-                android:text="@string/finalizar_venda" />
+                android:text="@string/next_page" />
         </LinearLayout>
 
-        <!-- MENU INFERIOR -->
+        <!-- Menu Inferior -->
         <LinearLayout
+            android:id="@+id/LLMenuInferior"
             android:layout_width="380dp"
             android:layout_height="65dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:background="@drawable/border">
 
             <ImageButton
