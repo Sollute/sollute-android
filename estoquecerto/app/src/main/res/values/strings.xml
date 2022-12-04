@@ -107,7 +107,9 @@
     <string name="menu_drawer_open">Drawer Open</string>
     <string name="menu_drawer_close">Drawer Close</string>
     <string name="finalizar_venda">Finalizar Venda</string>
-    <string name="adcionar_venda">Adcionar Venda</string>
+    <string name="adicionar_venda">Adicionar Venda</string>
+    <string name="metodo_pagamento">Método de Pagamento</string>
+    <string name="realizar_venda">Realizar Venda</string>
     <string name="produtos_mais_vendidos">Produtos mais vendidos</string>
 
 </resources>
