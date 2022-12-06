@@ -124,6 +124,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvExtractList"
                 android:layout_width="match_parent"
+                tools:listitem="@layout/activity_extract_item"
                 android:layout_height="match_parent" />
 
         </LinearLayout>

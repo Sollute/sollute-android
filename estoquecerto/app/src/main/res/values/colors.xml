@@ -7,7 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="red">#FF0000</color>
+    <color name="red_dialog">#9A2626</color>
     <color name="green">#26FF00</color>
+    <color name="green_dialog">#58D642</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_header">#566FF0</color>
     <color name="background_text">#999999</color>

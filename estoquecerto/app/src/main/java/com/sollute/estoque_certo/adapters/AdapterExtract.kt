@@ -33,9 +33,9 @@ class AdapterExtract(
         holder.extractTime.text = extracts[position].extractTime
         holder.extractAmount.text = extracts[position].extractAmount.toString()
         when (extracts[position].extractType) {
-            1 -> holder.extractAmount.setTextColor(AppCompatResources.getColorStateList(this, R.color.red))
-            2 -> holder.extractAmount.setTextColor(AppCompatResources.getColorStateList(this, R.color.green))
-            3 -> holder.extractAmount.setTextColor(AppCompatResources.getColorStateList(this, R.color.blue))
+            1 -> holder.extractAmount.setTextColor(AppCompatResources.getColorStateList(context, R.color.red))
+            2 -> holder.extractAmount.setTextColor(AppCompatResources.getColorStateList(context, R.color.green))
+            3 -> holder.extractAmount.setTextColor(AppCompatResources.getColorStateList(context, R.color.blue))
         }
     }
 

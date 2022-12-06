@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.sollute.estoque_certo.activities.dashboard.DashboardActivity
 import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.product.ProductActivity
+import com.sollute.estoque_certo.activities.sale.AddSaleActivity
 import com.sollute.estoque_certo.databinding.ActivityUserBinding
 import com.sollute.estoque_certo.models.user.UserResponse
 import com.sollute.estoque_certo.rest.Rest
@@ -30,6 +31,9 @@ class UserActivity : DrawerBaseActivity() {
 
 //        getInfo(idEmpresa)
 
+        binding.tvSell.setOnClickListener {
+            startActivity(Intent(this, AddSaleActivity::class.java))
+        }
         binding.tvDashboard.setOnClickListener {
             startActivity(Intent(this, DashboardActivity::class.java))
         }

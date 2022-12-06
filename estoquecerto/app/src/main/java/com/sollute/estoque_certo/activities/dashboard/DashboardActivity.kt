@@ -12,6 +12,7 @@ import com.sollute.estoque_certo.R
 import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.activities.product.NewProductFirstActivity
 import com.sollute.estoque_certo.activities.product.ProductActivity
+import com.sollute.estoque_certo.activities.sale.AddSaleActivity
 import com.sollute.estoque_certo.activities.user.UserActivity
 import com.sollute.estoque_certo.databinding.ActivityDashboardBinding
 import com.sollute.estoque_certo.models.dashboard.ListTop
@@ -37,6 +38,9 @@ class DashboardActivity : DrawerBaseActivity() {
 
         binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
 
+        binding.tvSell.setOnClickListener {
+            startActivity(Intent(this, AddSaleActivity::class.java))
+        }
         binding.tvUser.setOnClickListener {
             startActivity(Intent(this, UserActivity::class.java))
         }
