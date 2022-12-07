@@ -19,7 +19,6 @@ class Start1Activity : AppCompatActivity() {
         binding.btnStart.setOnClickListener { irTelaStart2() }
     }
 
-    private fun irTelaStart2() {
-        startActivity(Intent(this, Start2Activity::class.java))
-    }
+    private fun irTelaStart2() = startActivity(Intent(this, Start2Activity::class.java))
+
 }

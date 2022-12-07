@@ -57,46 +57,41 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/LLCaixa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="100dp"
             android:layout_marginRight="50dp"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/SearchExtract"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="Descrição da despesa"
-                app:boxCornerRadiusBottomEnd="8dp"
-                app:boxCornerRadiusBottomStart="8dp"
-                app:boxCornerRadiusTopEnd="8dp"
-                app:boxCornerRadiusTopStart="8dp"
-                app:boxStrokeColor="@color/background_header"
-                app:counterEnabled="true"
-                app:counterMaxLength="25"
-                app:endIconMode="clear_text"
-                app:hintTextColor="@color/background_header">
+                android:layout_weight="1"
+                android:text="Caixa:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/background_text"
-                    android:textSize="12sp"
-                    tools:text="" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/tvValorCaixa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="R$ 450,00" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/LLLabelHistorico"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/LLCaixa"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="50dp"
             android:orientation="vertical">
 
@@ -116,25 +111,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@+id/LLMenuInferior"
+            android:layout_below="@+id/LLLabelHistorico"
             android:layout_marginLeft="35dp"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="35dp"
-            android:layout_marginBottom="80dp">
+            android:layout_marginBottom="15dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvExtractList"
                 android:layout_width="match_parent"
-                tools:listitem="@layout/activity_extract_item"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                tools:listitem="@layout/activity_extract_item" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/LLMenuInferior"
             android:layout_width="380dp"
             android:layout_height="65dp"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="100dp"
             android:layout_marginRight="15dp"
             android:background="@drawable/border">
 

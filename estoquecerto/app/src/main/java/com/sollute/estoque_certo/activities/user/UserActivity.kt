@@ -29,8 +29,6 @@ class UserActivity : DrawerBaseActivity() {
 
         val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
-//        getInfo(idEmpresa)
-
         binding.tvSell.setOnClickListener {
             startActivity(Intent(this, AddSaleActivity::class.java))
         }

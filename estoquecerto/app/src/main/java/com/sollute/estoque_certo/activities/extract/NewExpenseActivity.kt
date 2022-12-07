@@ -7,6 +7,7 @@ import com.sollute.estoque_certo.activities.menu.DrawerBaseActivity
 import com.sollute.estoque_certo.databinding.ActivityNewExpenseBinding
 import com.sollute.estoque_certo.models.extract.NewExtract
 import com.sollute.estoque_certo.rest.Rest
+import com.sollute.estoque_certo.services.cashier.Cashier
 import com.sollute.estoque_certo.services.extract.Extract
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,7 +18,8 @@ import java.util.*
 class NewExpenseActivity : DrawerBaseActivity() {
 
     lateinit var binding: ActivityNewExpenseBinding
-    private val httpClient: Extract = Rest.getInstance().create(Extract::class.java)
+    private val httpClientExtract: Extract = Rest.getInstance().create(Extract::class.java)
+    private val httpClientCashier: Cashier = Rest.getInstance().create(Cashier::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +30,16 @@ class NewExpenseActivity : DrawerBaseActivity() {
         val idEmpresa: Int = getPreferences(MODE_PRIVATE).getInt("idEmpresa", 1)
 
         binding.btnSave.setOnClickListener { postExpense(idEmpresa) }
-        binding.goBack.setOnClickListener { startActivity(Intent(this, ExtractActivity::class.java)) }
-        binding.tvSwitch.setOnClickListener { startActivity(Intent(this, NewRecipeActivity::class.java)) }
         binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
+        binding.goBack.setOnClickListener {
+            startActivity(Intent(this, ExtractActivity::class.java))
+        }
+        binding.tvSwitch.setOnClickListener {
+            startActivity(Intent(this, NewRecipeActivity::class.java))
+        }
     }
 
-    private fun goBack() { startActivity(Intent(this, ExtractActivity::class.java)) }
+    private fun goBack() = startActivity(Intent(this, ExtractActivity::class.java))
 
     private fun postExpense(idEmpresa: Int) {
 
@@ -44,7 +50,7 @@ class NewExpenseActivity : DrawerBaseActivity() {
             extract_type = 1
         )
 
-        httpClient.postExtract(idEmpresa, newExpense).enqueue(object : Callback<Void> {
+        httpClientExtract.postExtract(idEmpresa, newExpense).enqueue(object : Callback<Void> {
 
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 when {
@@ -54,6 +60,7 @@ class NewExpenseActivity : DrawerBaseActivity() {
                             "Despesa cadastrada com sucesso!",
                             Toast.LENGTH_LONG
                         ).show()
+                        updateCashier(idEmpresa, newExpense.extractAmount)
                         goBack()
                     }
                 }
@@ -63,8 +70,21 @@ class NewExpenseActivity : DrawerBaseActivity() {
                 print("not ok")
 
             }
-
         })
+    }
 
+    private fun updateCashier(
+        idEmpresa: Int,
+        amount: Double
+    ) {
+        httpClientCashier.removeValue(idEmpresa, amount).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                print("ok")
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                print("not ok")
+            }
+        })
     }
 }

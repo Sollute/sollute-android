@@ -9,14 +9,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="590dp"
+        android:layout_height="600dp"
         android:background="@drawable/borderbottom"
-        android:bottomLeftRadius="20dp"
-        android:bottomRightRadius="20dp"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:topLeftRadius="0dp"
-        android:topRightRadius="0dp">
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -42,38 +38,41 @@
             android:text="@string/s3_subtitulo"
             android:textColor="@color/white" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            android:src="@drawable/tres_pontos_3" />
-
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="30dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="20dp">
 
-        <ImageButton
-            android:id="@+id/goBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginEnd="25dp"
-            android:background="@color/white"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:src="@drawable/chevron_left" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
 
-        <Button
-            android:id="@+id/btnNextPageStart"
-            android:layout_width="150dp"
-            android:layout_height="55dp"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/background_header"
-            android:text="@string/next_page" />
+            <ImageButton
+                android:id="@+id/btnBackToStep3"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="25dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:src="@drawable/chevron_left" />
+
+            <Button
+                android:id="@+id/btnFinish"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/background_header"
+                android:text="Próximo" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

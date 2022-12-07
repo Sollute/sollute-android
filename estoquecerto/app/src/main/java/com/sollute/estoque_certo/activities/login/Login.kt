@@ -47,12 +47,12 @@ class Login : AppCompatActivity() {
     private fun checkStatus() {
         request.check().enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                getPreferences(MODE_PRIVATE).also { it.edit().putBoolean("isOnline", true).apply() }
+                getPreferences(MODE_PRIVATE).apply { this.edit().putBoolean("isOnline", true).apply() }
                 isOnline = true
             }
 
             override fun onFailure(call: Call<Void>, t: Throwable) {
-                getPreferences(MODE_PRIVATE).also {it.edit().putBoolean("isOnline", false).apply() }
+                getPreferences(MODE_PRIVATE).apply { this.edit().putBoolean("isOnline", false).apply() }
                 isOnline = false
             }
         })
@@ -73,11 +73,9 @@ class Login : AppCompatActivity() {
                 ) {
                     when {
                         response.code() == 200 -> {
-                            val sharedPreferences: SharedPreferences = getPreferences(MODE_PRIVATE)
-                                .also {
-                                    it.edit().putInt("idEmpresa", response.body()!!.idEmpresa)
-                                        .apply()
-                                }
+                            getPreferences(MODE_PRIVATE).apply {
+                                this.edit().putInt("idEmpresa", response.body()!!.idEmpresa).apply()
+                            }
                             productScreen()
                         }
                         (response.code() == 401) -> {

@@ -16,20 +16,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
-        <!-- Start -->
-
-        <!--        <activity-->
-        <!--            android:name=".activities.start.Start1Activity"-->
-        <!--            android:exported="true">-->
-        <!--            <intent-filter>-->
-        <!--                <action android:name="android.intent.action.MAIN" />-->
-
-        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-        <!--            </intent-filter>-->
-        <!--        </activity>-->
         <activity
             android:name=".activities.start.Start1Activity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activities.start.Start2Activity"
             android:exported="false" />
@@ -38,18 +32,10 @@
             android:exported="false" />
         <activity
             android:name=".activities.start.Start4Activity"
-            android:exported="false" />
-
-        <!-- Produto -->
+            android:exported="false" /> <!-- Produto -->
         <activity
             android:name=".activities.product.ProductActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".activities.product.EditProductActivity"
             android:exported="false" />
@@ -58,9 +44,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.product.NewProductSecondActivity"
-            android:exported="false" />
-
-        <!-- Cliente -->
+            android:exported="false" /> <!-- Cliente -->
         <activity
             android:name=".activities.client.ClientActivity"
             android:exported="false" />
@@ -69,9 +53,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.client.NewClientActivity"
-            android:exported="false" />
-
-        <!-- Fornecedor -->
+            android:exported="false" /> <!-- Fornecedor -->
         <activity
             android:name=".activities.provider.ProviderActivity"
             android:exported="false" />
@@ -80,9 +62,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.provider.NewProviderActivity"
-            android:exported="false" />
-
-        <!-- Funcionario -->
+            android:exported="false" /> <!-- Funcionario -->
         <activity
             android:name=".activities.employee.EmployeeActivity"
             android:exported="false" />
@@ -91,14 +71,10 @@
             android:exported="false" />
         <activity
             android:name=".activities.employee.NewEmployeeActivity"
-            android:exported="false" />
-
-        <!-- Login -->
+            android:exported="false" /> <!-- Login -->
         <activity
             android:name=".activities.login.Login"
-            android:exported="false" />
-
-        <!-- Registro -->
+            android:exported="false" /> <!-- Registro -->
         <activity
             android:name=".activities.register.RegisterActivity"
             android:exported="false" />
@@ -107,14 +83,10 @@
             android:exported="false" />
         <activity
             android:name=".activities.register.Register3Activity"
-            android:exported="false" />
-
-        <!-- Usuário -->
+            android:exported="false" /> <!-- Usuário -->
         <activity
             android:name=".activities.user.UserActivity"
-            android:exported="false" />
-
-        <!-- Extrato -->
+            android:exported="false" /> <!-- Extrato -->
         <activity
             android:name=".activities.extract.ExtractActivity"
             android:exported="false" />
@@ -123,9 +95,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.extract.NewRecipeActivity"
-            android:exported="false" />
-
-        <!-- Vendas -->
+            android:exported="false" /> <!-- Vendas -->
         <activity
             android:name=".activities.sale.SaleCompleted"
             android:exported="false" />
@@ -137,14 +107,10 @@
             android:exported="false" />
         <activity
             android:name=".activities.sale.SaleMethodActivity"
-            android:exported="false" />
-
-        <!-- Dashboard -->
+            android:exported="false" /> <!-- Dashboard -->
         <activity
             android:name=".activities.dashboard.DashboardActivity"
-            android:exported="false" />
-
-        <!-- Menu Lateral -->
+            android:exported="false" /> <!-- Menu Lateral -->
         <activity
             android:name=".activities.menu.DrawerBaseActivity"
             android:exported="false">

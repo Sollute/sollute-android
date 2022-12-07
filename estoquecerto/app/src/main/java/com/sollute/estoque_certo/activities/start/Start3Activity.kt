@@ -16,15 +16,12 @@ class Start3Activity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        binding.btnNextPageStart.setOnClickListener { irTelaStart4() }
-        binding.goBack.setOnClickListener { irTelaStart2() }
+        binding.btnNextStep4.setOnClickListener { irTelaStart4() }
+        binding.btnBackToStep2.setOnClickListener { irTelaStart2() }
     }
 
-    private fun irTelaStart4() {
-        startActivity(Intent(this, Start4Activity::class.java))
-    }
+    private fun irTelaStart4() = startActivity(Intent(this, Start4Activity::class.java))
 
-    private fun irTelaStart2() {
-        startActivity(Intent(this, Start1Activity::class.java))
-    }
+    private fun irTelaStart2() = startActivity(Intent(this, Start1Activity::class.java))
+
 }

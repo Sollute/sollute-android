@@ -78,11 +78,12 @@
         <LinearLayout
             android:id="@+id/LLRecycler"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/LLBotaoContinuar"
             android:layout_below="@+id/LLLabelProdutos"
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
-            android:layout_marginBottom="80dp">
+            android:layout_marginBottom="20dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvProductList"
@@ -94,13 +95,13 @@
 
         <!-- Botão Continuar -->
         <LinearLayout
+            android:id="@+id/LLBotaoContinuar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/LLMenuInferior"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="50dp"
-            android:layout_marginEnd="100dp">
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="15dp">
 
             <Button
                 android:id="@+id/btnNextPage"

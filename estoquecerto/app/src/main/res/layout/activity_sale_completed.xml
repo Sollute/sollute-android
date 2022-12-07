@@ -92,32 +92,29 @@
                 android:textSize="20sp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="20dp"
+                android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="50dp">
 
                 <Button
                     android:id="@+id/btnYes"
-                    android:layout_width="210dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginEnd="20dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/background_header"
-                    android:text="@string/yes"
-                    android:textColor="@color/white" />
+                    android:text="@string/yes" />
 
                 <Button
                     android:id="@+id/btnNo"
-                    android:layout_width="210dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="@string/no"
-                    android:textColor="@color/background_header"
-                    app:strokeColor="@color/background_header"
-                    app:strokeWidth="3dp" />
+                    android:backgroundTint="@color/background_header"
+                    android:text="@string/no" />
 
             </LinearLayout>
 

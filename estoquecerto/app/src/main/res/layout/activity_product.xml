@@ -93,6 +93,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/LLLabelProdutos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -116,10 +117,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@+id/LLMenuInferior"
+            android:layout_below="@id/LLLabelProdutos"
             android:layout_marginLeft="35dp"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="35dp"
-            android:layout_marginBottom="80dp">
+            android:layout_marginBottom="15dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvProductList"
@@ -130,11 +133,11 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/LLMenuInferior"
             android:layout_width="380dp"
             android:layout_height="65dp"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="100dp"
             android:layout_marginRight="15dp"
             android:background="@drawable/border">
 

@@ -22,6 +22,7 @@ class SaleCompleted : DrawerBaseActivity() {
         binding.btnNo.setOnClickListener { startActivity(Intent(this, ProductActivity::class.java)) }
 
         binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
+        binding.tvSell.setOnClickListener { startActivity(Intent(this, AddSaleActivity::class.java)) }
         binding.tvDashboard.setOnClickListener { startActivity(Intent(this, DashboardActivity::class.java)) }
         binding.tvUser.setOnClickListener { startActivity(Intent(this, UserActivity::class.java)) }
         binding.tvProduct.setOnClickListener { startActivity(Intent(this, ProductActivity::class.java)) }

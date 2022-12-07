@@ -1,7 +1,6 @@
 package com.sollute.estoque_certo.activities.sale
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,7 +30,6 @@ class AddSaleActivity : DrawerBaseActivity() {
     private val listProducts: MutableList<ListProduct> = mutableListOf()
     private val httpClient: Product = Rest.getInstance().create(Product::class.java)
     private val httpClientSale: Sale = Rest.getInstance().create(Sale::class.java)
-    private var amount: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,24 +41,18 @@ class AddSaleActivity : DrawerBaseActivity() {
         list(idEmpresa)
 
         binding.btnNextPage.setOnClickListener { nextPage() }
-        binding.tvDashboard.setOnClickListener {
-            startActivity(Intent(this, DashboardActivity::class.java))
-        }
-        binding.tvUser.setOnClickListener {
-            startActivity(Intent(this, UserActivity::class.java))
-        }
-        binding.tvProduct.setOnClickListener {
-            startActivity(Intent(this, ProductActivity::class.java))
-        }
+        binding.tvMenuHamburguer.setOnClickListener { super.drawerLayout.open() }
+        binding.tvSell.setOnClickListener { startActivity(Intent(this, AddSaleActivity::class.java)) }
+        binding.tvDashboard.setOnClickListener { startActivity(Intent(this, DashboardActivity::class.java)) }
+        binding.tvUser.setOnClickListener { startActivity(Intent(this, UserActivity::class.java)) }
+        binding.tvProduct.setOnClickListener { startActivity(Intent(this, ProductActivity::class.java)) }
     }
 
     private fun nextPage() {
         val nextScreen = Intent(
             this,
             SaleMethodActivity::class.java
-        ).apply {
-            this.putExtra("amount", amount)
-        }
+        )
         startActivity(nextScreen)
     }
 
@@ -117,7 +109,6 @@ class AddSaleActivity : DrawerBaseActivity() {
                 if ((product.productQuantity - requestQuantity) > 0) {
                     alertDialog.dismiss()
                     addCart(idEmpresa, product.productName, requestQuantity)
-                    amount += (product.productPrice * requestQuantity)
                 }
             }
 
